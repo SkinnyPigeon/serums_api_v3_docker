@@ -2,7 +2,7 @@ version: '3'
 services:
   data_lake:
     container_name: data_lake_v3
-    restart: always
+    # restart: always
     build: .
     ports:
       - "5000:5000"
