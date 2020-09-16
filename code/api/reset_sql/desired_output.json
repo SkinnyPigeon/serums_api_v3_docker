@@ -1,0 +1,44 @@
+{
+    "patientId":"8c858e5b-480e-498c-9f17-77b46f448f4e",
+    "personalInfo":{
+        "firsName": "First Name",
+        "lastName": "Last Name",
+        "dateOfBirth": "DDMMYYYY|NA",
+        "gender": "M|F|NA",
+        "nationality": "Country|NA",
+        "weight": "##kg|##lb|NA",
+        "height": "###cm|#ft#in|NA"
+    },
+    "events":[
+        {
+            "eventId": "#############",
+            "associatedId": "chi123",
+            "when":"DDMMYYYY-hhmm-UTC±0|NA",
+            "where":"Hospital Name|Country|Place|Location",
+            "who":"The name person that performed the action: Dr. Name, Hospital X, Laboratory Y, etc.",
+            "what":["Event tags",  "or labels", "gp visit", "x-ray", "physiotherapy", "chemotherapy", "etc."],
+            "details":[
+                {"some field": "some value"},
+                {"other field": "other value"},
+                {"another field": "another value"},
+                {"an array field": ["an", "array", "of", "values"]}
+            ]
+
+        },
+        {
+            "eventId": "#############",
+            "associatedId": "ID123",
+            "when":"DDMMYYYY-hhmm-UTC±0|NA",
+            "where":"Hospital Name|Country|Place|Location",
+            "who":"The name person that performed the action: Dr. Name, Hospital X, Laboratory Y, etc.",
+            "what":["Event tags",  "or labels", "gp visit", "x-ray", "physiotherapy", "chemotherapy", "etc."],
+            "details":[
+                {"some field": "some value"},
+                {"other field": "other value"},
+                {"another field": "another value"},
+                {"an array field": ["an", "array", "of", "values"]}
+            ]
+
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+version: '3'
+services:
+  data_lake:
+    container_name: data_lake_v3
+    restart: always
+    build: .
+    ports:
+      - "5000:5000"
+    stdin_open: true
+    tty: true
+    # networks:
+    #   - serums
+
+# networks:
+#   serums:
+#     external: true
