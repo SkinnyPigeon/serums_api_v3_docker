@@ -10,7 +10,8 @@ from pathlib import Path
 
 project_folder = os.path.expanduser('~/code/api/')
 load_dotenv(os.path.join(project_folder, '.env'))
-PASSWORD = os.getenv('PASSWORD')
+PASSWORD = os.environ.get('PGPASSWORD')
+# PASSWORD = os.getenv('PASSWORD')
 
 import random
 import string
@@ -23,7 +24,7 @@ def setup_data_vault_connection(unique_schema, Base):
     class_registry = {}
     metadata = MetaData(schema=unique_schema)
     base = Base(metadata=unique_schema)
-    engine = create_engine('postgresql://postgres:{}@localhost:5434/data_vault'.format(PASSWORD))
+    engine = create_engine('postgresql://postgres:{}@localhost:5432/data_vault'.format(PASSWORD))
     Session = sessionmaker(bind=engine, autoflush=True, autocommit=False)
     session = Session()
     return {'base': base, 'metadata': metadata, 'engine': engine, 'session': session, 'schema': unique_schema}

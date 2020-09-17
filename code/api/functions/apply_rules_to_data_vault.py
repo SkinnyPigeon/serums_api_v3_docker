@@ -25,8 +25,11 @@ def apply_tags(patient_tags, hospital_id):
     hospital_tags, controls = hospital_tags_and_controls_picker(hospital_id)
     altered_controls = []
     for tag in hospital_tags:
-        if tag['tag'] in patient_tags:
-            for satellite in controls[tag['table']]['satellites']['satellites']:
-                satellite['columns'] = find_commonality(satellite['columns'], tag['fields'])
-            altered_controls.append(controls[tag['table']])
+        try:
+            if tag['tag'] in patient_tags:
+                for satellite in controls[tag['table']]['satellites']['satellites']:
+                    satellite['columns'] = find_commonality(satellite['columns'], tag['fields'])
+                altered_controls.append(controls[tag['table']])
+        except:
+            pass
     return altered_controls

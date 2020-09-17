@@ -13,9 +13,10 @@ from pathlib import Path
 
 project_folder = os.path.expanduser('~/code/api/')
 load_dotenv(os.path.join(project_folder, '.env'))
-PASSWORD = os.getenv('PASSWORD')
+# PASSWORD = os.getenv('PASSWORD')
+PASSWORD = os.environ.get('PGPASSWORD')
 
-engine = create_engine('postgresql://postgres:{}@localhost:5434/source'.format(PASSWORD), echo='debug')
+engine = create_engine('postgresql://postgres:{}@localhost:5432/source'.format(PASSWORD), echo='debug')
 
 
 # Tables/Classes

@@ -78,3 +78,14 @@ def format_data(hospital_id, sphr, serums_id, patient_tags):
     output.update({"events": formatted_sphr})
 
     return json.dumps(output)
+
+def format_data_decrypted(hospital_id, sphr, serums_id, patient_tags):
+    output = {"serums_id": serums_id}
+    personal_info, event_boilerplate = hospital_picker(hospital_id)
+    formatted_personal_info = personal_info_formatter(personal_info, sphr)
+    formatted_sphr = sphr_formatter(event_boilerplate, sphr, patient_tags)
+
+    output.update({"personalInfo": formatted_personal_info})
+    output.update({"events": formatted_sphr})
+
+    return output

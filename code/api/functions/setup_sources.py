@@ -11,7 +11,8 @@ from pathlib import Path
 
 project_folder = os.path.expanduser('~/code/api/')
 load_dotenv(os.path.join(project_folder, '.env'))
-PASSWORD = os.getenv('PASSWORD')
+PASSWORD = os.environ.get('PGPASSWORD')
+# PASSWORD = os.getenv('PASSWORD')
 
 from sources.tags.fcrb import fcrb_tags
 from sources.tags.ustan import ustan_tags
@@ -28,7 +29,7 @@ def hospital_picker(hospital_id):
 def setup_connection(hospital):
     metadata = MetaData(schema=hospital)
     Base = automap_base(metadata=metadata)
-    engine = create_engine('postgresql://postgres:{}@localhost:5434/source'.format(PASSWORD))
+    engine = create_engine('postgresql://postgres:{}@localhost:5432/source'.format(PASSWORD))
     Base.prepare(engine, reflect=True)
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -73,12 +74,15 @@ def select_tags_from_rule_table(source_session, rule_class, rule_id):
 def select_source_fields(source_session, tables, hospital, hospital_tags, patient_tags, filters, patient_id, key_name, connection):
     to_return = {}
     for hospital_tag in hospital_tags:
-        if hospital_tag['tag'] in patient_tags:
-            to_return[hospital_tag['table']] = []
-            class_name = tables[hospital_tag['table']]
-            results = get_results(source_session, class_name, hospital_tag['fields'], patient_id, filters, key_name, hospital_tag['key_lookup'], connection)
-            for result in results:
-                to_return[hospital_tag['table']].append(object_as_dict(result))
+        try:
+            if hospital_tag['tag'] in patient_tags:
+                to_return[hospital_tag['table']] = []
+                class_name = tables[hospital_tag['table']]
+                results = get_results(source_session, class_name, hospital_tag['fields'], patient_id, filters, key_name, hospital_tag['key_lookup'], connection)
+                for result in results:
+                    to_return[hospital_tag['table']].append(object_as_dict(result))
+        except:
+            pass
     return to_return
 
 def get_results(source_session, class_name, fields, patient_id, filters, key_name, key_lookup, connection):

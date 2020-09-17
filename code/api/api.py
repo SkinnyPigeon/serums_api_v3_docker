@@ -11,7 +11,7 @@ from functions.setup_sources import *
 from functions.data_vault import create_data_vault, copy_to_dv
 from functions.apply_rules_to_data_vault import *
 from functions.encryption import encrypt_patient_record
-from functions.formatter import format_data
+from functions.formatter import format_data, format_data_decrypted
 from functions.handle_users import add_user_to_serums, remove_user_from_serums
 from functions.handle_rules import add_rule_to_hospital_db
 
@@ -117,7 +117,6 @@ class GetSphr(Resource):
 class AddUser(Resource):
     '''Link a patient's hospital ID to their Serums ID'''
     @api.doc(body=add_user_fields)
-    # @api.marshal_with(code=200)
     def post(self):
         req_data = request.get_json()
         return add_user_to_serums(req_data)
@@ -126,7 +125,6 @@ class AddUser(Resource):
 class RemoveUser(Resource):
     '''Remove link(s) between a patient's hospital ID(s) and their Serums ID'''
     @api.doc(body=remove_user_fields)
-    # @api.marshal_with(code=200)
     def post(self):
         req_data = request.get_json()
         remove_user_from_serums(req_data)
@@ -136,7 +134,6 @@ class RemoveUser(Resource):
 class AddRule(Resource):
     '''Add a new rule based on selected tags and filters'''
     @api.doc(body=add_rules_fields)
-    # @api.marshal_with(code=200)
     def post(self):
         req_data = request.get_json()
         return add_rule_to_hospital_db(req_data)
@@ -171,7 +168,6 @@ class GetEncrypted(Resource):
 class GetDecrypted(Resource):
     '''Return the Smart Patient Health Record from the Serums data lake'''
     @api.doc(body=request_fields)
-    @api.marshal_with(reply_fields, code=200)
     def post(self):
         req_data = request.get_json()
         invalid_fields = validate_sphr_request(req_data)
@@ -184,8 +180,7 @@ class GetDecrypted(Resource):
         control_files = apply_tags(patient_tags, req_data['hospital_id'])
         connection = create_data_vault(req_data['hospital_id'])
         sphr = copy_to_dv(source_data, control_files, connection)
-        sphr = format_data(req_data['hospital_id'], sphr, req_data['serums_id'], patient_tags)
-        encrypted_record = encrypt_patient_record(sphr, req_data['public_key'])
+        sphr = format_data_decrypted(req_data['hospital_id'], sphr, req_data['serums_id'], patient_tags)
 
         connection['engine'].dispose()
 

@@ -9,7 +9,8 @@ import json
 
 project_folder = os.path.expanduser('~/code/api/')
 load_dotenv(os.path.join(project_folder, '.env'))
-PASSWORD = os.getenv('PASSWORD')
+PASSWORD = os.environ.get('PGPASSWORD')
+# PASSWORD = os.getenv('PASSWORD')
 
 def hospital_rule_picker(hospital):
     if hospital == 1:
@@ -25,7 +26,7 @@ def hospital_rule_picker(hospital):
 def setup_connection(hospital):
     metadata = MetaData(schema=hospital)
     Base = automap_base(metadata=metadata)
-    engine = create_engine('postgresql://postgres:{}@localhost:5434/source'.format(PASSWORD))
+    engine = create_engine('postgresql://postgres:{}@localhost:5432/source'.format(PASSWORD))
     Base.prepare(engine, reflect=True)
     Session = sessionmaker(bind=engine)
     session = Session()
