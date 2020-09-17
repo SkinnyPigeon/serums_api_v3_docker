@@ -369,8 +369,8 @@ class ZMC_Appointments(Base):
     date = Column(DateTime(timezone=False))
     notes = Column(Text)
 
-class ZMC_Opperations(Base):
-    __tablename__ = 'patient_opperations'
+class ZMC_Operations(Base):
+    __tablename__ = 'patient_operations'
     __table_args__ = {'schema': 'zmc'}
     patnr = Column(Integer, primary_key=True)
     anatomical_location = Column(String)

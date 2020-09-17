@@ -25,7 +25,7 @@ insert into zmc.patient_appointments (patnr, type, date, notes) values (1075835,
 insert into zmc.patient_appointments (patnr, type, date, notes) values (1075835, 'Control Appointment', '2020-10-26', 'Progress measured via Activity Monitor. No physical appointment needed');
 
 
-insert into zmc.patient_opperations (patnr, anatomical_location, date, notes) values (1075835, 'Right hip', '2020-09-20', 'See operation report');
+insert into zmc.patient_operations (patnr, anatomical_location, date, notes) values (1075835, 'Right hip', '2020-09-20', 'See operation report');
 
 
 insert into zmc.patient_warnings (patnr, alerts, begin_date, type) values (1075835, 'Pacemaker', '2015-06-01', 'Conditie');
