@@ -10,7 +10,7 @@ from pathlib import Path
 
 project_folder = os.path.expanduser('~/code/api_v3/')
 load_dotenv(os.path.join(project_folder, '.env'))
-PASSWORD = os.getenv('PASSWORD')
+PASSWORD = os.environ.get('PGPASSWORD')
 
 def hospital_picker(hospital_id):
     if hospital_id == 'FCRB':
