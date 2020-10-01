@@ -23,7 +23,7 @@ def hospital_picker(hospital_id):
 def setup_connection(hospital):
     metadata = MetaData(schema=hospital)
     Base = automap_base(metadata=metadata)
-    engine = create_engine('postgresql://postgres:{}@localhost:5434/testing_source'.format(PASSWORD))
+    engine = create_engine('postgresql://postgres:{}@localhost:5432/testing_source'.format(PASSWORD))
     Base.prepare(engine, reflect=True)
     Session = sessionmaker(bind=engine)
     session = Session()
