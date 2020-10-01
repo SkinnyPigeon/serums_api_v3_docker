@@ -52,11 +52,23 @@ insert into zmc.patient_allergies_intolerance (patnr, caustic_substance, critica
 insert into zmc.patient_diagnostic (patnr, type, name, anatomical_location, laterality, begin_date, end_date) values (1075835, 'Diagnosis', 'Coxartrose', 'Right Hip', 'No', '2020-09-01', '2020-11-27');
 
 
-insert into zmc.patient_rules (rule_id, tags, filters) values (1, ARRAY['wearable', 'personal'], '{}');
-insert into zmc.patient_rules (rule_id, tags, filters) values (2, ARRAY['patient_details'], '{}');
-insert into zmc.patient_rules (rule_id, tags, filters) values (3, ARRAY['personal'], '{}');
-insert into zmc.patient_rules (rule_id, tags, filters) values (4, ARRAY['wearable', 'personal'], '{"day_nr": 2}');
+insert into zmc.patient_rules (rule_id, tags, filters) values ('9a8sdn8asj89dfs', ARRAY['wearable', 'patient_details'], '{}');
 
 
 insert into zmc.serums_ids (serums_id, patnr) values (1, 1075835);
+
+insert into zmc.hospital_tags (tags) values (ARRAY['wearable', 'diagnostic', 'patient_details', 'patient_address', 'appointments', 'operations', 'documents', 'drugs_and_alcohol', 'allergies', 'additional_information', 'treatments', 'personal']);
+
+insert into zmc.hospital_doctors (id, name, specialism) values (1, 'Lucas De Vries', 1);
+insert into zmc.hospital_doctors (id, name, specialism) values (2, 'Milan Van de Berg', 1);
+insert into zmc.hospital_doctors (id, name, specialism) values (3, 'Emma Bakker', 1);
+insert into zmc.hospital_doctors (id, name, specialism) values (4, 'Sophie Janssen', 1);
+insert into zmc.hospital_doctors (id, name, specialism) values (5, 'Levi Van Dijk', 2);
+insert into zmc.hospital_doctors (id, name, specialism) values (6, 'Julia Visser', 2);
+insert into zmc.hospital_doctors (id, name, specialism) values (7, 'Sem Jansen', 2);
+insert into zmc.hospital_doctors (id, name, specialism) values (8, 'Mila Meyer', 3);
+insert into zmc.hospital_doctors (id, name, specialism) values (9, 'Anna Smit', 3);
+insert into zmc.hospital_doctors (id, name, specialism) values (10, 'Daan De Jong', 3);
+
+
 

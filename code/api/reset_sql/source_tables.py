@@ -161,9 +161,22 @@ class FCRB_Vital_Signs(Base):
 class FCRB_Patient_Rules(Base):
     __tablename__ = 'patient_rules'
     __table_args__ = {'schema': 'fcrb'}
-    rule_id = Column(Integer, primary_key=True)
+    rule_id = Column(String, primary_key=True)
     tags = Column(ARRAY(String))
     filters = Column(JSON)
+    
+class FCRB_TAGS(Base):
+    __tablename__ = 'hospital_tags'
+    __table_args__ = {'schema': 'fcrb'}
+    id = Column(Integer, primary_key=True)
+    tags = Column(ARRAY(String))  
+
+class FCRB_Doctors(Base):
+    __tablename__ = 'hospital_doctors'
+    __table_args__ = {'schema': 'fcrb'}
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    specialism = Column(Integer)
 
 ### USTAN
 
@@ -282,9 +295,23 @@ class USTAN_Serums_IDs(Base):
 class USTAN_Patient_Rules(Base):
     __tablename__ = 'patient_rules'
     __table_args__ = {'schema': 'ustan'}
-    rule_id = Column(Integer, primary_key=True)
+    rule_id = Column(String, primary_key=True)
     tags = Column(ARRAY(String))
     filters = Column(JSON)
+
+class USTAN_TAGS(Base):
+    __tablename__ = 'hospital_tags'
+    __table_args__ = {'schema': 'ustan'}
+    id = Column(Integer, primary_key=True)
+    tags = Column(ARRAY(String)) 
+
+class USTAN_Doctors(Base):
+    __tablename__ = 'hospital_doctors'
+    __table_args__ = {'schema': 'ustan'}
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    specialism = Column(Integer)
+
 
 
 ### ZMC 
@@ -357,7 +384,7 @@ class ZMC_Serums_IDs(Base):
 class ZMC_Patient_Rules(Base):
     __tablename__ = 'patient_rules'
     __table_args__ = {'schema': 'zmc'}
-    rule_id = Column(Integer, primary_key=True)
+    rule_id = Column(String, primary_key=True)
     tags = Column(ARRAY(String))
     filters = Column(JSON)
 
@@ -441,5 +468,18 @@ class ZMC_Diagnostic(Base):
     laterality = Column(String)
     begin_date = Column(DateTime(timezone=False))
     end_date = Column(DateTime(timezone=False))
+
+class ZMC_TAGS(Base):
+    __tablename__ = 'hospital_tags'
+    __table_args__ = {'schema': 'zmc'}
+    id = Column(Integer, primary_key=True)
+    tags = Column(ARRAY(String)) 
+
+class ZMC_Doctors(Base):
+    __tablename__ = 'hospital_doctors'
+    __table_args__ = {'schema': 'zmc'}
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    specialism = Column(Integer)
 
 Base.metadata.create_all(engine)

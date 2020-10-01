@@ -25,9 +25,20 @@ values ('2020-07-04', 'tumour_site_icd10', 5, 3, 'stage_clinical_t_code', 'stage
 insert into ustan.serums_ids (serums_id, chi) values (1, 1);
 
 
-insert into ustan.patient_rules (rule_id, tags, filters) values (1, ARRAY['personal'], '{}');
-insert into ustan.patient_rules (rule_id, tags, filters) values (2, ARRAY['patient_details'], '{}');
-insert into ustan.patient_rules (rule_id, tags, filters) values (3, ARRAY['personal', 'treatments'], '{}');
-insert into ustan.patient_rules (rule_id, tags, filters) values (4, ARRAY['patient_details', 'treatments'], '{"cycle_id": 2}');
+insert into ustan.patient_rules (rule_id, tags, filters) values ('h8asdasja8jskalc', ARRAY['patient_details', 'treatments'], '{}');
+
+insert into ustan.hospital_tags (tags) values (ARRAY['diagnostic', 'medication', 'patient_details', 'patient_address', 'appointments', 'patient_details', 'healthcare_providers', 'treatments', 'personal']);
+
+insert into ustan.hospital_doctors (id, name, specialism) values (1, 'Isla MacDonald', 1);
+insert into ustan.hospital_doctors (id, name, specialism) values (2, 'Charles Stewart', 1);
+insert into ustan.hospital_doctors (id, name, specialism) values (3, 'Oliver Wilson', 1);
+insert into ustan.hospital_doctors (id, name, specialism) values (4, 'Emily Scott', 1);
+insert into ustan.hospital_doctors (id, name, specialism) values (5, 'Ella Murray', 2);
+insert into ustan.hospital_doctors (id, name, specialism) values (6, 'James Campbell', 2);
+insert into ustan.hospital_doctors (id, name, specialism) values (7, 'Charlotte Watson', 2);
+insert into ustan.hospital_doctors (id, name, specialism) values (8, 'Amelia Clark', 3);
+insert into ustan.hospital_doctors (id, name, specialism) values (9, 'Noah Thomson', 3);
+insert into ustan.hospital_doctors (id, name, specialism) values (10, 'Jack Smith', 3);
+
 
 

@@ -253,16 +253,22 @@ values (1239828, 'PCHACON', 'H-MMG', '1991-02-28', '2018-11-21', NULL, '2018-11-
 insert into fcrb.serums_ids (serums_id, patnr) values (1, 4641202);
 
 
-insert into fcrb.patient_rules (rule_id, tags, filters) values (1, ARRAY['wearable', 'personal'], '{}');
-insert into fcrb.patient_rules (rule_id, tags, filters) values (2, ARRAY['patient_details'], '{}');
-insert into fcrb.patient_rules (rule_id, tags, filters) values (3, ARRAY['personal'], '{}');
-insert into fcrb.patient_rules (rule_id, tags, filters) values (4, ARRAY['wearable', 'personal'], '{"falnr": 988392719}');
-insert into fcrb.patient_rules (rule_id, tags, filters) values (5, ARRAY['all'], '{}');
-insert into fcrb.patient_rules (rule_id, tags, filters) values (6, ARRAY['medication', 'diagnostic'], '{}');
-insert into fcrb.patient_rules (rule_id, tags, filters) values (7, ARRAY['appointments', 'patient_details', 'medication', 'diagnostic'], '{}');
-insert into fcrb.patient_rules (rule_id, tags, filters) values (8, ARRAY['all'], '{"falnr": 988392719}');
-insert into fcrb.patient_rules (rule_id, tags, filters) values (9, ARRAY['healthcare_providers'], '{}');
+insert into fcrb.patient_rules (rule_id, tags, filters) values ('as8sadausd99S', ARRAY['wearable', 'patient_details'], '{}');
 
+
+insert into fcrb.hospital_tags (tags) values (ARRAY['wearable', 'diagnostic', 'medication', 'patient_details', 'patient_address', 'appointments', 'healthcare_providers', 'treatments', 'personal']);
+
+
+insert into fcrb.hospital_doctors (id, name, specialism) values (1, 'Mateu Martin Silva', 1);
+insert into fcrb.hospital_doctors (id, name, specialism) values (2, 'Lluc Garcia Torres', 1);
+insert into fcrb.hospital_doctors (id, name, specialism) values (3, 'Llora Romero Navarro', 1);
+insert into fcrb.hospital_doctors (id, name, specialism) values (4, 'Laia Ortega Morales', 1);
+insert into fcrb.hospital_doctors (id, name, specialism) values (5, 'Neus Ramos Serrano', 2);
+insert into fcrb.hospital_doctors (id, name, specialism) values (6, 'Beatriu Iglesias Delgado', 2);
+insert into fcrb.hospital_doctors (id, name, specialism) values (7, 'Carles Sanchez Martinez', 2);
+insert into fcrb.hospital_doctors (id, name, specialism) values (8, 'Dolors Sanz Rubio', 3);
+insert into fcrb.hospital_doctors (id, name, specialism) values (9, 'Francesc Diaz Ruiz', 3);
+insert into fcrb.hospital_doctors (id, name, specialism) values (10, 'Àlex Alonso Romero', 3);
 
 
 
