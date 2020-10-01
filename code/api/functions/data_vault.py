@@ -28,11 +28,11 @@ def create_data_vault(hospital_id):
     print(schema)
     connection = setup_data_vault_connection(schema, Base)
     create_unique_schema(connection, schema, Base)
-    if hospital_id == 1:
+    if hospital_id == 'FCRB':
         create_fcrb_dv(schema, Base, connection['engine'])
-    elif hospital_id == 2:
+    elif hospital_id == 'USTAN':
         create_ustan_dv(schema, Base, connection['engine'])
-    elif hospital_id == 3:
+    elif hospital_id == 'ZMC':
         create_zmc_dv(schema, Base, connection['engine'])
 
     return connection

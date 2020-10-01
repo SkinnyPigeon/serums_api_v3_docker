@@ -14,11 +14,11 @@ def print_source_data(source_data):
     print(source_data)
 
 def hospital_tags_and_controls_picker(hospital_id):
-    if hospital_id == 1:
+    if hospital_id == 'FCRB':
         return fcrb_tags, fcrb_controls
-    elif hospital_id == 2:
+    elif hospital_id == 'USTAN':
         return ustan_tags, ustan_controls
-    elif hospital_id == 3:
+    elif hospital_id == 'ZMC':
         return zmc_tags, zmc_controls
 
 def apply_tags(patient_tags, hospital_id):

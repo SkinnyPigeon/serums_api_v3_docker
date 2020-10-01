@@ -4,13 +4,13 @@ from sources.format_mapping.zmc import *
 import json
 
 def hospital_picker(hospital_id):
-    if hospital_id == 1:
+    if hospital_id == 'FCRB':
         return fcrb_personal_info, fcrb_event_boilerplate
-    elif hospital_id == 2:
+    elif hospital_id == 'USTAN':
         return ustan_personal_info, ustan_event_boilerplate
-    elif hospital_id == 3:
+    elif hospital_id == 'ZMC':
         return zmc_personal_info, zmc_event_boilerplate
-
+        
 def personal_info_formatter(personal_info, sphr):
     sphr = json.loads(sphr)
     for record in sphr:

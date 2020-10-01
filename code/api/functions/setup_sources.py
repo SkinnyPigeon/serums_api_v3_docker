@@ -19,11 +19,11 @@ from sources.tags.ustan import ustan_tags
 from sources.tags.zmc import zmc_tags
 
 def hospital_picker(hospital_id):
-    if hospital_id == 1:
+    if hospital_id == 'FCRB':
         return 'fcrb', fcrb_tags
-    elif hospital_id == 2:
+    elif hospital_id == 'USTAN':
         return 'ustan', ustan_tags
-    elif hospital_id == 3:
+    elif hospital_id == 'ZMC':
         return 'zmc', zmc_tags
 
 def setup_connection(hospital):
@@ -38,7 +38,7 @@ def setup_connection(hospital):
 def select_table_classes(hospital, source_base):
     tables = {}
     for class_name in source_base._decl_class_registry.values():
-        if hasattr(class_name, '__table__') and class_name.__table__.fullname not in ['{hospital}.serums_ids'.format(hospital=hospital), '{hospital}.patient_rules'.format(hospital=hospital)]:
+        if hasattr(class_name, '__table__') and class_name.__table__.fullname not in ['{hospital}.serums_ids'.format(hospital=hospital), '{hospital}.patient_rules'.format(hospital=hospital), '{hospital}.hospital_tags'.format(hospital=hospital), '{hospital}.hospital_doctors'.format(hospital=hospital)]:
             tables.update({class_name.__table__.fullname: class_name})
     return tables
 

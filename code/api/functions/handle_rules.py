@@ -13,15 +13,16 @@ PASSWORD = os.environ.get('PGPASSWORD')
 # PASSWORD = os.getenv('PASSWORD')
 
 def hospital_rule_picker(hospital):
-    if hospital == 1:
+    if hospital == 'FCRB':
         hospital = 'fcrb'
-    elif hospital == 2:
+    elif hospital == 'USTAN':
         hospital = 'ustan'
-    elif hospital == 3:
+    elif hospital == 'ZMC':
         hospital = 'zmc'
     connection = setup_connection(hospital)
     rule_table = select_rule_table(connection)
     return connection, rule_table
+
 
 def setup_connection(hospital):
     metadata = MetaData(schema=hospital)

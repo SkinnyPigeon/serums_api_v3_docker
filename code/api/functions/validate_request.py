@@ -23,8 +23,8 @@ def check_for_data_types(request, invalid_fields):
     correct_types = {
         'public_key': str,
         'serums_id': int,
-        'rule_id': int,
-        'hospital_id': int
+        'rule_id': str,
+        'hospital_id': str
     }
     for key in request:
         if not isinstance(request[key], correct_types[key]):

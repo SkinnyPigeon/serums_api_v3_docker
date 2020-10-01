@@ -10,14 +10,13 @@ import json
 project_folder = os.path.expanduser('~/code/api/')
 load_dotenv(os.path.join(project_folder, '.env'))
 PASSWORD = os.environ.get('PGPASSWORD')
-# PASSWORD = os.getenv('PASSWORD')
 
 def hospital_id_picker(hospital_id):
-    if hospital_id == 1:
+    if hospital_id == 'FCRB':
         hospital = 'fcrb'
-    elif hospital_id == 2:
+    elif hospital_id == 'USTAN':
         hospital = 'ustan'
-    elif hospital_id == 3:
+    elif hospital_id == 'ZMC':
         hospital = 'zmc'
     connection = setup_connection(hospital)
     id_column, id_table = select_id_column(connection)
