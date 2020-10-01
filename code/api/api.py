@@ -40,9 +40,10 @@ hello = api.model('Server Check', {
 })
 
 request_fields = api.model('Request', {
-    'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=123),
-    'rule_id': fields.Integer(required=True, description='Rule to be executed', example=456),
-    'hospital_id': fields.Integer(required=True, description='The id of the hospital for the source data', example=789)
+    'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=1),
+    'rule_id': fields.Integer(required=True, description='Rule to be executed', example=2),
+    'hospital_id': fields.Integer(required=True, description='The id of the hospital for the source data', example=3),
+    'public_key': fields.String(required=True, description="The public key used as part of the API's encryption", example="-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA24IJ1BITwdCmERIJgk2v\nplEwjsXNupYWE23cy8bSvmVhHuZZKRZU5YPGQwaFZERFT0/fJvtRFinYhe9KOmXw\nHYhrrDCIOgXkYvzJMZ+IWTDMHmrmuXjC/9UfarpzE4mudCIWCVffcGaItP2aMlhu\nE4dxxH9S7xbr4F6mRDmZBbup7H4hnkJAnsy4LMM8vf8eREk4VqW1MQhougdmDCi9\nXt2ZvOxD4tVEW3wTTWUPm+1ZZk3eyV+twnbp2O3T9EIYQ1Nm7vNkjVgucSDXMKT6\niCThYCG2a6ogf33Z5mPsSlAT+Q1IfL+8FNkbUH0K/ZJqV8SlI68FPZ/v/rC3TXLs\n4wIDAQAB\n-----END PUBLIC KEY-----\n")
 })
 
 reply_fields = api.model('Successful Response', {
@@ -51,19 +52,19 @@ reply_fields = api.model('Successful Response', {
 })
 
 add_user_fields = api.model('Add User', {
-    'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=123),
-    'hospitals': fields.List(fields.Integer(required=True, description='The id of the hospital for the source data', example=789))
+    'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=1),
+    'patient_id': fields.Integer(required=True, description="The Patient's ID in the host hospital to be linked to the Serums ID", example=1075835),
+    'hospital_id': fields.Integer(required=True, description='The id of the hospital for the source data', example=3)
 })
 
 remove_user_fields = api.model('Remove User', {
-    'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=123),
-    'patient_id': fields.Integer(required=True, description="The Patient's ID in the host hospital to be linked to the Serums ID", example=456),
-    'hospital_id': fields.Integer(required=True, description='The id of the hospital for the source data', example=789)
+    'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=1),
+    'hospitals': fields.List(fields.Integer(required=True, description='The id of the hospital for the source data', example=2))
 })
 
 add_rules_fields = api.model('Add Rule', {
-    'rule_id': fields.Integer(required=True, description='Rule to be executed', example=456),
-    'hospital_id': fields.Integer(required=True, description='The id of the hospital for the source data', example=789),
+    'rule_id': fields.Integer(required=True, description='Rule to be executed', example=123),
+    'hospital_id': fields.Integer(required=True, description='The id of the hospital for the source data', example=2),
     'tags': fields.List(fields.String(required=True, description='The tags that the patient has selected to control their data', example='[wearable, patient_details]')),
     'filters': fields.String(required=False, description='The filters to apply to any requested data', example="einri=101")
 })
@@ -111,7 +112,7 @@ class GetSphr(Resource):
 
         connection['engine'].dispose()
 
-        return sphr
+        return encrypted_record
 
 @ns.route("/add_user", methods=['post'])
 class AddUser(Resource):
