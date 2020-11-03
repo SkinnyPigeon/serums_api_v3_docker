@@ -53,6 +53,7 @@ insert into zmc.patient_diagnostic (patnr, type, name, anatomical_location, late
 
 
 insert into zmc.patient_rules (rule_id, tags, filters) values ('9a8sdn8asj89dfs', ARRAY['wearable', 'patient_details'], '{}');
+insert into zmc.patient_rules (rule_id, tags, filters) values ('abc', ARRAY['all'], '{}');
 
 
 insert into zmc.serums_ids (serums_id, patnr) values (1, 1075835);

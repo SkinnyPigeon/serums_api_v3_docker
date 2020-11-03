@@ -6,7 +6,7 @@ ustan_diagnostic = {
   'fields': [
     'chi',
     'first_seen_date',
-    'primary',
+    '"primary"',
     'age',
     'site',
     'side',
@@ -168,21 +168,23 @@ ustan_all_4 = {
   ], 'key_lookup': {}
 }
 
-ustan_tags = [ustan_wearable
-ustan_diagnostic
-ustan_medication
-ustan_patient_details
-ustan_patient_address
-ustan_appointments
-ustan_operations
-ustan_documents
-ustan_healthcare_providers
-ustan_drugs_and_alcohol
-ustan_allergies
-ustan_additional_information
-ustan_treatments
-ustan_personal
-ustan_all_1
-ustan_all_2
-ustan_all_3
-ustan_all_4]
+ustan_tags = [
+    ustan_wearable,
+    ustan_diagnostic,
+    ustan_medication,
+    ustan_patient_details,
+    ustan_patient_address,
+    ustan_appointments,
+    ustan_operations,
+    ustan_documents,
+    ustan_healthcare_providers,
+    ustan_drugs_and_alcohol,
+    ustan_allergies,
+    ustan_additional_information,
+    ustan_treatments,
+    ustan_personal,
+    ustan_all_1,
+    ustan_all_2,
+    ustan_all_3,
+    ustan_all_4
+]

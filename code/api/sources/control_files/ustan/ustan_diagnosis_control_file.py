@@ -15,7 +15,7 @@ ustan_diagnosis_satellites = {
         },
         {
             'satellite': 'sat_event_diagnosis_details', 
-            'columns': ['primary', 'age' ,'site', 'side', 'histology', 'stage', 'tnm_t', 'tnm_n', 'tnm_m', 'perf_stat', 'metastasis1'], 'hub': 'hub_event', 'hub_id': 0
+            'columns': ['"primary"', 'age' ,'site', 'side', 'histology', 'stage', 'tnm_t', 'tnm_n', 'tnm_m', 'perf_stat', 'metastasis1'], 'hub': 'hub_event', 'hub_id': 0
         }
     ]
 }

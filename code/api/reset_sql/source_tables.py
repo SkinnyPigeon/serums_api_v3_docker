@@ -3,7 +3,7 @@
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
-from sqlalchemy import Column, Integer, String, DateTime, Time, Text, Numeric, ForeignKey, create_engine
+from sqlalchemy import Column, Integer, BigInteger, String, DateTime, Time, Text, Numeric, ForeignKey, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.dialects.postgresql import ARRAY, JSON
 
@@ -185,10 +185,10 @@ class FCRB_Doctors(Base):
 class USTAN_Chemocare(Base):
     __tablename__ = 'chemocare'
     __table_args__ = {'schema': 'ustan'}
-    chi = Column(Integer, primary_key=True)
+    chi = Column(BigInteger, primary_key=True)
     intention = Column(String)
     regime = Column(String)
-    appointment_date = Column(DateTime(timezone=False))
+    appointment_date = Column(DateTime(timezone=False), primary_key=True)
     drug_dose = Column(Integer)
     drug_type = Column(String)
     drug_status = Column(String)
@@ -197,24 +197,24 @@ class USTAN_Chemocare(Base):
 class USTAN_Demographics(Base):
     __tablename__ = 'demographics'
     __table_args__ = {'schema': 'ustan'}
-    chi	= Column(Integer, primary_key=True)
+    chi	= Column(BigInteger, primary_key=True)
     name = Column(String)
     initial	= Column(String)
     gp_name	= Column(String)
     postcode = Column(String)	
     age	= Column(Integer)
-    dat_birth = Column(DateTime(timezone=False))
+    dat_birth = Column(DateTime(timezone=False), primary_key=True)
     gender = Column(String)
     civil_status = Column(Integer)
-    religion - Column(Integer)
+    religion = Column(Integer)
     ref_hospital = Column(Integer)
     dat_death = Column(Integer)
 
 class USTAN_Diagnosis(Base):
     __tablename__ = 'diagnosis'
     __table_args__ = {'schema': 'ustan'}
-    chi	= Column(Integer, primary_key=True)
-    first_seen_date	= Column(DateTime(timezone=False))
+    chi	= Column(BigInteger, primary_key=True)
+    first_seen_date	= Column(DateTime(timezone=False), primary_key=True)
     primary	= Column(Integer)
     age	= Column(Integer)
     site = Column(String)
@@ -230,8 +230,8 @@ class USTAN_Diagnosis(Base):
 class USTAN_Smr01(Base):
     __tablename__ = 'smr01'
     __table_args__ = {'schema': 'ustan'}
-    chi	= Column(Integer(primary_key=True))
-    incidence_date = Column(DateTime(timezone=False))
+    chi	= Column(BigInteger, primary_key=True)
+    incidence_date = Column(DateTime(timezone=False), primary_key=True)
     admission_date = Column(DateTime(timezone=True))
     length_of_stay = Column(Integer)
     main_condition = Column(String)	
@@ -251,7 +251,7 @@ class USTAN_Serums_IDs(Base):
     __tablename__ = 'serums_ids'
     __table_args__ = {'schema': 'ustan'}
     serums_id = Column(Integer, primary_key=True)
-    chi = Column(Integer, primary_key=True)
+    chi = Column(BigInteger, primary_key=True)
 
 class USTAN_Patient_Rules(Base):
     __tablename__ = 'patient_rules'

@@ -10,7 +10,7 @@ insert into ustan.demographics (chi, name, initial, gp_name, postcode, age, dat_
 values (2606566626, 'MARIE POPPO', 'R', 'BIAGIONI', 'DG349WU', 41, '1976-06-26', 'F', 9, 9, 593, null);
 
 
-insert into ustan.diagnosis (chi, first_seen_date, primary, age, site, side, histology, stage, tnm_t, tnm_n, tnm_m, perf_stat, metastasis1)
+insert into ustan.diagnosis (chi, first_seen_date, "primary", age, site, side, histology, stage, tnm_t, tnm_n, tnm_m, perf_stat, metastasis1)
 values(2606566626, '2014-05-12', 1, 41, 'C50.9', 2, 8504, '3A', '4B', '2', '0', null, null);
 
 
@@ -23,7 +23,7 @@ values (2606566626, '2020-09-11', '2020-10-09', 0, 'C509', 'C773', null, null, '
 insert into ustan.serums_ids (serums_id, chi) values (1, 1);
 
 insert into ustan.patient_rules (rule_id, tags, filters) values ('h8asdasja8jskalc', ARRAY['patient_details', 'treatments'], '{}');
-insert into ustan.patient_rules (rule_id, tags, filters) values ('abc', ARRAY['patient_details', 'treatments'], '{}');
+insert into ustan.patient_rules (rule_id, tags, filters) values ('abc', ARRAY['all'], '{}');
 
 insert into ustan.hospital_tags (tags) values (ARRAY['diagnostic', 'medication', 'patient_details', 'patient_address', 'appointments', 'patient_details', 'healthcare_providers', 'treatments', 'personal']);
 

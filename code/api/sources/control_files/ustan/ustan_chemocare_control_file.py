@@ -3,7 +3,7 @@ ustan_chemocare_hubs = {
     'table': 'ustan.chemocare', 
     'hubs': [
         {'hub': 'hub_time', 'keys': ['chi']}, 
-        {'hub': 'hub_object', 'keys': ['chi']}, , 
+        {'hub': 'hub_object', 'keys': ['chi']}, 
         {'hub': 'hub_event', 'keys': ['chi']}
     ]
 }

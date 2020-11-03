@@ -1,5 +1,5 @@
 # Imports
-from sqlalchemy import Column, Integer, String, Numeric, DateTime, Text, ForeignKey
+from sqlalchemy import Column, Integer, BigInteger, String, Numeric, DateTime, Text, ForeignKey
 
 # Column Types
 
@@ -27,7 +27,7 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True)}
 
-    keys = [{'chi': Column(Integer)}]
+    keys = [{'chi': Column(BigInteger)}]
     for key in keys:
         hub_time.update(key)
 
@@ -37,7 +37,7 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True)}
 
-    keys = [{'chi': Column(Integer)}]
+    keys = [{'chi': Column(BigInteger)}]
     for key in keys:
         hub_person.update(key)
 
@@ -47,7 +47,7 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True)}
 
-    keys = [{'chi': Column(Integer)}]
+    keys = [{'chi': Column(BigInteger)}]
     for key in keys:
         hub_object.update(key)
 
@@ -57,7 +57,7 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True)}
 
-    keys = [{'chi': Column(Integer)}]
+    keys = [{'chi': Column(BigInteger)}]
     for key in keys:
         hub_location.update(key)
 
@@ -67,7 +67,7 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True)}
 
-    keys = [{'chi': Column(Integer)}]
+    keys = [{'chi': Column(BigInteger)}]
     for key in keys:
         hub_event.update(key)
 
@@ -287,7 +287,7 @@ def create_ustan_dv(schema, base, engine):
     'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id))}
 
     columns = [
-        {'primary': Column(column_types['integer'])},
+        {'"primary"': Column(column_types['integer'])},
         {'age': Column(column_types['integer'])},
         {'site': Column(column_types['string'])},
         {'side': Column(column_types['integer'])},
