@@ -244,7 +244,7 @@ def create_ustan_dv(schema, base, engine):
     'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
 
     columns = [
-        {'name': Column(column_types['integer'])},
+        {'name': Column(column_types['string'])},
         {'initial': Column(column_types['string'])},
         {'gp_name': Column(column_types['string'])},
         {'postcode': Column(column_types['string'])},

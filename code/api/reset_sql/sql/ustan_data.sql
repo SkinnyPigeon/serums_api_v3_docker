@@ -1,9 +1,9 @@
 insert into ustan.chemocare (chi, intention, regime, appointment_date, drug_dose, drug_type, drug_status, outcome) 
-values (2606566626, 'Adjuvant', 'FEC-80', '2020-12-01', 777, 'neutal', 'NA', 'NA');
+values (2606566626, 'Adjuvant', 'FEC-80', '2020-12-01', 777, 'neutral', 'NA', 'NA');
 insert into ustan.chemocare (chi, intention, regime, appointment_date, drug_dose, drug_type, drug_status, outcome) 
 values (2606566626, 'Adjuvant', 'FEC-80', '2020-12-08', 888, 'low_toxic', 'NA', 'NA');
 insert into ustan.chemocare (chi, intention, regime, appointment_date, drug_dose, drug_type, drug_status, outcome) 
-values (2606566626, 'Adjuvant', 'FEC-80', '2020-12-15', 777, 'neutal', 'NA', 'NA');
+values (2606566626, 'Adjuvant', 'FEC-80', '2020-12-15', 777, 'neutral', 'NA', 'NA');
 
 
 insert into ustan.demographics (chi, name, initial, gp_name, postcode, age, dat_birth, gender, civil_status, religion, ref_hospital, dat_death)
@@ -20,12 +20,12 @@ insert into ustan.smr01 (chi, incidence_date, admission_date, length_of_stay, ma
 values (2606566626, '2020-09-11', '2020-10-09', 0, 'C509', 'C773', null, null, 'X729', null, '2019-01-08', 2, null, '1A');
 
 
-insert into ustan.serums_ids (serums_id, chi) values (1, 1);
+insert into ustan.serums_ids (serums_id, chi) values (1, 2606566626);
 
 insert into ustan.patient_rules (rule_id, tags, filters) values ('h8asdasja8jskalc', ARRAY['patient_details', 'treatments'], '{}');
 insert into ustan.patient_rules (rule_id, tags, filters) values ('abc', ARRAY['all'], '{}');
 
-insert into ustan.hospital_tags (tags) values (ARRAY['diagnostic', 'medication', 'patient_details', 'patient_address', 'appointments', 'patient_details', 'healthcare_providers', 'treatments', 'personal']);
+insert into ustan.hospital_tags (tags) values (ARRAY['diagnostic', 'patient_details', 'appointments', 'treatments', 'all']);
 
 insert into ustan.hospital_doctors (id, name, specialism) values (1, 'Isla MacDonald', 1);
 insert into ustan.hospital_doctors (id, name, specialism) values (2, 'Charles Stewart', 1);
