@@ -182,109 +182,70 @@ class FCRB_Doctors(Base):
 
 # Tables/Classes
 
-# class USTAN_General_Data(Base):
-#     __tablename__ = 'general_data'
-#     __table_args__ = {'schema': 'ustan'}
-#     chi = Column(Integer, primary_key=True)
-
-class USTAN_Chemocare_Toxicity(Base):
-    __tablename__ = 'chemocare_toxicity'
+class USTAN_Chemocare(Base):
+    __tablename__ = 'chemocare'
     __table_args__ = {'schema': 'ustan'}
     chi = Column(Integer, primary_key=True)
-    date1 = Column(DateTime(timezone=False))
-    nausea = Column(Numeric)
-    vomiting = Column(Numeric)
-    diarrhoea = Column(Numeric)
-    constipation = Column(Numeric)
-    oral_mucostis = Column(Numeric)
-    oesophasitis = Column(Numeric)
-    neurotoxicity = Column(Numeric)
-    hand_foot = Column(Numeric)
-    skin = Column(Numeric)
-    hypersensitivity = Column(Numeric)
-    fatigue = Column(Numeric)
-    performance_status = Column(Numeric)
-    issues_since_last_visit = Column(Numeric)
-    last_visit_issue_description = Column(String)
-
-class USTAN_Chemocare_Treatment(Base):
-    __tablename__ = 'chemocare_treatment'
-    __table_args__ = {'schema': 'ustan'}
-    chi = Column(Integer, primary_key=True)
-    appointment_date = Column(DateTime(timezone=False))
-    last_toxicity_date = Column(DateTime(timezone=False))
-    tumour_group = Column(String)
-    age_at_diagnosis = Column(Numeric)
-    height = Column(Numeric)
-    weight = Column(Numeric)
-    surface_area = Column(Numeric)
-    patient_type = Column(String)
-    consultant_code = Column(String)
     intention = Column(String)
-    regime_code = Column(String)
-    cycle = Column(Integer, primary_key=True)
-    cycle_id = Column(Integer, primary_key=True)
+    regime = Column(String)
+    appointment_date = Column(DateTime(timezone=False))
+    drug_dose = Column(Integer)
     drug_type = Column(String)
-    drug_name = Column(String)
-    drug_dose = Column(Numeric)
-    required_dose = Column(Numeric)
     drug_status = Column(String)
+    outcome = Column(String)
 
-
-class USTAN_NDC_Charlson(Base):
-    __tablename__ = 'ndc_charlson'
+class USTAN_Demographics(Base):
+    __tablename__ = 'demographics'
     __table_args__ = {'schema': 'ustan'}
-    postcode = Column(String)
-    incidence_year = Column(Integer)
-    simd1 = Column(Integer)
-    simd = Column(Integer)
-    conf_heart_fail_flag = Column(Integer)
-    dementia_flag = Column(Integer)
-    pulmonary_flag = Column(Integer)
-    con_tiss_disease_flag = Column(Integer)
-    diabetes_flag = Column(Integer)
-    para_hemiplegia_flag = Column(Integer)
-    renal_flag = Column(Integer)
-    liver_flag = Column(Integer)
-    aids_hiv_flag = Column(Integer)
-    charlson_quan_score = Column(Integer)
-    chi = Column(Integer, primary_key=True)
+    chi	= Column(Integer, primary_key=True)
+    name = Column(String)
+    initial	= Column(String)
+    gp_name	= Column(String)
+    postcode = Column(String)	
+    age	= Column(Integer)
+    dat_birth = Column(DateTime(timezone=False))
+    gender = Column(String)
+    civil_status = Column(Integer)
+    religion - Column(Integer)
+    ref_hospital = Column(Integer)
+    dat_death = Column(Integer)
 
-class USTAN_NDC_SMR01(Base):
-    __tablename__ = 'ndc_smr01'
+class USTAN_Diagnosis(Base):
+    __tablename__ = 'diagnosis'
     __table_args__ = {'schema': 'ustan'}
-    admission_date = Column(DateTime(timezone=False))
-    discharge_date = Column(Integer)
-    length_of_stay = Column(Integer)
-    sex = Column(Integer)
-    age_in_years = Column(Integer)
-    ethnic_group = Column(String)
-    marital_status = Column(String)
-    postcode = Column(String)
-    main_condition = Column(String)
-    other_condition_1 = Column(String)
-    other_condition_2 = Column(String)
-    other_condition_3 = Column(String)
-    other_condition_4 = Column(String)
-    main_operation_a = Column(String)
-    main_operation_b = Column(String)
-    chi = Column(Integer, primary_key=True)
-    age_at_diagnosis = Column(Numeric)
-    height = Column(Numeric)
-    weight = Column(Numeric)
+    chi	= Column(Integer, primary_key=True)
+    first_seen_date	= Column(DateTime(timezone=False))
+    primary	= Column(Integer)
+    age	= Column(Integer)
+    site = Column(String)
+    side = Column(Integer)
+    histology = Column(Integer)
+    stage = Column(String)
+    tnm_t = Column(String)
+    tnm_n = Column(String)
+    tnm_m = Column(String)
+    perf_stat = Column(String)
+    metastasis1 = Column(String)
 
-class USTAN_NDC_SMR06(Base):
-    __tablename__ = 'ndc_smr06'
+class USTAN_Smr01(Base):
+    __tablename__ = 'smr01'
     __table_args__ = {'schema': 'ustan'}
+    chi	= Column(Integer(primary_key=True))
     incidence_date = Column(DateTime(timezone=False))
-    tumour_site_icd10 = Column(String)
-    oestrogen_receptor_er_status = Column(Integer)
-    her2_status_code = Column(Integer)
-    stage_clinical_t_code = Column(String)
-    stage_clinical_n_code = Column(String)
-    stage_clinical_m_code = Column(String)
-    pathological_tumour_size = Column(Integer)
-    chi = Column(Integer, primary_key=True)
+    admission_date = Column(DateTime(timezone=True))
+    length_of_stay = Column(Integer)
+    main_condition = Column(String)	
+    other_condition1 = Column(String)
+    other_condition2 = Column(String)	
+    other_condition3 = Column(String)	
+    main_operation_a = Column(String)
+    main_operation_b = Column(String)	
+    discharge_date = Column(DateTime(timezone=False))	
+    waiting_list_type = Column(Integer)	
+    marital_status = Column(String)
+    ethnic_group = Column(String)
+
+    
 
 class USTAN_Serums_IDs(Base):
     __tablename__ = 'serums_ids'

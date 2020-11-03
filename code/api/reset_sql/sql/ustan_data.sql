@@ -1,29 +1,26 @@
-insert into ustan.general_data (chi) values (1);
-
-insert into ustan.chemocare_toxicity (date1, nausea, vomiting, diarrhoea, constipation, oral_mucostis, oesophasitis, neurotoxicity, hand_foot, skin, hypersensitivity, fatigue, performance_status, issues_since_last_visit, last_visit_issue_description, chi
-) values ('2020-08-01', 2, 3, 4, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1, 'Feeling better', 1);
-
-
-insert into ustan.chemocare_treatment (appointment_date, last_toxicity_date, tumour_group, age_at_diagnosis, height, weight, surface_area, patient_type, consultant_code, intention, regime_code, cycle, cycle_id, drug_type, drug_name, drug_dose, required_dose, drug_status, chi
-) values ('2020-07-04', '2020-01-23', 'Mixed', 47, 167, 78, 52, 'patient_type', 'consultant_code', 'intention', 'regime_code', 1, 1, 'drug_type', 'drug_name', 50, 50, 'taken', 1);
-
-insert into ustan.chemocare_treatment (appointment_date, last_toxicity_date, tumour_group, age_at_diagnosis, height, weight, surface_area, patient_type, consultant_code, intention, regime_code, cycle, cycle_id, drug_type, drug_name, drug_dose, required_dose, drug_status, chi
-) values ('2020-08-04', '2020-01-23', 'Mixed', 47, 167, 78, 52, 'patient_type', 'consultant_code', 'intention', 'regime_code', 1, 2, 'drug_type', 'drug_name', 50, 50, 'taken', 1);
+insert into ustan.chemocare (chi, intention, regime, appointment_date, drug_dose, drug_type, drug_status, outcome) 
+values (2606566626, 'Adjuvant', 'FEC-80', '2020-12-01', 777, 'neutal', 'NA', 'NA');
+insert into ustan.chemocare (chi, intention, regime, appointment_date, drug_dose, drug_type, drug_status, outcome) 
+values (2606566626, 'Adjuvant', 'FEC-80', '2020-12-08', 888, 'low_toxic', 'NA', 'NA');
+insert into ustan.chemocare (chi, intention, regime, appointment_date, drug_dose, drug_type, drug_status, outcome) 
+values (2606566626, 'Adjuvant', 'FEC-80', '2020-12-15', 777, 'neutal', 'NA', 'NA');
 
 
-insert into ustan.ndc_charlson (postcode, incidence_year, simd1, simd, conf_heart_fail_flag, dementia_flag, pulmonary_flag, con_tiss_disease_flag, diabetes_flag, para_hemiplegia_flag, renal_flag, liver_flag, aids_hiv_flag, charlson_quan_score, chi) 
-values ('EH6', 2020, 4, 5, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1);
+insert into ustan.demographics (chi, name, initial, gp_name, postcode, age, dat_birth, gender, civil_status, religion, ref_hospital, dat_death)
+values (2606566626, 'MARIE POPPO', 'R', 'BIAGIONI', 'DG349WU', 41, '1976-06-26', 'F', 9, 9, 593, null);
 
 
-insert into ustan.ndc_smr01 (admission_date, discharge_date, length_of_stay, sex, age_in_years, ethnic_group, marital_status, postcode, main_condition, other_condition_1, other_condition_2, other_condition_3, other_condition_4, main_operation_a, main_operation_b, chi, age_at_diagnosis, height, weight)
- values ('2020-08-04', 20200807, 3, 1, 47, 'ethnic_group', 'marital_status', 'postcode', 'main_condition', 'other_condition_1', 'other_condition_2', 'other_condition_3', 'other_condition_4', 'main_operation_a', 'main_operation_b', 1, 57, 167, 78);
+insert into ustan.diagnosis (chi, first_seen_date, primary, age, site, side, histology, stage, tnm_t, tnm_n, tnm_m, perf_stat, metastasis1)
+values(2606566626, '2014-05-12', 1, 41, 'C50.9', 2, 8504, '3A', '4B', '2', '0', null, null);
 
-insert into ustan.ndc_smr06 (incidence_date, tumour_site_icd10, oestrogen_receptor_er_status, her2_status_code, stage_clinical_t_code, stage_clinical_n_code, stage_clinical_m_code, pathological_tumour_size, chi) 
-values ('2020-07-04', 'tumour_site_icd10', 5, 3, 'stage_clinical_t_code', 'stage_clinical_n_code', 'stage_clinical_m_code', 1, 1);
+
+insert into ustan.smr01 (chi, incidence_date, admission_date, length_of_stay, main_condition, other_condition1, other_condition2, other_condition3, main_operation_a, main_operation_b, discharge_date, waiting_list_type, marital_status, ethnic_group)
+values (2606566626, '2015-11-30', '2016-01-04', 0, 'C509', 'C773', null, null, 'X729', null, '2016-01-03', 2, 'Z', '1A');
+insert into ustan.smr01 (chi, incidence_date, admission_date, length_of_stay, main_condition, other_condition1, other_condition2, other_condition3, main_operation_a, main_operation_b, discharge_date, waiting_list_type, marital_status, ethnic_group)
+values (2606566626, '2020-09-11', '2020-10-09', 0, 'C509', 'C773', null, null, 'X729', null, '2019-01-08', 2, null, '1A');
 
 
 insert into ustan.serums_ids (serums_id, chi) values (1, 1);
-
 
 insert into ustan.patient_rules (rule_id, tags, filters) values ('h8asdasja8jskalc', ARRAY['patient_details', 'treatments'], '{}');
 
