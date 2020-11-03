@@ -257,7 +257,7 @@ insert into fcrb.patient_rules (rule_id, tags, filters) values ('as8sadausd99S',
 insert into fcrb.patient_rules (rule_id, tags, filters) values ('abc', ARRAY['all'], '{}');
 
 
-insert into fcrb.hospital_tags (tags) values (ARRAY['wearable', 'diagnostic', 'medication', 'patient_details', 'patient_address', 'appointments', 'healthcare_providers', 'treatments', 'personal']);
+insert into fcrb.hospital_tags (tags) values (ARRAY['wearable', 'diagnostic', 'medication', 'patient_details', 'patient_address', 'appointments', 'healthcare_providers', 'treatments', 'personal', 'all']);
 
 
 insert into fcrb.hospital_doctors (id, name, specialism) values (1, 'Mateu Martin Silva', 1);
