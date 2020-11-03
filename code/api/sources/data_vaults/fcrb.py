@@ -304,7 +304,7 @@ def create_fcrb_dv(schema, base, engine):
     'source_table': Column(column_types['string']),
     'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
 
-    columns = [{'idodr': Column(column_types['varchar'])}]
+    columns = [{'idodr': Column(column_types['string'])}]
     for column in columns:
         new_satellite.update(column)
 
