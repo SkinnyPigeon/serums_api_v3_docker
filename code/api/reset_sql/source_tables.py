@@ -1,4 +1,4 @@
-# # Imports
+# Imports
 
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
@@ -182,14 +182,15 @@ class FCRB_Doctors(Base):
 
 # Tables/Classes
 
-class USTAN_General_Data(Base):
-    __tablename__ = 'general_data'
-    __table_args__ = {'schema': 'ustan'}
-    chi = Column(Integer, primary_key=True)
+# class USTAN_General_Data(Base):
+#     __tablename__ = 'general_data'
+#     __table_args__ = {'schema': 'ustan'}
+#     chi = Column(Integer, primary_key=True)
 
 class USTAN_Chemocare_Toxicity(Base):
     __tablename__ = 'chemocare_toxicity'
     __table_args__ = {'schema': 'ustan'}
+    chi = Column(Integer, primary_key=True)
     date1 = Column(DateTime(timezone=False))
     nausea = Column(Numeric)
     vomiting = Column(Numeric)
@@ -205,11 +206,11 @@ class USTAN_Chemocare_Toxicity(Base):
     performance_status = Column(Numeric)
     issues_since_last_visit = Column(Numeric)
     last_visit_issue_description = Column(String)
-    chi = Column(Integer, primary_key=True)
 
 class USTAN_Chemocare_Treatment(Base):
     __tablename__ = 'chemocare_treatment'
     __table_args__ = {'schema': 'ustan'}
+    chi = Column(Integer, primary_key=True)
     appointment_date = Column(DateTime(timezone=False))
     last_toxicity_date = Column(DateTime(timezone=False))
     tumour_group = Column(String)
@@ -228,7 +229,6 @@ class USTAN_Chemocare_Treatment(Base):
     drug_dose = Column(Numeric)
     required_dose = Column(Numeric)
     drug_status = Column(String)
-    chi = Column(Integer, primary_key=True)
 
 
 class USTAN_NDC_Charlson(Base):

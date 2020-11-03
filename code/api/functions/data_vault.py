@@ -4,7 +4,6 @@ project_folder = os.path.expanduser('~/code/api/')
 
 from dotenv import load_dotenv
 load_dotenv(os.path.join(project_folder, '.env'))
-# PASSWORD = os.getenv('PASSWORD')
 PASSWORD = os.environ.get('PGPASSWORD')
 
 import json
