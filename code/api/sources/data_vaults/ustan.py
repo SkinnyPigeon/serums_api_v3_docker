@@ -184,339 +184,198 @@ def create_ustan_dv(schema, base, engine):
 
     # Satellites
         
-    new_satellite={'__tablename__':'sat_time_issue_date',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
-
-    columns = [{'date1': Column(column_types['datetime'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    time_issue_date = type('USTAN_Sat_Time_Issue_Date',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_object_treatment_side_effects',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
-
-    columns = [{'nausea': Column(column_types['numeric'])},{'vomiting': Column(column_types['numeric'])},{'diarrhoea': Column(column_types['numeric'])},{'constipation': Column(column_types['numeric'])},{'oral_mucostis': Column(column_types['numeric'])},{'oesophasitis': Column(column_types['numeric'])},{'neurotoxicity': Column(column_types['numeric'])},{'hand_foot': Column(column_types['numeric'])},{'skin': Column(column_types['numeric'])},{'hypersensitivity': Column(column_types['numeric'])},{'fatigue': Column(column_types['numeric'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    object_treatment_side_effects = type('USTAN_Sat_Object_Treatment_Side_Effects',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_event_performance_status',
+    new_satellite={'__tablename__':'sat_event_chemocare_treatment',
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
     'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id))}
 
-    columns = [{'performance_status': Column(column_types['numeric'])}]
+    columns = [
+        {'intension': Column(column_types['string'])},
+        {'regime': Column(column_types['string'])},
+        {'outcome': Column(column_types['string'])}
+    ]
     for column in columns:
         new_satellite.update(column)
 
-    event_performance_status = type('USTAN_Sat_Event_Performance_Status',(base,),new_satellite)
+    event_chemocare_treatment = type('USTAN_Sat_Event_Chemocare_Treatment',(base,),new_satellite)
 
     #
         
-    new_satellite={'__tablename__':'sat_object_last_visit',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
-
-    columns = [{'issues_since_last_visit': Column(column_types['numeric'])},{'last_visit_issue_description': Column(column_types['varchar'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    object_last_visit = type('USTAN_Sat_Object_Last_Visit',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_time_appointment_date',
+    new_satellite={'__tablename__':'sat_time_chemocare_dates',
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
     'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
 
-    columns = [{'appointment_date': Column(column_types['datetime'])}]
+    columns = [
+        {'appointment_date': Column(column_types['datetime'])}
+    ]
     for column in columns:
         new_satellite.update(column)
 
-    time_appointment_date = type('USTAN_Sat_Time_Appointment_Date',(base,),new_satellite)
+    time_chemocare_dates = type('USTAN_Sat_Time_Chemocare_Dates',(base,),new_satellite)
 
     #
-        
-    new_satellite={'__tablename__':'sat_time_last_toxicity_date',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
 
-    columns = [{'last_toxicity_date': Column(column_types['datetime'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    time_last_toxicity_date = type('USTAN_Sat_Time_Last_Toxicity_Date',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_object_tumour_group',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
-
-    columns = [{'tumour_group': Column(column_types['varchar'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    object_tumour_group = type('USTAN_Sat_Object_Tumour_Group',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_person_patient_measurements',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
-
-    columns = [{'age_at_diagnosis': Column(column_types['numeric'])},{'height': Column(column_types['numeric'])},{'weight': Column(column_types['numeric'])},{'surface_area': Column(column_types['numeric'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    person_patient_measurements = type('USTAN_Sat_Person_Patient_Measurements',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_person_patient_type',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
-
-    columns = [{'patient_type': Column(column_types['varchar'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    person_patient_type = type('USTAN_Sat_Person_Patient_Type',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_person_consultant_code',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
-
-    columns = [{'consultant_code': Column(column_types['varchar'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    person_consultant_code = type('USTAN_Sat_Person_Consultant_Code',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_object_treatment_details',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
-
-    columns = [{'intention': Column(column_types['varchar'])},{'regime_code': Column(column_types['varchar'])},{'cycle': Column(column_types['integer'])},{'cycle_id': Column(column_types['integer'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    object_treatment_details = type('USTAN_Sat_Object_Treatment_Details',(base,),new_satellite)
-
-    #
-        
     new_satellite={'__tablename__':'sat_object_drug_details',
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
     'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
 
-    columns = [{'drug_type': Column(column_types['varchar'])},{'drug_name': Column(column_types['varchar'])},{'required_dose': Column(column_types['numeric'])},{'drug_status': Column(column_types['varchar'])}]
+    columns = [
+        {'drug_dose': Column(column_types['integer'])},
+        {'drug_type': Column(column_types['string'])},
+        {'drug_status': Column(column_types['string'])}
+    
+    ]
     for column in columns:
         new_satellite.update(column)
 
     object_drug_details = type('USTAN_Sat_Object_Drug_Details',(base,),new_satellite)
 
     #
-        
-    new_satellite={'__tablename__':'sat_person_demographic_data',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
 
-    columns = [{'postcode': Column(column_types['varchar'])},{'simd': Column(column_types['integer'])},{'simd1': Column(column_types['integer'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    person_demographic_data = type('USTAN_Sat_Person_Demographic_Data',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_time_incidence_year',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
-
-    columns = [{'incidence_year': Column(column_types['integer'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    time_incidence_year = type('USTAN_Sat_Time_Incidence_Year',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_object_condition_flags',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
-
-    columns = [{'conf_heart_fail_flag': Column(column_types['integer'])},{'dementia_flag': Column(column_types['integer'])},{'pulmonary_flag': Column(column_types['integer'])},{'con_tiss_disease_flag': Column(column_types['integer'])},{'diabetes_flag': Column(column_types['integer'])},{'para_hemiplegia_flag': Column(column_types['integer'])},{'renal_flag': Column(column_types['integer'])},{'liver_flag': Column(column_types['integer'])},{'aids_hiv_flag': Column(column_types['integer'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    object_condition_flags = type('USTAN_Sat_Object_Condition_Flags',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_object_quan_score',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
-
-    columns = [{'charlson_quan_score': Column(column_types['integer'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    object_quan_score = type('USTAN_Sat_Object_Quan_Score',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_time_admissions_date',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
-
-    columns = [{'admission_date': Column(column_types['datetime'])},{'discharge_date': Column(column_types['integer'])},{'length_of_stay': Column(column_types['integer'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    time_admissions_date = type('USTAN_Sat_Time_Admissions_Date',(base,),new_satellite)
-
-    #
-        
     new_satellite={'__tablename__':'sat_person_patient_details',
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
     'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
 
-    columns = [{'sex': Column(column_types['integer'])},{'age_in_years': Column(column_types['integer'])},{'ethnic_group': Column(column_types['varchar'])},{'marital_status': Column(column_types['varchar'])},{'postcode': Column(column_types['varchar'])},{'age_at_diagnosis': Column(column_types['numeric'])},{'height': Column(column_types['numeric'])},{'weight': Column(column_types['numeric'])}]
+    columns = [
+        {'name': Column(column_types['integer'])},
+        {'initial': Column(column_types['string'])},
+        {'gp_name': Column(column_types['string'])},
+        {'postcode': Column(column_types['string'])},
+        {'age': Column(column_types['integer'])},
+        {'dat_birth': Column(column_types['datetime'])},
+        {'gender': Column(column_types['string'])},
+        {'civil_status': Column(column_types['integer'])},
+        {'religion': Column(column_types['integer'])},
+        {'ref_hospital': Column(column_types['integer'])},
+        {'dat_death': Column(column_types['datetime'])}
+    ]
+
     for column in columns:
         new_satellite.update(column)
 
     person_patient_details = type('USTAN_Sat_Person_Patient_Details',(base,),new_satellite)
 
     #
-        
-    new_satellite={'__tablename__':'sat_object_conditions_details',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
 
-    columns = [{'main_condition': Column(column_types['varchar'])},{'other_condition_1': Column(column_types['varchar'])},{'other_condition_2': Column(column_types['varchar'])},{'other_condition_3': Column(column_types['varchar'])},{'other_condition_4': Column(column_types['varchar'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    object_conditions_details = type('USTAN_Sat_Object_Conditions_Details',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_object_operations_details',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
-
-    columns = [{'main_operation_a': Column(column_types['varchar'])},{'main_operation_b': Column(column_types['varchar'])}]
-    for column in columns:
-        new_satellite.update(column)
-
-    object_operations_details = type('USTAN_Sat_Object_Operations_Details',(base,),new_satellite)
-
-    #
-        
-    new_satellite={'__tablename__':'sat_time_incidence_date',
+    new_satellite={'__tablename__':'sat_time_diagnosis_date',
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
     'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
 
-    columns = [{'incidence_date': Column(column_types['datetime'])}]
+    columns = [
+        {'first_seen_date': Column(column_types['datetime'])}
+    ]
     for column in columns:
         new_satellite.update(column)
 
-    time_incidence_date = type('USTAN_Sat_Time_Incidence_Date',(base,),new_satellite)
+    time_diagnosis_date = type('USTAN_Sat_Time_Diagnosis_Date',(base,),new_satellite)
 
     #
-        
-    new_satellite={'__tablename__':'sat_location_tumour_site',
+
+    new_satellite={'__tablename__':'sat_event_diagnosis_details',
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_location.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id))}
 
-    columns = [{'tumour_site_icd10': Column(column_types['varchar'])}]
+    columns = [
+        {'primary': Column(column_types['integer'])},
+        {'age': Column(column_types['integer'])},
+        {'site': Column(column_types['string'])},
+        {'side': Column(column_types['integer'])},
+        {'histology': Column(column_types['integer'])},
+        {'stage': Column(column_types['string'])},
+        {'tnm_t': Column(column_types['string'])},
+        {'tnm_n': Column(column_types['string'])},
+        {'tnm_m': Column(column_types['string'])},
+        {'perf_stat': Column(column_types['string'])},
+        {'metastasis1': Column(column_types['string'])},
+    ]
     for column in columns:
         new_satellite.update(column)
 
-    location_tumour_site = type('USTAN_Sat_Location_Tumour_Site',(base,),new_satellite)
+    event_diagnosis_details = type('USTAN_Sat_Event_Diagnosis_Details',(base,),new_satellite)
 
     #
-        
-    new_satellite={'__tablename__':'sat_object_status_codes',
+
+    new_satellite={'__tablename__':'sat_time_care_dates',
+    '__table_args__':{'schema': schema},
+    'id': Column(column_types['integer'], primary_key=True),
+    'source_table': Column(column_types['string']),
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
+
+    columns = [
+        {'incidence_date': Column(column_types['datetime'])},
+        {'admission_date': Column(column_types['datetime'])},
+        {'length_of_stay': Column(column_types['integer'])},
+        {'discharge_date': Column(column_types['datetime'])}
+    ]
+    for column in columns:
+        new_satellite.update(column)
+
+    time_care_dates = type('USTAN_Sat_Time_Care_Dates',(base,),new_satellite)
+
+    #
+
+    new_satellite={'__tablename__':'sat_object_condition_details',
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
     'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
 
-    columns = [{'oestrogen_receptor_er_status': Column(column_types['integer'])},{'her2_status_code': Column(column_types['integer'])},{'stage_clinical_t_code': Column(column_types['varchar'])},{'stage_clinical_n_code': Column(column_types['varchar'])},{'stage_clinical_m_code': Column(column_types['varchar'])}]
+    columns = [
+        {'main_condition': Column(column_types['string'])},
+        {'other_condition1': Column(column_types['string'])},
+        {'other_condition2': Column(column_types['string'])},
+        {'other_condition3': Column(column_types['string'])}
+    ]
     for column in columns:
         new_satellite.update(column)
 
-    object_status_codes = type('USTAN_Sat_Object_Status_Codes',(base,),new_satellite)
+    object_condition_details = type('USTAN_Sat_Object_Condition_Details',(base,),new_satellite)
 
     #
-        
-    new_satellite={'__tablename__':'sat_object_tumour_size',
+
+    new_satellite={'__tablename__':'sat_object_operation_details',
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
     'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
 
-    columns = [{'pathological_tumour_size': Column(column_types['integer'])}]
+    columns = [
+        {'main_operation_a': Column(column_types['string'])},
+        {'main_operation_b': Column(column_types['string'])}
+    ]
     for column in columns:
         new_satellite.update(column)
 
-    object_tumour_size = type('USTAN_Sat_Object_Tumour_Size',(base,),new_satellite)
+    object_operation_details = type('USTAN_Sat_Object_Operation_Details',(base,),new_satellite)
+
+    #
+
+    new_satellite={'__tablename__':'sat_person_care_details',
+    '__table_args__':{'schema': schema},
+    'id': Column(column_types['integer'], primary_key=True),
+    'source_table': Column(column_types['string']),
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
+
+    columns = [
+        {'waiting_list_type': Column(column_types['integer'])},
+        {'marital_status': Column(column_types['string'])},
+        {'ethnic_group': Column(column_types['string'])}
+    ]
+    for column in columns:
+        new_satellite.update(column)
+	
+    person_care_details = type('USTAN_Sat_Person_Care_Details',(base,),new_satellite)
 
     #
         
