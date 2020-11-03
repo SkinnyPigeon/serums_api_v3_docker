@@ -114,7 +114,7 @@ ustan_all_1 = {
 }
 
 ustan_all_2 = {
-  'tag': 'treatments',
+  'tag': 'all',
   'table': 'ustan.chemocare',
   'fields': [
     'chi',
