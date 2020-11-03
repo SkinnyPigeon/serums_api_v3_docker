@@ -10,7 +10,7 @@ insert into ustan.demographics (chi, name, initial, gp_name, postcode, age, dat_
 values (2606566626, 'MARIE POPPO', 'R', 'BIAGIONI', 'DG349WU', 41, '1976-06-26', 'F', 9, 9, 593, null);
 
 
-insert into ustan.diagnosis (chi, first_seen_date, "primary", age, site, side, histology, stage, tnm_t, tnm_n, tnm_m, perf_stat, metastasis1)
+insert into ustan.diagnosis (chi, first_seen_date, primary_field, age, site, side, histology, stage, tnm_t, tnm_n, tnm_m, perf_stat, metastasis1)
 values(2606566626, '2014-05-12', 1, 41, 'C50.9', 2, 8504, '3A', '4B', '2', '0', null, null);
 
 

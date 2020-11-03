@@ -192,12 +192,11 @@ class GetDecrypted(Resource):
         if not valid:
             return invalid_fields
 
-        source_data, patient_tags = get_source_data(req_data)  
+        source_data, patient_tags = get_source_data(req_data) 
         control_files = apply_tags(patient_tags, req_data['hospital_id'])
         connection = create_data_vault(req_data['hospital_id'])
         sphr = copy_to_dv(source_data, control_files, connection)
         sphr = format_data_decrypted(req_data['hospital_id'], sphr, req_data['serums_id'], patient_tags)
-
         connection['engine'].dispose()
 
         return sphr

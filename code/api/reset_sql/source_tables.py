@@ -215,7 +215,7 @@ class USTAN_Diagnosis(Base):
     __table_args__ = {'schema': 'ustan'}
     chi	= Column(BigInteger, primary_key=True)
     first_seen_date	= Column(DateTime(timezone=False), primary_key=True)
-    primary	= Column(Integer)
+    primary_field = Column(Integer)
     age	= Column(Integer)
     site = Column(String)
     side = Column(Integer)

@@ -6,7 +6,7 @@ ustan_diagnostic = {
   'fields': [
     'chi',
     'first_seen_date',
-    '"primary"',
+    'primary_field',
     'age',
     'site',
     'side',
@@ -85,7 +85,6 @@ ustan_treatments = {
     'appointment_date',
     'drug_dose',
     'drug_type',
-    'stage_clinical_m',
     'drug_status',
     'outcome'
   ], 'key_lookup': {}
@@ -115,7 +114,7 @@ ustan_all_1 = {
 }
 
 ustan_all_2 = {
-  'tag': 'all',
+  'tag': 'treatments',
   'table': 'ustan.chemocare',
   'fields': [
     'chi',
@@ -124,7 +123,6 @@ ustan_all_2 = {
     'appointment_date',
     'drug_dose',
     'drug_type',
-    'stage_clinical_m',
     'drug_status',
     'outcome'
   ], 'key_lookup': {}
@@ -136,7 +134,7 @@ ustan_all_3 = {
   'fields': [
     'chi',
     'first_seen_date',
-    'primary',
+    'primary_field',
     'age',
     'site',
     'side',

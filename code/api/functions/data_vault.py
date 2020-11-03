@@ -62,6 +62,7 @@ def get_class_by_schema_and_tablename(schema, table_fullname, base):
       return class_name
 
 def handle_hubs(schema, hub, row, engine, base):
+    # print("HANDLING HUBS")
     # print("HUB: {}".format(hub))
     keys_to_insert = {}
     for key in hub['keys']:
@@ -82,9 +83,12 @@ def handle_hubs(schema, hub, row, engine, base):
 
 
 def handle_satellites(satellites, hub, hub_id, row, engine, schema, base, source_table):
+    # print("HANDLING SATELLITES")
     for satellite in satellites['satellites']:
+        # print("satellite: {}".format(satellite))
         if satellite['hub'] == hub['hub']:
             satellite_to_insert = get_class_by_schema_and_tablename(schema, satellite['satellite'], base)
+            # print("INSERT: {}".format(satellite_to_insert))
             if len(satellite['columns']) == 0:
                 continue
             else:
@@ -95,9 +99,13 @@ def handle_satellites(satellites, hub, hub_id, row, engine, schema, base, source
                     except:
                         print("Error")
             satellite_query = insert(satellite_to_insert).values(columns_to_insert)
+            print("SAT QUERY: {}".format(satellite_query))
             satellite_result = engine.execute(satellite_query, con=engine)
+            print("SAT RES: {}".format(satellite_result))
+
         
 def setup_links(hub, hub_id, links):
+    # print("SETTING LINKS")
     id_name = get_link_table_value_to_insert(hub['hub'])
     # print("ID NAME: {}".format(id_name))
     for link in links['links']:
@@ -109,6 +117,7 @@ def setup_links(hub, hub_id, links):
         #   print("LINK AFTER: {}".format(link))
 
 def handle_links(schema, links, engine, base):
+    # print("HANDLING LINKS")
     for link in links['links']:
         link_to_insert = get_class_by_schema_and_tablename(schema, link['link'], base)
         ids_to_insert = link['values']
@@ -120,6 +129,8 @@ def copy_to_dv(source_data, control_files, connection):
     base = connection['base']
     schema = connection['schema']
     for key, data_to_copy in source_data.items():
+        # print(key)
+        # print(data_to_copy)
         hubs, satellites, links = hubs_satellites_links(control_files, key)
         for row in data_to_copy.itertuples(index=False):
             source_table = hubs['table'].split('.')[1]
@@ -132,6 +143,7 @@ def copy_to_dv(source_data, control_files, connection):
     return return_dv(schema)
 
 def return_dv(schema):
+    # print("RETURNING DV")
     output = []
     connection = connect_to_existing_dv(schema)
 
@@ -148,4 +160,5 @@ def return_dv(schema):
             table = {class_name.__table__.name: parsed}
             output.append(table)
     engine.dispose()
+    # print(output)
     return json.dumps(output)

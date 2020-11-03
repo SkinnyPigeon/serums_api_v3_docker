@@ -8,7 +8,7 @@ column_types = {
     'string': String,
     'varchar': String,
     'numeric': Numeric,
-    'datetime': DateTime,
+    'datetime': DateTime(timezone=False),
     'text': Text
 }
 
@@ -191,7 +191,7 @@ def create_ustan_dv(schema, base, engine):
     'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id))}
 
     columns = [
-        {'intension': Column(column_types['string'])},
+        {'intention': Column(column_types['string'])},
         {'regime': Column(column_types['string'])},
         {'outcome': Column(column_types['string'])}
     ]
@@ -264,7 +264,7 @@ def create_ustan_dv(schema, base, engine):
 
     #
 
-    new_satellite={'__tablename__':'sat_time_diagnosis_date',
+    new_satellite={'__tablename__':'sat_time_diagnosis_dates',
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
@@ -276,7 +276,7 @@ def create_ustan_dv(schema, base, engine):
     for column in columns:
         new_satellite.update(column)
 
-    time_diagnosis_date = type('USTAN_Sat_Time_Diagnosis_Date',(base,),new_satellite)
+    time_diagnosis_date = type('USTAN_Sat_Time_Diagnosis_Dates',(base,),new_satellite)
 
     #
 
@@ -287,7 +287,7 @@ def create_ustan_dv(schema, base, engine):
     'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id))}
 
     columns = [
-        {'"primary"': Column(column_types['integer'])},
+        {'primary_field': Column(column_types['integer'])},
         {'age': Column(column_types['integer'])},
         {'site': Column(column_types['string'])},
         {'side': Column(column_types['integer'])},
@@ -297,7 +297,7 @@ def create_ustan_dv(schema, base, engine):
         {'tnm_n': Column(column_types['string'])},
         {'tnm_m': Column(column_types['string'])},
         {'perf_stat': Column(column_types['string'])},
-        {'metastasis1': Column(column_types['string'])},
+        {'metastasis1': Column(column_types['string'])}
     ]
     for column in columns:
         new_satellite.update(column)

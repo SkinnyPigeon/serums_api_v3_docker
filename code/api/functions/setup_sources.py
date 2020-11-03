@@ -73,11 +73,14 @@ def select_tags_from_rule_table(source_session, rule_class, rule_id):
 
 def select_source_fields(source_session, tables, hospital, hospital_tags, patient_tags, filters, patient_id, key_name, connection):
     to_return = {}
+    # print(patient_tags)
     for hospital_tag in hospital_tags:
+        # print(hospital_tag)
         try:
             if hospital_tag['tag'] in patient_tags:
                 to_return[hospital_tag['table']] = []
                 class_name = tables[hospital_tag['table']]
+                # print(class_name)
                 results = get_results(source_session, class_name, hospital_tag['fields'], patient_id, filters, key_name, hospital_tag['key_lookup'], connection)
                 for result in results:
                     to_return[hospital_tag['table']].append(object_as_dict(result))
@@ -87,20 +90,27 @@ def select_source_fields(source_session, tables, hospital, hospital_tags, patien
 
 def get_results(source_session, class_name, fields, patient_id, filters, key_name, key_lookup, connection):
     string_fields = ', '.join(fields)
+    # print(fields)
     query = source_session.query(class_name)
+    # print("QUERY: {}".format(query))
     try:
         try:
             all_filters = {key_name: patient_id}
             all_filters.update(filters)
             for attr,value in all_filters.items():
                 query = query.filter(getattr(class_name,attr)==value).options(load_only(*fields))
+                # print("QUERY 1: {}".format(query))
         except:
             all_filters = {key_name: patient_id}
             for attr,value in all_filters.items():
                 query = query.filter(getattr(class_name,attr)==value).options(load_only(*fields))
+                # print("QUERY 2: {}".format(query))
+
     except:
         query = get_results_via_alternative_key(key_name, patient_id, connection, source_session, key_lookup, class_name)
+        # print("QUERY 3: {}".format(query))
     results = query.all()
+    # print("RESULTS: {}".format(results))
     connection['engine'].dispose()
     return results
 
@@ -136,8 +146,11 @@ def get_source_data(req_data):
     rule_class = source_base.classes.patient_rules
     key_name = select_source_patient_id_name(hospital)
     patient_id = select_source_patient_id_value(source_session, id_class, req_data['serums_id'], key_name)
+    # print(patient_id)
     patient_tags, filters = select_tags_from_rule_table(source_session, rule_class, req_data['rule_id'])
+    # print(patient_tags)
     source_data = select_source_fields(source_session, tables, hospital, hospital_tags, patient_tags, filters, patient_id, key_name, connection)
+    # print(source_data)
     source_data = results_to_df(source_data)
     for key, values in source_data.items():
         print("RESULT: ")
