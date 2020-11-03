@@ -1,7 +1,7 @@
 ustan_personal_info = {
     "firstName": {
-        "field": "NA",
-        "location": "NA",
+        "field": "name",
+        "location": "sat_person_patient_details",
         "value": "NA"
     },
     "lastName": {
@@ -10,12 +10,12 @@ ustan_personal_info = {
         "value": "NA"
     },
     "dateOfBirth": {
-        "field": "NA",
-        "location": "NA",
+        "field": "dat_birth",
+        "location": "sat_person_patient_details",
         "value": "NA"
     },
     "gender": {
-        "field": "sex",
+        "field": "gender",
         "location": "sat_person_patient_details",
         "value": "NA"
     },
@@ -49,7 +49,7 @@ ustan_event_boilerplate = {
     },
     "when": {
         "field": "incidence_date",
-        "location": "sat_time_incidence_date",
+        "location": "sat_time_care_dates",
         "value": "NA"
     },
     "where": {
