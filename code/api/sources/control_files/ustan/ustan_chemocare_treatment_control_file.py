@@ -1,7 +1,0 @@
-
-ustan_chemocare_treatment_hubs = {'table': 'ustan.chemocare_treatment', 'hubs': [{'hub': 'hub_time', 'keys': ['chi']}, {'hub': 'hub_person', 'keys': ['chi']}, {'hub': 'hub_object', 'keys': ['chi']}]}
-
-ustan_chemocare_treatment_satellites = {'satellites': [{'satellite': 'sat_time_appointment_date', 'columns': ['appointment_date'], 'hub': 'hub_time', 'hub_id': 0}, {'satellite': 'sat_time_last_toxicity_date', 'columns': ['last_toxicity_date'], 'hub': 'hub_time', 'hub_id': 0}, {'satellite': 'sat_object_tumour_group', 'columns': ['tumour_group'], 'hub': 'hub_object', 'hub_id': 0}, {'satellite': 'sat_person_patient_measurements', 'columns': ['age_at_diagnosis', 'height', 'weight', 'surface_area'], 'hub': 'hub_person', 'hub_id': 0}, {'satellite': 'sat_person_patient_type', 'columns': ['patient_type'], 'hub': 'hub_person', 'hub_id': 0}, {'satellite': 'sat_person_consultant_code', 'columns': ['consultant_code'], 'hub': 'hub_person', 'hub_id': 0}, {'satellite': 'sat_object_treatment_details', 'columns': ['intention', 'regime_code', 'cycle', 'cycle_id'], 'hub': 'hub_object', 'hub_id': 0}, {'satellite': 'sat_object_drug_details', 'columns': ['drug_type', 'drug_name', 'required_dose', 'drug_status'], 'hub': 'hub_object', 'hub_id': 0}]}
-
-ustan_chemocare_treatment_links = {'links': [{'link': 'person_time_link', 'values': {'person_id': 0, 'time_id': 0}}, {'link': 'object_time_link', 'values': {'object_id': 0, 'time_id': 0}}, {'link': 'person_object_link', 'values': {'person_id': 0, 'object_id': 0}}]}
-    
