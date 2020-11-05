@@ -188,7 +188,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'nr_sst': Column(column_types['integer'])},{'steps_total': Column(column_types['integer'])},{'cadence': Column(column_types['integer'])},{'cyc_rot': Column(column_types['integer'])},{'cyc_rpm': Column(column_types['integer'])}]
     for column in columns:
@@ -202,7 +203,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'day_nr': Column(column_types['integer'])},{'time_total': Column(column_types['integer'])},{'time_passive': Column(column_types['integer'])},{'time_active': Column(column_types['integer'])},{'time_sit': Column(column_types['integer'])},{'time_stand': Column(column_types['integer'])},{'time_walk': Column(column_types['integer'])},{'time_cycle': Column(column_types['integer'])},{'time_hi': Column(column_types['integer'])}]
     for column in columns:
@@ -216,7 +218,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'gschl': Column(column_types['varchar'])},{'nname': Column(column_types['varchar'])},{'nnams': Column(column_types['varchar'])},{'vname': Column(column_types['varchar'])},{'titel': Column(column_types['varchar'])},{'namzu': Column(column_types['varchar'])},{'gbdat': Column(column_types['datetime'])},{'gbnam': Column(column_types['varchar'])},{'gbnas': Column(column_types['varchar'])},{'gland': Column(column_types['varchar'])},{'natio': Column(column_types['varchar'])},{'land': Column(column_types['varchar'])},{'telf1': Column(column_types['varchar'])}]
     for column in columns:
@@ -230,7 +233,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_location.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_location.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'pstlz': Column(column_types['varchar'])},{'ort': Column(column_types['varchar'])},{'stras': Column(column_types['varchar'])}]
     for column in columns:
@@ -244,7 +248,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'height': Column(column_types['integer'])},{'weight': Column(column_types['integer'])},{'date': Column(column_types['datetime'])}]
     for column in columns:
@@ -258,7 +263,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'report_title': Column(column_types['varchar'])},{'department': Column(column_types['varchar'])},{'date': Column(column_types['datetime'])},{'content': Column(column_types['text'])}]
     for column in columns:
@@ -272,7 +278,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'type': Column(column_types['varchar'])},{'date': Column(column_types['datetime'])},{'notes': Column(column_types['text'])}]
     for column in columns:
@@ -286,7 +293,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'anatomical_location': Column(column_types['varchar'])},{'date': Column(column_types['datetime'])},{'notes': Column(column_types['text'])}]
     for column in columns:
@@ -300,7 +308,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'usage_status': Column(column_types['varchar'])},{'quantity': Column(column_types['varchar'])},{'description': Column(column_types['varchar'])}]
     for column in columns:
@@ -314,7 +323,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'caustic_substance': Column(column_types['varchar'])},{'critical': Column(column_types['varchar'])},{'description': Column(column_types['varchar'])}]
     for column in columns:
@@ -328,7 +338,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'type': Column(column_types['varchar'])},{'name': Column(column_types['varchar'])},{'anatomical_location': Column(column_types['varchar'])},{'laterality': Column(column_types['varchar'])}]
     for column in columns:
@@ -342,7 +353,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'begin_date': Column(column_types['datetime'])},{'end_date': Column(column_types['datetime'])}]
     for column in columns:
@@ -356,7 +368,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'substance': Column(column_types['varchar'])},{'quantity': Column(column_types['varchar'])},{'description': Column(column_types['varchar'])},{'laterality': Column(column_types['varchar'])}]
     for column in columns:
@@ -370,7 +383,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'name': Column(column_types['varchar'])},{'value': Column(column_types['varchar'])}]
     for column in columns:
@@ -384,7 +398,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'date': Column(column_types['datetime'])}]
     for column in columns:
@@ -398,7 +413,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'house_type': Column(column_types['varchar'])},{'description': Column(column_types['varchar'])}]
     for column in columns:
@@ -412,7 +428,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'substance': Column(column_types['varchar'])},{'description': Column(column_types['varchar'])}]
     for column in columns:
@@ -426,7 +443,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'alerts': Column(column_types['varchar'])},{'type': Column(column_types['varchar'])}]
     for column in columns:
@@ -440,7 +458,8 @@ def create_zmc_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'begin_date': Column(column_types['datetime'])}]
     for column in columns:

@@ -188,7 +188,8 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [
         {'intention': Column(column_types['string'])},
@@ -206,7 +207,8 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [
         {'appointment_date': Column(column_types['datetime'])}
@@ -222,7 +224,8 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [
         {'drug_dose': Column(column_types['integer'])},
@@ -241,7 +244,8 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [
         {'name': Column(column_types['string'])},
@@ -268,7 +272,8 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [
         {'first_seen_date': Column(column_types['datetime'])}
@@ -284,7 +289,8 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [
         {'primary_field': Column(column_types['integer'])},
@@ -310,7 +316,8 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [
         {'incidence_date': Column(column_types['datetime'])},
@@ -329,7 +336,8 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [
         {'main_condition': Column(column_types['string'])},
@@ -348,7 +356,8 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [
         {'main_operation_a': Column(column_types['string'])},
@@ -365,7 +374,8 @@ def create_ustan_dv(schema, base, engine):
     '__table_args__':{'schema': schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [
         {'waiting_list_type': Column(column_types['integer'])},

@@ -190,7 +190,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'lfdnr': Column(column_types['integer'])},{'dkey1': Column(column_types['varchar'])}]
     for column in columns:
@@ -204,7 +205,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'bekat': Column(column_types['varchar'])}]
     for column in columns:
@@ -218,7 +220,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'falar': Column(column_types['varchar'])},{'statu': Column(column_types['varchar'])},{'krzan': Column(column_types['varchar'])},{'storn': Column(column_types['varchar'])},{'casetx': Column(column_types['varchar'])},{'enddtx': Column(column_types['varchar'])}]
     for column in columns:
@@ -232,7 +235,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'einzg': Column(column_types['varchar'])},{'fatnx': Column(column_types['varchar'])}]
     for column in columns:
@@ -246,7 +250,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'orgna': Column(column_types['varchar'])}]
     for column in columns:
@@ -260,7 +265,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'motx': Column(column_types['varchar'])},{'mostx': Column(column_types['varchar'])},{'motypid': Column(column_types['varchar'])},{'mpresnr': Column(column_types['varchar'])},{'storn': Column(column_types['varchar'])},{'stusr': Column(column_types['varchar'])},{'stoid': Column(column_types['varchar'])}]
     for column in columns:
@@ -274,7 +280,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'erdat': Column(column_types['datetime'])},{'stdat': Column(column_types['datetime'])}]
     for column in columns:
@@ -288,7 +295,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'vbem': Column(column_types['varchar'])},{'datyp': Column(column_types['datetime'])},{'wertogr': Column(column_types['varchar'])},{'wertugr': Column(column_types['varchar'])},{'wertmax': Column(column_types['varchar'])},{'wertmin': Column(column_types['varchar'])}]
     for column in columns:
@@ -302,7 +310,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'idodr': Column(column_types['string'])}]
     for column in columns:
@@ -316,7 +325,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'erdat': Column(column_types['datetime'])}]
     for column in columns:
@@ -330,7 +340,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'gschl': Column(column_types['varchar'])},{'nname': Column(column_types['varchar'])},{'vname': Column(column_types['varchar'])},{'gbdat': Column(column_types['datetime'])},{'gbnam': Column(column_types['varchar'])},{'namzu': Column(column_types['varchar'])},{'glrand': Column(column_types['varchar'])},{'famst': Column(column_types['varchar'])},{'telf1': Column(column_types['varchar'])},{'rvnum': Column(column_types['varchar'])},{'decdat': Column(column_types['time'])}]
     for column in columns:
@@ -344,7 +355,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_location.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_location.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'pstlz': Column(column_types['varchar'])},{'stras': Column(column_types['varchar'])},{'land': Column(column_types['varchar'])},{'ort': Column(column_types['varchar'])},{'floor': Column(column_types['varchar'])},{'adrnr': Column(column_types['varchar'])}]
     for column in columns:
@@ -358,7 +370,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_person.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'erusr': Column(column_types['varchar'])},{'gbdat': Column(column_types['datetime'])},{'rank': Column(column_types['varchar'])}]
     for column in columns:
@@ -372,7 +385,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'begdt': Column(column_types['datetime'])},{'enddt': Column(column_types['datetime'])},{'erdat': Column(column_types['datetime'])}]
     for column in columns:
@@ -386,7 +400,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_object.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'idvs': Column(column_types['varchar'])},{'dttyp': Column(column_types['varchar'])},{'typevs': Column(column_types['varchar'])},{'vwert': Column(column_types['varchar'])},{'vbem': Column(column_types['varchar'])}]
     for column in columns:
@@ -400,7 +415,8 @@ def create_fcrb_dv(schema, base, engine):
     '__table_args__':{'schema':  schema},
     'id': Column(column_types['integer'], primary_key=True),
     'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id))}
+    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
+    'display_text': Column(column_types['string'])}
 
     columns = [{'erdat': Column(column_types['datetime'])},{'vptim': Column(column_types['time'])}]
     for column in columns:
