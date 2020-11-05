@@ -97,7 +97,7 @@ def handle_satellites(satellites, hub, hub_id, row, engine, schema, base, source
                 if len(satellite['columns']) == 0:
                     continue
                 else:
-                    columns_to_insert = {'hub_id': hub_id, 'source_table': source_table}
+                    columns_to_insert = {'hub_id': hub_id, 'source_table': source_table, 'display_text': satellite['display_text']}
                     for column in satellite['columns']:
                         try:
                             columns_to_insert.update({column: getattr(row, column)})

@@ -44,11 +44,10 @@ def add_rule_to_hospital_db(req_data):
     rule_id = req_data['rule_id']
     tags = req_data['tags']
     filters = req_data['filters']
-
+    serums_id = req_data['serums_id']
     connection, rule_table = hospital_rule_picker(hospital)
-
     try:
-        rule_to_add = {"rule_id": rule_id, "tags": tags, "filters": filters}
+        rule_to_add = {"rule_id": rule_id, "tags": tags, "filters": filters, "serums_id": serums_id}
         add_query = insert(rule_table).values(rule_to_add)
         result = connection['engine'].execute(add_query)
         connection['engine'].dispose()
@@ -56,3 +55,17 @@ def add_rule_to_hospital_db(req_data):
     except:
         connection['engine'].dispose()
         return json.dumps({"Result": "Error"})
+
+
+def remove_rule_from_serums(req_data):
+    rule_id = req_data['rule_id']
+    hospital = req_data['hospital_id']
+
+    for hospital in hospitals:
+        connection, rule_table = hospital_rule_picker(hospital)
+        rule_to_remove = rule_table.delete().where(rule_table.c.rule_id==rule_id)
+        connection['session'].execute(rule_to_remove)
+        connection['session'].commit()
+        connection['engine'].dispose()
+
+    return json.dumps({"Result": "Success"})

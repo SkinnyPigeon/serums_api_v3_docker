@@ -164,6 +164,7 @@ class FCRB_Patient_Rules(Base):
     rule_id = Column(String, primary_key=True)
     tags = Column(ARRAY(String))
     filters = Column(JSON)
+    serums_id = Column(Integer)
     
 class FCRB_TAGS(Base):
     __tablename__ = 'hospital_tags'
@@ -259,6 +260,7 @@ class USTAN_Patient_Rules(Base):
     rule_id = Column(String, primary_key=True)
     tags = Column(ARRAY(String))
     filters = Column(JSON)
+    serums_id = Column(Integer)
 
 class USTAN_TAGS(Base):
     __tablename__ = 'hospital_tags'
@@ -348,6 +350,7 @@ class ZMC_Patient_Rules(Base):
     rule_id = Column(String, primary_key=True)
     tags = Column(ARRAY(String))
     filters = Column(JSON)
+    serums_id = Column(Integer)
 
 class ZMC_Appointments(Base):
     __tablename__ = 'patient_appointments'
