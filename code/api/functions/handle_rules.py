@@ -90,3 +90,25 @@ def update_rule(req_data)
     except Exception as e:
         connection['engine'].dispose()
         return json.dumps({"Error": e})
+
+def get_rules(req_data):
+    serums_id = req_data['serums_id']
+    hospital = req_data['hospital_id']
+    connection, rule_table = hospital_rule_picker(hospital)
+    try:
+        i = 0
+        rules = {}
+        results = connection['session'].query(rule_table).
+        filter(rule_table.serums_id == serums_id).all()
+        for result in results:
+            rules.update({i: {
+                    'rule_id': result.rule_id, 
+                    'tags': result.tags, 
+                    'filters': result.filter
+                }
+            })
+        connection['engine'].dispose()
+        return json.dumps(rules)
+    except Exception as e:
+            connection['engine'].dispose()
+            return json.dumps({"Error": e})

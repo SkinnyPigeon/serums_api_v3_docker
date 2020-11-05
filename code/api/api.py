@@ -13,7 +13,7 @@ from functions.apply_rules_to_data_vault import *
 from functions.encryption import encrypt_patient_record
 from functions.formatter import format_data, format_data_decrypted
 from functions.handle_users import add_user_to_serums, remove_user_from_serums
-from functions.handle_rules import add_rule_to_hospital_db, remove_rule_from_serums, update_rule
+from functions.handle_rules import add_rule_to_hospital_db, remove_rule_from_serums, update_rule, get_rules
 from functions.get_tags_and_doctors import get_tags_and_doctors
 
 # Setting up environment
@@ -83,6 +83,11 @@ update_rule_fields = api.model('Update Rule', {
     'hospital_id': fields.String(required=True, description='The id of the hospital for the source data', example='FCRB'),
     'tags': fields.String(required=True, description='The tags that the patient has selected to control their data', example=['wearable', 'patient_details']),
     'filters': fields.String(required=False, description='The filters to apply to any requested data', example="einri=101")
+})
+
+all_rule_fields = api.model("Get Patient's Rules", {
+    'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=10523),
+    'hospital_id': fields.String(required=True, description='The id of the hospital for the source data', example='FCRB')
 })
 
 get_ts_and_ds_fields = api.model('Get Tags and Doctors', {
@@ -175,6 +180,13 @@ class UpdateRule(Resource):
         req_data = request.get_json()
         return update_rule(req_data)
 
+@ns.route("get_rules", methods=["post"])
+class GetRules(Resource):
+    """Get all of the rules for a single patient"""
+    @api.doc(body=all_rule_fields)
+    def post(self):
+        req_data = request.get_json()
+        return get_rules(req_data)
 
 @ns.route("/get_ts_and_ds", methods=["post"])
 class GetTsAndDs(Resource):
