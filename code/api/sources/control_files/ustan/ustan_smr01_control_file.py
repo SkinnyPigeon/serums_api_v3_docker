@@ -13,22 +13,26 @@ ustan_smr01_satellites = {
         {
             'satellite': 'sat_time_care_dates', 
             'columns': ['incidence_date',' admission_date', 'length_of_stay', 'discharge_date'], 
-            'hub': 'hub_time', 'hub_id': 0
+            'hub': 'hub_time', 'hub_id': 0,
+            'display_text': 'Care Dates'
         },
         {
             'satellite': 'sat_object_condition_details', 
             'columns': ['main_condition', 'other_condition1', 'other_condition2', 'other_condition3'], 
-            'hub': 'hub_object', 'hub_id': 0
+            'hub': 'hub_object', 'hub_id': 0,
+            'display_text': 'Condition Details'
         },
         {
             'satellite': 'sat_object_operation_details', 
             'columns': ['main_operation_a', 'main_operation_b'], 
-            'hub': 'hub_object', 'hub_id': 0
+            'hub': 'hub_object', 'hub_id': 0,
+            'display_text': 'Operation Details'
         },
         {
             'satellite': 'sat_person_care_details', 
             'columns': ['waiting_list_type', 'marital_status', 'ethnic_group'], 
-            'hub': 'hub_person', 'hub_id': 0
+            'hub': 'hub_person', 'hub_id': 0,
+            'display_text': 'Care Details'
         }
     ]
 }

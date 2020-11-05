@@ -12,15 +12,18 @@ ustan_chemocare_satellites = {
     'satellites': [
         {
             'satellite': 'sat_time_chemocare_dates', 
-            'columns': ['appointment_date'], 'hub': 'hub_time', 'hub_id': 0
+            'columns': ['appointment_date'], 'hub': 'hub_time', 'hub_id': 0,
+            'display_text': 'Chemocare Dates'
         }, 
         {
             'satellite': 'sat_event_chemocare_treatment', 
-            'columns': ['intention', 'regime', 'outcome'], 'hub': 'hub_event', 'hub_id': 0
+            'columns': ['intention', 'regime', 'outcome'], 'hub': 'hub_event', 'hub_id': 0,
+            'display_text': 'Chemocare Treatment'
         }, 
         {
             'satellite': 'sat_object_drug_details', 
-            'columns': ['drug_dose', 'drug_type', 'drug_type'], 'hub': 'hub_object', 'hub_id': 0
+            'columns': ['drug_dose', 'drug_type', 'drug_type'], 'hub': 'hub_object', 'hub_id': 0,
+            'display_text': 'Chemocare Drugs'
         }
     ]
 }

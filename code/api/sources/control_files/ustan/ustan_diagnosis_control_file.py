@@ -11,11 +11,13 @@ ustan_diagnosis_satellites = {
     'satellites': [
         {
             'satellite': 'sat_time_diagnosis_dates', 
-            'columns': ['first_seen_date'], 'hub': 'hub_time', 'hub_id': 0
+            'columns': ['first_seen_date'], 'hub': 'hub_time', 'hub_id': 0,
+            'display_text': 'Diagnosis Dates'
         },
         {
             'satellite': 'sat_event_diagnosis_details', 
-            'columns': ['primary_field', 'age' ,'site', 'side', 'histology', 'stage', 'tnm_t', 'tnm_n', 'tnm_m', 'perf_stat', 'metastasis1'], 'hub': 'hub_event', 'hub_id': 0
+            'columns': ['primary_field', 'age' ,'site', 'side', 'histology', 'stage', 'tnm_t', 'tnm_n', 'tnm_m', 'perf_stat', 'metastasis1'], 'hub': 'hub_event', 'hub_id': 0,
+            'display_text': 'Diagnosis Details'
         }
     ]
 }
