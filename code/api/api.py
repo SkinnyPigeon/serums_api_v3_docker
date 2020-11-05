@@ -13,7 +13,7 @@ from functions.apply_rules_to_data_vault import *
 from functions.encryption import encrypt_patient_record
 from functions.formatter import format_data, format_data_decrypted
 from functions.handle_users import add_user_to_serums, remove_user_from_serums
-from functions.handle_rules import add_rule_to_hospital_db
+from functions.handle_rules import add_rule_to_hospital_db, remove_rule_from_serums, update_rule
 from functions.get_tags_and_doctors import get_tags_and_doctors
 
 # Setting up environment
@@ -65,6 +65,21 @@ remove_user_fields = api.model('Remove User', {
 
 add_rules_fields = api.model('Add Rule', {
     'rule_id': fields.String(required=True, description='Rule to be executed', example='9asud9sjads9aj9'),
+    'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=10523),
+    'hospital_id': fields.String(required=True, description='The id of the hospital for the source data', example='FCRB'),
+    'tags': fields.String(required=True, description='The tags that the patient has selected to control their data', example=['wearable', 'patient_details']),
+    'filters': fields.String(required=False, description='The filters to apply to any requested data', example="einri=101")
+})
+
+remove_rule_fields = api.model('Remove Rule', {
+    'rule_id': fields.String(required=True, description='Rule to be executed', example='9asud9sjads9aj9'),
+    'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=10523),
+    'hospital_id': fields.String(required=True, description='The id of the hospital for the source data', example='FCRB')
+})
+
+update_rule_fields = api.model('Update Rule', {
+    'rule_id': fields.String(required=True, description='Rule to be executed', example='9asud9sjads9aj9'),
+    'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=10523),
     'hospital_id': fields.String(required=True, description='The id of the hospital for the source data', example='FCRB'),
     'tags': fields.String(required=True, description='The tags that the patient has selected to control their data', example=['wearable', 'patient_details']),
     'filters': fields.String(required=False, description='The filters to apply to any requested data', example="einri=101")
@@ -143,6 +158,22 @@ class AddRule(Resource):
     def post(self):
         req_data = request.get_json()
         return add_rule_to_hospital_db(req_data)
+
+@ns.route("/remove_rule", methods=["post"])
+class RemoveRule(Resource):
+    """Remove a rule from a hospital's data lake"""
+    @api.doc(body=remove_rule_fields)
+    def post(self):
+        req_data = request.get_json()
+        return remove_rule_from_serums(req_data)
+
+@ns.route("update_rule", methods=["post"])
+class UpdateRule(Resource):
+    """Update an existing rule in a hospital's data lake"""
+    @api.doc(body=update_rule_fields)
+    def post(self):
+        req_data = request.get_json()
+        return update_rule(req_data)
 
 
 @ns.route("/get_ts_and_ds", methods=["post"])

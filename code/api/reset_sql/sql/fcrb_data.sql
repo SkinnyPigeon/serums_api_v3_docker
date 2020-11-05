@@ -253,8 +253,8 @@ values (1239828, 'PCHACON', 'H-MMG', '1991-02-28', '2018-11-21', NULL, '2018-11-
 insert into fcrb.serums_ids (serums_id, patnr) values (1, 4641202);
 
 
-insert into fcrb.patient_rules (rule_id, tags, filters) values ('as8sadausd99S', ARRAY['wearable', 'patient_details'], '{}');
-insert into fcrb.patient_rules (rule_id, tags, filters) values ('abc', ARRAY['all'], '{}');
+insert into fcrb.patient_rules (rule_id, serums_id, tags, filters) values ('as8sadausd99S', 1, ARRAY['wearable', 'patient_details'], '{}');
+insert into fcrb.patient_rules (rule_id, serums_id, tags, filters) values ('abc', 1, ARRAY['all'], '{}');
 
 
 insert into fcrb.hospital_tags (tags) values (ARRAY['wearable', 'diagnostic', 'medication', 'patient_details', 'patient_address', 'appointments', 'healthcare_providers', 'treatments', 'personal', 'all']);
