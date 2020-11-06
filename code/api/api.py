@@ -108,15 +108,21 @@ parser.add_argument('Tags', type=list, required=True, help="The tags which the p
 
 
 # Routes
-ns = api.namespace('api', description='Return the Smart Patient Health Record')
+hello_space = api.namespace('Hello', description='Check the Smart Patient Health Record Server is on')
+rule_space = api.namespace('Rules', description='Add, remove, update, and view rules')
+user_space = api.namespace('Users', description='Add and remove users')
+t_and_d = api.namespace('Tags and Doctors', description='Get the tags and doctors for each hospital')
+get_space = api.namespace('Smart Patient Health Record', description='Get the encrypted Smart Patient Health Record')
+test_space = api.namespace('Development End Points', description='Access to unencrypted data')
 
-@ns.route('/hello')
+
+@hello_space.route('/hello')
 class ServerCheck(Resource):
     @api.marshal_with(hello)
     def get(self):
         return {"hello": "Welcome to the SPHR API. The server is on"}
 
-@ns.route("/get_sphr", methods=['post'])
+@get_space.route("/get_sphr", methods=['post'])
 class GetSphr(Resource):
     '''Return the Smart Patient Health Record from the Serums data lake'''
     @api.doc(body=request_fields)
@@ -141,7 +147,7 @@ class GetSphr(Resource):
 
         return encrypted_record
 
-@ns.route("/add_user", methods=['post'])
+@user_space.route("/add_user", methods=['post'])
 class AddUser(Resource):
     '''Link a patient's hospital ID to their Serums ID'''
     @api.doc(body=add_user_fields)
@@ -149,7 +155,7 @@ class AddUser(Resource):
         req_data = request.get_json()
         return add_user_to_serums(req_data)
     
-@ns.route("/remove_user", methods=['post'])
+@user_space.route("/remove_user", methods=['post'])
 class RemoveUser(Resource):
     '''Remove link(s) between a patient's hospital ID(s) and their Serums ID'''
     @api.doc(body=remove_user_fields)
@@ -158,7 +164,7 @@ class RemoveUser(Resource):
         remove_user_from_serums(req_data)
         return json.dumps({"Result": "Success"})
 
-@ns.route("/add_rule", methods=['post'])
+@rule_space.route("/add_rule", methods=['post'])
 class AddRule(Resource):
     '''Add a new rule based on selected tags and filters'''
     @api.doc(body=add_rules_fields)
@@ -166,7 +172,7 @@ class AddRule(Resource):
         req_data = request.get_json()
         return add_rule_to_hospital_db(req_data)
 
-@ns.route("/remove_rule", methods=["post"])
+@rule_space.route("/remove_rule", methods=["post"])
 class RemoveRule(Resource):
     """Remove a rule from a hospital's data lake"""
     @api.doc(body=remove_rule_fields)
@@ -174,7 +180,7 @@ class RemoveRule(Resource):
         req_data = request.get_json()
         return remove_rule_from_serums(req_data)
 
-@ns.route("/update_rule", methods=["post"])
+@rule_space.route("/update_rule", methods=["post"])
 class UpdateRule(Resource):
     """Update an existing rule in a hospital's data lake"""
     @api.doc(body=update_rule_fields)
@@ -182,7 +188,7 @@ class UpdateRule(Resource):
         req_data = request.get_json()
         return update_rule(req_data)
 
-@ns.route("/get_rules", methods=["post"])
+@rule_space.route("/get_rules", methods=["post"])
 class GetRules(Resource):
     """Get all of the rules for a single patient"""
     @api.doc(body=all_rule_fields)
@@ -190,7 +196,7 @@ class GetRules(Resource):
         req_data = request.get_json()
         return get_rules(req_data)
 
-@ns.route("/get_ts_and_ds", methods=["post"])
+@t_and_d.route("/get_ts_and_ds", methods=["post"])
 class GetTsAndDs(Resource):
     '''Return the tags that each hospital has access to'''
     @api.doc(body=get_ts_and_ds_fields)
@@ -201,7 +207,7 @@ class GetTsAndDs(Resource):
 
 # Testing Routes
 
-@ns.route("/get_encrypted", methods=['post'])
+@test_space.route("/get_encrypted", methods=['post'])
 class GetEncrypted(Resource):
     '''Return the Smart Patient Health Record from the Serums data lake'''
     @api.doc(body=request_fields)
@@ -225,7 +231,7 @@ class GetEncrypted(Resource):
         return encrypted_record
 
 
-@ns.route("/get_decrypted", methods=['post'])
+@test_space.route("/get_decrypted", methods=['post'])
 class GetDecrypted(Resource):
     '''Return the Smart Patient Health Record from the Serums data lake'''
     @api.doc(body=request_fields)
