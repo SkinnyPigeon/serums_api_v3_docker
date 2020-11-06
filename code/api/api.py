@@ -108,12 +108,12 @@ parser.add_argument('Tags', type=list, required=True, help="The tags which the p
 
 
 # Routes
-hello_space = api.namespace('Hello', description='Check the Smart Patient Health Record Server is on')
-rule_space = api.namespace('Rules', description='Add, remove, update, and view rules')
-user_space = api.namespace('Users', description='Add and remove users')
-t_and_d = api.namespace('Tags and Doctors', description='Get the tags and doctors for each hospital')
-get_space = api.namespace('Smart Patient Health Record', description='Get the encrypted Smart Patient Health Record')
-test_space = api.namespace('Development End Points', description='Access to unencrypted data')
+hello_space = api.namespace('hello', description='Check the Smart Patient Health Record Server is on')
+rule_space = api.namespace('rules', description='Add, remove, update, and view rules')
+user_space = api.namespace('users', description='Add and remove users')
+t_and_d = api.namespace('helper', description='Get the tags and doctors for each hospital')
+get_space = api.namespace('api', description='Get the encrypted Smart Patient Health Record')
+test_space = api.namespace('dev', description='Access to unencrypted data')
 
 
 @hello_space.route('/hello')
