@@ -52,8 +52,8 @@ insert into zmc.patient_allergies_intolerance (patnr, caustic_substance, critica
 insert into zmc.patient_diagnostic (patnr, type, name, anatomical_location, laterality, begin_date, end_date) values (1075835, 'Diagnosis', 'Coxartrose', 'Right Hip', 'No', '2020-09-01', '2020-11-27');
 
 
-insert into zmc.patient_rules (rule_id, serums_id, tags, filters) values ('9a8sdn8asj89dfs', 1, ARRAY['wearable', 'patient_details'], '{}');
-insert into zmc.patient_rules (rule_id, serums_id, tags, filters) values ('abc', 1, ARRAY['all'], '{}');
+-- insert into zmc.patient_rules (rule_id, serums_id, tags, filters) values ('9a8sdn8asj89dfs', 1, ARRAY['wearable', 'patient_details'], '{}');
+-- insert into zmc.patient_rules (rule_id, serums_id, tags, filters) values ('abc', 1, ARRAY['all'], '{}');
 
 
 insert into zmc.serums_ids (serums_id, patnr) values (1, 1075835);

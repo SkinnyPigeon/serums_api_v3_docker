@@ -64,11 +64,12 @@ remove_user_fields = api.model('Remove User', {
 })
 
 add_rules_fields = api.model('Add Rule', {
-    'rule_id': fields.String(required=True, description='Rule to be executed', example='abc'),
+    'rule_id': fields.String(required=True, description='Rule id to be added', example='def'),
     'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=1),
     'hospital_id': fields.String(required=True, description='The id of the hospital for the source data', example='ZMC'),
-    'tags': fields.String(required=True, description='The tags that the patient has selected to control their data', example=['wearable', 'patient_details']),
-    'filters': fields.String(required=False, description='The filters to apply to any requested data. This feature is not fully implemented so ignore for now', example="")
+    'tags': fields.String(required=True, description='The tags that the patient has selected to control their data', example=['all'])
+    # ,
+    # 'filters': fields.String(required=False, description='The filters to apply to any requested data. This feature is not fully implemented so ignore for now', min_length=0, example="")
 })
 
 remove_rule_fields = api.model('Remove Rule', {
@@ -78,11 +79,12 @@ remove_rule_fields = api.model('Remove Rule', {
 })
 
 update_rule_fields = api.model('Update Rule', {
-    'rule_id': fields.String(required=True, description='Rule to be executed', example='abc'),
+    'rule_id': fields.String(required=True, description='Rule to be updated', example='def'),
     'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=1),
     'hospital_id': fields.String(required=True, description='The id of the hospital for the source data', example='ZMC'),
-    'tags': fields.String(required=True, description='The updated tags that the patient has selected to control their data', example=['diagnostic', 'patient_details']),
-    'filters': fields.String(required=False, description='The filters to apply to any requested data. This feature is not fully implemented so ignore for now', example="")
+    'tags': fields.String(required=True, description='The updated tags that the patient has selected to control their data', example=['diagnostic', 'patient_details'])
+    # ,
+    # 'filters': fields.String(required=False, description='The filters to apply to any requested data. This feature is not fully implemented so ignore for now', min_length=0, example="")
 })
 
 all_rule_fields = api.model("Get Patient's Rules", {
@@ -101,7 +103,7 @@ parser.add_argument('Hospital ID', type=list, required=True, help='The Hospital 
 parser.add_argument('Public Key', type=list, required=True, help='The Public Key', location='json')
 parser.add_argument('Hospitals', type=list, required=True, help="The list of hospitals to remove the patient's connection to", location='json')
 parser.add_argument('Tags', type=list, required=True, help="The tags which the patient has selected to select subsets of their data", location='json')
-parser.add_argument('filters', type=list, required=False, help="Any filters that the patient wants to apply to their data, such as episode number", location='json')
+# parser.add_argument('filters', type=list, required=False, help="Any filters that the patient wants to apply to their data, such as episode number", location='json')
 
 
 

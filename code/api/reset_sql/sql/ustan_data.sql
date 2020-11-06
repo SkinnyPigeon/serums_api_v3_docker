@@ -22,8 +22,8 @@ values (2606566626, '2020-09-11', '2020-10-09', 0, 'C509', 'C773', null, null, '
 
 insert into ustan.serums_ids (serums_id, chi) values (1, 2606566626);
 
-insert into ustan.patient_rules (rule_id, serums_id, tags, filters) values ('h8asdasja8jskalc', 1, ARRAY['patient_details', 'treatments'], '{}');
-insert into ustan.patient_rules (rule_id, serums_id, tags, filters) values ('abc', 1, ARRAY['all'], '{}');
+-- insert into ustan.patient_rules (rule_id, serums_id, tags, filters) values ('h8asdasja8jskalc', 1, ARRAY['patient_details', 'treatments'], '{}');
+-- insert into ustan.patient_rules (rule_id, serums_id, tags, filters) values ('abc', 1, ARRAY['all'], '{}');
 
 insert into ustan.hospital_tags (tags) values (ARRAY['diagnostic', 'patient_details', 'appointments', 'treatments', 'all']);
 

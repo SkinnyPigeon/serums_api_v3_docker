@@ -42,11 +42,12 @@ def add_rule_to_hospital_db(req_data):
     hospital = req_data['hospital_id']
     rule_id = req_data['rule_id']
     tags = req_data['tags']
-    filters = req_data['filters']
+    # filters = req_data['filters']
     serums_id = req_data['serums_id']
     connection, rule_table = hospital_rule_picker(hospital)
     try:
-        rule_to_add = {"rule_id": rule_id, "tags": tags, "filters": filters, "serums_id": serums_id}
+        rule_to_add = {"rule_id": rule_id, "tags": tags, "serums_id": serums_id}
+        # rule_to_add = {"rule_id": rule_id, "tags": tags, "filters": filters, "serums_id": serums_id}
         add_query = insert(rule_table).values(rule_to_add)
         result = connection['engine'].execute(add_query)
         connection['engine'].dispose()
@@ -75,11 +76,11 @@ def update_rule(req_data):
     hospital = req_data['hospital_id']
     rule_id = req_data['rule_id']
     tags = req_data['tags']
-    filters = req_data['filters']
+    # filters = req_data['filters']
     serums_id = req_data['serums_id']
     connection, rule_table = hospital_rule_picker(hospital)
     try:
-        stmt = rule_table.update().where(rule_table.c.rule_id == rule_id).where(rule_table.c.serums_id == serums_id).values(tags=tags).values(filters=filters)
+        stmt = rule_table.update().where(rule_table.c.rule_id == rule_id).where(rule_table.c.serums_id == serums_id).values(tags=tags)
         print(stmt)
         connection['engine'].execute(stmt)
         connection['engine'].dispose()

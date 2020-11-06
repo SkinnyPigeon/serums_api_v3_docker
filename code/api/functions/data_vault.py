@@ -41,7 +41,7 @@ def connect_to_existing_dv(schema):
     Base = automap_base(metadata=metadata)
     engine = create_engine('postgresql://postgres:{}@localhost:5432/data_vault'.format(PASSWORD))
     Base.prepare(engine, reflect=True)
-    Session = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=engine, autoflush=True, autocommit=False)
     session = Session()
     return {'base': Base, 'metadata': metadata, 'engine': engine, 'session': session, 'schema': schema}
 
@@ -64,6 +64,7 @@ def get_class_by_schema_and_tablename(schema, table_fullname, base):
         except:
             print("GET CLASS TABLE ERROR: {}".format(table_fullname))
 
+
 def handle_hubs(schema, hub, row, engine, base):
     # print("HANDLING HUBS")
     # print("HUB: {}".format(hub))
@@ -85,7 +86,7 @@ def handle_hubs(schema, hub, row, engine, base):
     return hub_id
 
 
-def handle_satellites(satellites, hub, hub_id, row, engine, schema, base, source_table):
+def handle_satellites(satellites, hub, hub_id, row, engine, schema, base, source_table, source_data, control_files, connection):
     print("HANDLING SATELLITES")
     for satellite in satellites['satellites']:
         if satellite['hub'] == hub['hub']:
@@ -112,7 +113,10 @@ def handle_satellites(satellites, hub, hub_id, row, engine, schema, base, source
             except:
                 print("ERROR 2: {}".format(satellite))
                 print(satellite['satellite'])
-                pass
+                # pass
+                # Dirty fix for now, let's see. Needs to be fixed
+                return copy_to_dv(source_data, control_files, connection)
+
 
         
 def setup_links(hub, hub_id, links):
@@ -151,7 +155,7 @@ def copy_to_dv(source_data, control_files, connection):
             source_table = hubs['table'].split('.')[1]
             for hub in hubs['hubs']:
                 hub_id = handle_hubs(schema, hub, row, engine, base)
-                handle_satellites(satellites, hub, hub_id, row, engine, schema, base, source_table)
+                handle_satellites(satellites, hub, hub_id, row, engine, schema, base, source_table, source_data, control_files, connection)
                 setup_links(hub, hub_id, links)
             handle_links(schema, links, engine, base)
     engine.dispose()
