@@ -8,14 +8,14 @@ fcrb_vital_signs_satellites = {
             'columns': ['idvs', 'dttyp', 'typevs', 'vwert', 'vbem'], 
             'hub': 'hub_object', 
             'hub_id': 0,
-            'display_name': 'Vital Sign Measurements'
+            'display_text': 'Vital Sign Measurements'
         }, 
         {
             'satellite': 'sat_time_vital_signs_date', 
             'columns': ['erdat', 'vptim'], 
             'hub': 'hub_time', 
             'hub_id': 0,
-            'display_name': 'Vital Sign Measurement Dates'
+            'display_text': 'Vital Sign Measurement Dates'
         }
     ]
 }

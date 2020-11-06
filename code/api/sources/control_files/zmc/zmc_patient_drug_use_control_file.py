@@ -8,7 +8,7 @@ zmc_patient_drug_use_satellites = {
             'columns': ['substance', 'quantity', 'description'], 
             'hub': 'hub_object', 
             'hub_id': 0,
-            'display_name': 'Drug Use'
+            'display_text': 'Drug Use'
         }
     ]
 }

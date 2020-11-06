@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, MetaData, insert
+from sqlalchemy import create_engine, MetaData, insert, update, and_
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import sessionmaker
 
@@ -53,7 +53,7 @@ def add_rule_to_hospital_db(req_data):
         return json.dumps({"Result": "Success"})
     except Exception as e:
         connection['engine'].dispose()
-        return json.dumps({"Error": e})
+        return e
 
 
 def remove_rule_from_serums(req_data):
@@ -69,9 +69,9 @@ def remove_rule_from_serums(req_data):
         return json.dumps({"Result": "Success"})
     except Exception as e:
         connection['engine'].dispose()
-        return json.dumps({"Error": e})
+        return e
 
-def update_rule(req_data)
+def update_rule(req_data):
     hospital = req_data['hospital_id']
     rule_id = req_data['rule_id']
     tags = req_data['tags']
@@ -79,15 +79,13 @@ def update_rule(req_data)
     serums_id = req_data['serums_id']
     connection, rule_table = hospital_rule_picker(hospital)
     try:
-        connection['session'].query(rule_table).\
-            filter(rule_table.rule_id == rule_id).\
-            filter(rule_table.serums_id == serums_id).\
-            update({rule_table.tags: tags, rule_table.filers: filters})
-        connection['session'].execute(rule_to_remove)
-        connection['session'].commit()
+        stmt = rule_table.update().where(rule_table.c.rule_id == rule_id).where(rule_table.c.serums_id == serums_id).values(tags=tags).values(filters=filters)
+        print(stmt)
+        connection['engine'].execute(stmt)
         connection['engine'].dispose()
         return json.dumps({"Result": "Success"})
     except Exception as e:
+        print(e)
         connection['engine'].dispose()
         return json.dumps({"Error": e})
 
@@ -98,17 +96,18 @@ def get_rules(req_data):
     try:
         i = 0
         rules = {}
-        results = connection['session'].query(rule_table).
-        filter(rule_table.serums_id == serums_id).all()
+        results = connection['session'].query(rule_table).\
+            filter(rule_table.c.serums_id == serums_id).all()
         for result in results:
             rules.update({i: {
                     'rule_id': result.rule_id, 
                     'tags': result.tags, 
-                    'filters': result.filter
+                    'filters': result.filters
                 }
             })
+            i += 1
         connection['engine'].dispose()
         return json.dumps(rules)
     except Exception as e:
             connection['engine'].dispose()
-            return json.dumps({"Error": e})
+            return e

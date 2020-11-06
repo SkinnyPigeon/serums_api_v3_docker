@@ -8,7 +8,7 @@ zmc_patient_tobacco_use_satellites = {
             'columns': ['substance', 'description'], 
             'hub': 'hub_object', 
             'hub_id': 0,
-            'display_name': 'Tobacco Use'
+            'display_text': 'Tobacco Use'
         }
     ]
 }

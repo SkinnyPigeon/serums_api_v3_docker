@@ -8,7 +8,7 @@ zmc_patient_allergies_intolerance_satellites = {
             'columns': ['caustic_substance', 'critical', 'description'], 
             'hub': 'hub_object', 
             'hub_id': 0,
-            'display_name': 'Allergies and Intolerances'
+            'display_text': 'Allergies and Intolerances'
         }
     ]
 }

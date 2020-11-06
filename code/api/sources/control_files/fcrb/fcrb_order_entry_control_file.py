@@ -8,14 +8,14 @@ fcrb_order_entry_satellites = {
             'columns': ['idodr'], 
             'hub': 'hub_object', 
             'hub_id': 0,
-            'display_name': 'Order Entry'
+            'display_text': 'Order Entry'
         }, 
         {
             'satellite': 'sat_time_order_date', 
             'columns': ['erdat'], 
             'hub': 'hub_time', 
             'hub_id': 0,
-            'display_name': 'Order Entry Dates'
+            'display_text': 'Order Entry Dates'
         }
     ]
 }

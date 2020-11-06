@@ -8,7 +8,7 @@ zmc_patient_measurements_satellites = {
             'columns': ['height', 'weight', 'date'], 
             'hub': 'hub_person', 
             'hub_id': 0,
-            'display_name': 'Patient Measurements'
+            'display_text': 'Patient Measurements'
         }
     ]
 }

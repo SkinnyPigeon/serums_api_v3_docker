@@ -86,28 +86,31 @@ def handle_hubs(schema, hub, row, engine, base):
 
 
 def handle_satellites(satellites, hub, hub_id, row, engine, schema, base, source_table):
-    # print("HANDLING SATELLITES")
+    print("HANDLING SATELLITES")
     for satellite in satellites['satellites']:
-        # print("satellite: {}".format(satellite))
         if satellite['hub'] == hub['hub']:
             print("satellite: {}".format(satellite))
             try:
                 satellite_to_insert = get_class_by_schema_and_tablename(schema, satellite['satellite'], base)
-                # print("INSERT: {}".format(satellite_to_insert))
+                print("INSERT: {}".format(satellite_to_insert))
                 if len(satellite['columns']) == 0:
+                    print("ERROR: {}".format(satellite))
                     continue
                 else:
                     columns_to_insert = {'hub_id': hub_id, 'source_table': source_table, 'display_text': satellite['display_text']}
+                    print("COLUMNS TO INSERT: {}".format(columns_to_insert))
                     for column in satellite['columns']:
                         try:
                             columns_to_insert.update({column: getattr(row, column)})
                         except:
                             print("Error")
+                print
                 satellite_query = insert(satellite_to_insert).values(columns_to_insert)
-                # print("SAT QUERY: {}".format(satellite_query))
+                print("SAT QUERY: {}".format(satellite_query))
                 satellite_result = engine.execute(satellite_query, con=engine)
-                # print("SAT RES: {}".format(satellite_result))
+                print("SAT RES: {}".format(satellite_result))
             except:
+                print("ERROR 2: {}".format(satellite))
                 print(satellite['satellite'])
                 pass
 
@@ -125,7 +128,7 @@ def setup_links(hub, hub_id, links):
         #   print("LINK AFTER: {}".format(link))
 
 def handle_links(schema, links, engine, base):
-    print("HANDLING LINKS")
+    # print("HANDLING LINKS")
     for link in links['links']:
         try:
             link_to_insert = get_class_by_schema_and_tablename(schema, link['link'], base)
@@ -133,7 +136,7 @@ def handle_links(schema, links, engine, base):
             link_query = insert(link_to_insert).values(ids_to_insert)
             link_result = engine.execute(link_query, con=engine)
         except:
-            print(link['link'])
+            # print(link['link'])
             pass
 
 def copy_to_dv(source_data, control_files, connection):
@@ -141,8 +144,8 @@ def copy_to_dv(source_data, control_files, connection):
     base = connection['base']
     schema = connection['schema']
     for key, data_to_copy in source_data.items():
-        print(key)
-        print(data_to_copy)
+        print("COPYING KEY: {}".format(key))
+        print("COPYING DATA: {}".format(data_to_copy))
         hubs, satellites, links = hubs_satellites_links(control_files, key)
         for row in data_to_copy.itertuples(index=False):
             source_table = hubs['table'].split('.')[1]

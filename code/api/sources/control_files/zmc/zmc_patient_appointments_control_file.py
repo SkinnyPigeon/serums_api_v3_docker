@@ -8,7 +8,7 @@ zmc_patient_appointments_satellites = {
             'columns': ['type', 'date', 'notes'], 
             'hub': 'hub_event', 
             'hub_id': 0,
-            'display_name': 'Appintments'
+            'display_text': 'Appintments'
         }
     ]
 }

@@ -8,14 +8,14 @@ zmc_patient_functional_state_satellites = {
             'columns': ['name', 'value'], 
             'hub': 'hub_object', 
             'hub_id': 0,
-            'display_name': 'Functional State'
+            'display_text': 'Functional State'
         }, 
         {
             'satellite': 'sat_time_patient_functional_state', 
             'columns': ['date'], 
             'hub': 'hub_time', 
             'hub_id': 0,
-            'display_name': 'Functional State Dates'
+            'display_text': 'Functional State Dates'
         }
     ]
 }

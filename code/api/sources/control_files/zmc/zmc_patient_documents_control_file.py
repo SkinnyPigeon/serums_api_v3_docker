@@ -8,7 +8,7 @@ zmc_patient_documents_satellites = {
             'columns': ['report_title', 'department', 'date', 'content'], 
             'hub': 'hub_object', 
             'hub_id': 0,
-            'display_name': 'Patient Documents'
+            'display_text': 'Patient Documents'
         }
     ]
 }

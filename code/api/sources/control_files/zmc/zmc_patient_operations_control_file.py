@@ -8,7 +8,7 @@ zmc_patient_operations_satellites = {
             'columns': ['anatomical_location', 'date', 'notes'], 
             'hub': 'hub_event', 
             'hub_id': 0,
-            'display_name': 'Operations'
+            'display_text': 'Operations'
         }
     ]
 }

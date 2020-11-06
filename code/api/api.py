@@ -172,7 +172,7 @@ class RemoveRule(Resource):
         req_data = request.get_json()
         return remove_rule_from_serums(req_data)
 
-@ns.route("update_rule", methods=["post"])
+@ns.route("/update_rule", methods=["post"])
 class UpdateRule(Resource):
     """Update an existing rule in a hospital's data lake"""
     @api.doc(body=update_rule_fields)
@@ -180,7 +180,7 @@ class UpdateRule(Resource):
         req_data = request.get_json()
         return update_rule(req_data)
 
-@ns.route("get_rules", methods=["post"])
+@ns.route("/get_rules", methods=["post"])
 class GetRules(Resource):
     """Get all of the rules for a single patient"""
     @api.doc(body=all_rule_fields)

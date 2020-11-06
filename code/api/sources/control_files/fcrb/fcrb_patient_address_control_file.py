@@ -7,7 +7,7 @@ fcrb_patient_address_satellites = {
             'satellite': 'sat_location_patient_address', 
             'columns': ['pstlz', 'stras', 'land', 'ort', 'floor', 'adrnr'], 
             'hub': 'hub_location', 'hub_id': 0,
-            'display_name': 'Patient Address'
+            'display_text': 'Patient Address'
         }
     ]
 }

@@ -8,14 +8,14 @@ zmc_wearable_satellites = {
             'columns': ['nr_sst', 'steps_total', 'cadence', 'cyc_rot', 'cyc_rpm'], 
             'hub': 'hub_event', 
             'hub_id': 0,
-            'display_name': 'Exercise Values'
+            'display_text': 'Exercise Values'
         }, 
         {
             'satellite': 'sat_time_exercise_measurements', 
             'columns': ['day_nr', 'time_total', 'time_passive', 'time_active', 'time_sit', 'time_stand', 'time_walk', 'time_cycle', 'time_hi'], 
             'hub': 'hub_time', 
             'hub_id': 0,
-            'display_name': 'Exercise Lengths'
+            'display_text': 'Exercise Lengths'
         }
     ]
 }
