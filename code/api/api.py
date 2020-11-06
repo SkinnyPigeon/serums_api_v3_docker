@@ -67,13 +67,13 @@ add_rules_fields = api.model('Add Rule', {
     'rule_id': fields.String(required=True, description='Rule id to be added', example='def'),
     'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=1),
     'hospital_id': fields.String(required=True, description='The id of the hospital for the source data', example='ZMC'),
-    'tags': fields.String(required=True, description='The tags that the patient has selected to control their data', example=['all'])
+    'tags': fields.String(required=True, description='The tags that the patient has selected to control their data', example=['appointments', 'patient_details'])
     # ,
     # 'filters': fields.String(required=False, description='The filters to apply to any requested data. This feature is not fully implemented so ignore for now', min_length=0, example="")
 })
 
 remove_rule_fields = api.model('Remove Rule', {
-    'rule_id': fields.String(required=True, description='Rule to be executed', example='abc'),
+    'rule_id': fields.String(required=True, description='Rule to be deleted', example='def'),
     'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=1),
     'hospital_id': fields.String(required=True, description='The id of the hospital for the source data', example='ZMC')
 })
@@ -247,4 +247,4 @@ class GetDecrypted(Resource):
         return sphr
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port='8080')
+    app.run(debug=True, host='0.0.0.0', port='5000')

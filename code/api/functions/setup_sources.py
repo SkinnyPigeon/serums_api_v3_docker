@@ -12,7 +12,7 @@ from pathlib import Path
 project_folder = os.path.expanduser('~/code/api/')
 load_dotenv(os.path.join(project_folder, '.env'))
 PASSWORD = os.environ.get('PGPASSWORD')
-# PASSWORD = os.getenv('PASSWORD')
+
 
 from sources.tags.fcrb import fcrb_tags
 from sources.tags.ustan import ustan_tags

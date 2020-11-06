@@ -11,6 +11,7 @@ project_folder = os.path.expanduser('~/code/api/')
 load_dotenv(os.path.join(project_folder, '.env'))
 PASSWORD = os.environ.get('PGPASSWORD')
 
+
 def hospital_id_picker(hospital_id):
     if hospital_id == 'FCRB':
         hospital = 'fcrb'

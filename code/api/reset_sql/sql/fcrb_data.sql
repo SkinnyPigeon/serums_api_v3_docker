@@ -126,106 +126,106 @@ insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, ty
 values (4641202 ,988392719 ,6877299 ,'GLIC_CAPIL' ,'INT' ,'2019-04-05' ,'06:46:10' ,'EXTERNO' ,79 ,'');	
 insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
 values (4641202 ,988392719 ,6877401 ,'GLIC_CAPIL' ,'INT' ,'2019-10-22' ,'03:53:56' ,'EXTERNO' ,86 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9854393 ,'PULSIOX' ,'INT' ,'2019-12-24' ,'18:29:19' ,'EXTERNO' ,95 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9854445 ,'PULSIOX' ,'INT' ,'2019-04-26' ,'05:34:24' ,'EXTERNO' ,90 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9854550 ,'PULSIOX' ,'INT' ,'2020-03-26' ,'21:42:26' ,'EXTERNO' ,91 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9854637 ,'PULSIOX' ,'INT' ,'2019-12-06' ,'17:41:08' ,'EXTERNO' ,86 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9854713 ,'PULSIOX' ,'INT' ,'2019-06-08' ,'20:08:17' ,'EXTERNO' ,88 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9854838 ,'PULSIOX' ,'INT' ,'2019-10-27' ,'19:10:23' ,'EXTERNO' ,91 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9854988 ,'PULSIOX' ,'INT' ,'2019-10-27' ,'08:36:17' ,'EXTERNO' ,88 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9855095 ,'PULSIOX' ,'INT' ,'2019-09-22' ,'19:39:03' ,'EXTERNO' ,90 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9855165 ,'PULSIOX' ,'INT' ,'2020-04-30' ,'22:38:48' ,'EXTERNO' ,85 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9855255 ,'PULSIOX' ,'INT' ,'2020-05-10' ,'04:53:32' ,'EXTERNO' ,89 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9855386 ,'PULSIOX' ,'INT' ,'2019-05-28' ,'03:03:16' ,'EXTERNO' ,95 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9855473 ,'PULSIOX' ,'INT' ,'2019-09-12' ,'00:00:53' ,'EXTERNO' ,97 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9855567 ,'PULSIOX' ,'INT' ,'2019-12-30' ,'17:10:03' ,'EXTERNO' ,87 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9855666 ,'PULSIOX' ,'INT' ,'2020-01-25' ,'19:39:14' ,'EXTERNO' ,96 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9855732 ,'PULSIOX' ,'INT' ,'2020-05-26' ,'10:19:56' ,'EXTERNO' ,87 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9855862 ,'PULSIOX' ,'INT' ,'2019-11-01' ,'19:58:07' ,'EXTERNO' ,98 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9855977 ,'PULSIOX' ,'INT' ,'2019-10-25' ,'15:55:36' ,'EXTERNO' ,97 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9856036 ,'PULSIOX' ,'INT' ,'2020-02-21' ,'07:19:29' ,'EXTERNO' ,88 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9856169 ,'PULSIOX' ,'INT' ,'2019-10-27' ,'23:23:55' ,'EXTERNO' ,93 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9856246 ,'PULSIOX' ,'INT' ,'2020-05-24' ,'20:51:09' ,'EXTERNO' ,85 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9856353 ,'PULSIOX' ,'INT' ,'2019-10-24' ,'18:52:38' ,'EXTERNO' ,98 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9856499 ,'PULSIOX' ,'INT' ,'2020-05-05' ,'18:44:37' ,'EXTERNO' ,86 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9856553 ,'PULSIOX' ,'INT' ,'2019-07-18' ,'18:06:42' ,'EXTERNO' ,93 ,'');
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9856698 ,'PULSIOX' ,'INT' ,'2020-02-09' ,'14:10:56' ,'EXTERNO' ,91 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9856729 ,'PULSIOX' ,'INT' ,'2020-05-28' ,'00:59:59' ,'EXTERNO' ,91 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9856851 ,'PULSIOX' ,'INT' ,'2019-05-29' ,'15:29:36' ,'EXTERNO' ,94 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9857020 ,'PULSIOX' ,'INT' ,'2020-04-03' ,'10:37:45' ,'EXTERNO' ,89 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9857061 ,'PULSIOX' ,'INT' ,'2019-10-03' ,'14:35:32' ,'EXTERNO' ,87 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9857140 ,'PULSIOX' ,'INT' ,'2019-05-03' ,'00:23:33' ,'EXTERNO' ,94 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9857233 ,'PULSIOX' ,'INT' ,'2020-04-22' ,'00:41:31' ,'EXTERNO' ,89 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9857429 ,'PULSIOX' ,'INT' ,'2019-09-24' ,'00:36:20' ,'EXTERNO' ,96 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9857506 ,'PULSIOX' ,'INT' ,'2020-03-04' ,'17:20:02' ,'EXTERNO' ,85 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9857549 ,'PULSIOX' ,'INT' ,'2019-05-30' ,'15:59:05' ,'EXTERNO' ,92 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9857657 ,'PULSIOX' ,'INT' ,'2019-07-16' ,'07:24:31' ,'EXTERNO' ,86 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9857808 ,'PULSIOX' ,'INT' ,'2019-11-29' ,'07:36:01' ,'EXTERNO' ,87 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9857907 ,'PULSIOX' ,'INT' ,'2019-08-13' ,'09:54:57' ,'EXTERNO' ,91 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9858021 ,'PULSIOX' ,'INT' ,'2019-11-03' ,'03:50:19' ,'EXTERNO' ,97 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9858085 ,'PULSIOX' ,'INT' ,'2019-08-04' ,'20:35:48' ,'EXTERNO' ,98 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9858207 ,'PULSIOX' ,'INT' ,'2019-06-26' ,'21:20:26' ,'EXTERNO' ,86 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9858316 ,'PULSIOX' ,'INT' ,'2019-11-18' ,'05:01:35' ,'EXTERNO' ,90 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9858372 ,'PULSIOX' ,'INT' ,'2020-05-16' ,'23:34:23' ,'EXTERNO' ,94 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9858489 ,'PULSIOX' ,'INT' ,'2019-08-25' ,'20:03:22' ,'EXTERNO' ,98 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9858584 ,'PULSIOX' ,'INT' ,'2020-01-26' ,'18:21:54' ,'EXTERNO' ,88 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9858664 ,'PULSIOX' ,'INT' ,'2019-07-28' ,'13:59:07' ,'EXTERNO' ,98 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9858764 ,'PULSIOX' ,'INT' ,'2020-03-28' ,'14:18:46' ,'EXTERNO' ,88 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9858920 ,'PULSIOX' ,'INT' ,'2019-06-30' ,'12:40:48' ,'EXTERNO' ,91 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9859001 ,'PULSIOX' ,'INT' ,'2019-05-20' ,'03:18:27' ,'EXTERNO' ,87 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9859134 ,'PULSIOX' ,'INT' ,'2019-05-02' ,'21:16:08' ,'EXTERNO' ,91 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9859158 ,'PULSIOX' ,'INT' ,'2019-10-15' ,'09:35:23' ,'EXTERNO' ,98 ,'');	
--- insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
--- values (4641202 ,98823483 ,9859251 ,'PULSIOX' ,'INT' ,'2019-09-19' ,'15:03:27' ,'EXTERNO' ,93 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9854393 ,'PULSIOX' ,'INT' ,'2019-12-24' ,'18:29:19' ,'EXTERNO' ,95 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9854445 ,'PULSIOX' ,'INT' ,'2019-04-26' ,'05:34:24' ,'EXTERNO' ,90 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9854550 ,'PULSIOX' ,'INT' ,'2020-03-26' ,'21:42:26' ,'EXTERNO' ,91 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9854637 ,'PULSIOX' ,'INT' ,'2019-12-06' ,'17:41:08' ,'EXTERNO' ,86 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9854713 ,'PULSIOX' ,'INT' ,'2019-06-08' ,'20:08:17' ,'EXTERNO' ,88 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9854838 ,'PULSIOX' ,'INT' ,'2019-10-27' ,'19:10:23' ,'EXTERNO' ,91 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9854988 ,'PULSIOX' ,'INT' ,'2019-10-27' ,'08:36:17' ,'EXTERNO' ,88 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9855095 ,'PULSIOX' ,'INT' ,'2019-09-22' ,'19:39:03' ,'EXTERNO' ,90 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9855165 ,'PULSIOX' ,'INT' ,'2020-04-30' ,'22:38:48' ,'EXTERNO' ,85 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9855255 ,'PULSIOX' ,'INT' ,'2020-05-10' ,'04:53:32' ,'EXTERNO' ,89 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9855386 ,'PULSIOX' ,'INT' ,'2019-05-28' ,'03:03:16' ,'EXTERNO' ,95 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9855473 ,'PULSIOX' ,'INT' ,'2019-09-12' ,'00:00:53' ,'EXTERNO' ,97 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9855567 ,'PULSIOX' ,'INT' ,'2019-12-30' ,'17:10:03' ,'EXTERNO' ,87 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9855666 ,'PULSIOX' ,'INT' ,'2020-01-25' ,'19:39:14' ,'EXTERNO' ,96 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9855732 ,'PULSIOX' ,'INT' ,'2020-05-26' ,'10:19:56' ,'EXTERNO' ,87 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9855862 ,'PULSIOX' ,'INT' ,'2019-11-01' ,'19:58:07' ,'EXTERNO' ,98 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9855977 ,'PULSIOX' ,'INT' ,'2019-10-25' ,'15:55:36' ,'EXTERNO' ,97 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9856036 ,'PULSIOX' ,'INT' ,'2020-02-21' ,'07:19:29' ,'EXTERNO' ,88 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9856169 ,'PULSIOX' ,'INT' ,'2019-10-27' ,'23:23:55' ,'EXTERNO' ,93 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9856246 ,'PULSIOX' ,'INT' ,'2020-05-24' ,'20:51:09' ,'EXTERNO' ,85 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9856353 ,'PULSIOX' ,'INT' ,'2019-10-24' ,'18:52:38' ,'EXTERNO' ,98 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9856499 ,'PULSIOX' ,'INT' ,'2020-05-05' ,'18:44:37' ,'EXTERNO' ,86 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9856553 ,'PULSIOX' ,'INT' ,'2019-07-18' ,'18:06:42' ,'EXTERNO' ,93 ,'');
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9856698 ,'PULSIOX' ,'INT' ,'2020-02-09' ,'14:10:56' ,'EXTERNO' ,91 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9856729 ,'PULSIOX' ,'INT' ,'2020-05-28' ,'00:59:59' ,'EXTERNO' ,91 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9856851 ,'PULSIOX' ,'INT' ,'2019-05-29' ,'15:29:36' ,'EXTERNO' ,94 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9857020 ,'PULSIOX' ,'INT' ,'2020-04-03' ,'10:37:45' ,'EXTERNO' ,89 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9857061 ,'PULSIOX' ,'INT' ,'2019-10-03' ,'14:35:32' ,'EXTERNO' ,87 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9857140 ,'PULSIOX' ,'INT' ,'2019-05-03' ,'00:23:33' ,'EXTERNO' ,94 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9857233 ,'PULSIOX' ,'INT' ,'2020-04-22' ,'00:41:31' ,'EXTERNO' ,89 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9857429 ,'PULSIOX' ,'INT' ,'2019-09-24' ,'00:36:20' ,'EXTERNO' ,96 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9857506 ,'PULSIOX' ,'INT' ,'2020-03-04' ,'17:20:02' ,'EXTERNO' ,85 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9857549 ,'PULSIOX' ,'INT' ,'2019-05-30' ,'15:59:05' ,'EXTERNO' ,92 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9857657 ,'PULSIOX' ,'INT' ,'2019-07-16' ,'07:24:31' ,'EXTERNO' ,86 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9857808 ,'PULSIOX' ,'INT' ,'2019-11-29' ,'07:36:01' ,'EXTERNO' ,87 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9857907 ,'PULSIOX' ,'INT' ,'2019-08-13' ,'09:54:57' ,'EXTERNO' ,91 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9858021 ,'PULSIOX' ,'INT' ,'2019-11-03' ,'03:50:19' ,'EXTERNO' ,97 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9858085 ,'PULSIOX' ,'INT' ,'2019-08-04' ,'20:35:48' ,'EXTERNO' ,98 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9858207 ,'PULSIOX' ,'INT' ,'2019-06-26' ,'21:20:26' ,'EXTERNO' ,86 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9858316 ,'PULSIOX' ,'INT' ,'2019-11-18' ,'05:01:35' ,'EXTERNO' ,90 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9858372 ,'PULSIOX' ,'INT' ,'2020-05-16' ,'23:34:23' ,'EXTERNO' ,94 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9858489 ,'PULSIOX' ,'INT' ,'2019-08-25' ,'20:03:22' ,'EXTERNO' ,98 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9858584 ,'PULSIOX' ,'INT' ,'2020-01-26' ,'18:21:54' ,'EXTERNO' ,88 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9858664 ,'PULSIOX' ,'INT' ,'2019-07-28' ,'13:59:07' ,'EXTERNO' ,98 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9858764 ,'PULSIOX' ,'INT' ,'2020-03-28' ,'14:18:46' ,'EXTERNO' ,88 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9858920 ,'PULSIOX' ,'INT' ,'2019-06-30' ,'12:40:48' ,'EXTERNO' ,91 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9859001 ,'PULSIOX' ,'INT' ,'2019-05-20' ,'03:18:27' ,'EXTERNO' ,87 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9859134 ,'PULSIOX' ,'INT' ,'2019-05-02' ,'21:16:08' ,'EXTERNO' ,91 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9859158 ,'PULSIOX' ,'INT' ,'2019-10-15' ,'09:35:23' ,'EXTERNO' ,98 ,'');	
+insert into fcrb.vital_signs (patnr, falnr, idvs, vppid, dttyp, erdat, vptim, typevs, vwert, vbem) 
+values (4641202 ,98823483 ,9859251 ,'PULSIOX' ,'INT' ,'2019-09-19' ,'15:03:27' ,'EXTERNO' ,93 ,'');	
 
 
 insert into fcrb.order_entry (einri, falnr, idodr, patnr, pernr, erdat, orgid) values ('HCPB', 988392719, 95565900, 4641202, 2827346, '1991-09-23', 'H-END');
@@ -254,7 +254,7 @@ insert into fcrb.serums_ids (serums_id, patnr) values (1, 4641202);
 
 
 -- insert into fcrb.patient_rules (rule_id, serums_id, tags, filters) values ('as8sadausd99S', 1, ARRAY['wearable', 'patient_details'], '{}');
--- insert into fcrb.patient_rules (rule_id, serums_id, tags, filters) values ('abc', 1, ARRAY['all'], '{}');
+insert into fcrb.patient_rules (rule_id, serums_id, tags, filters) values ('abc', 1, ARRAY['all'], '{}');
 
 
 insert into fcrb.hospital_tags (tags) values (ARRAY['wearable', 'diagnostic', 'medication', 'patient_details', 'patient_address', 'appointments', 'healthcare_providers', 'treatments', 'personal', 'all']);
