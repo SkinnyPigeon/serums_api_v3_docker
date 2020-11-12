@@ -8,14 +8,14 @@ zmc_patient_details_satellites = {
             'columns': ['gschl', 'nname', 'nnams', 'vname', 'titel', 'namzu', 'gbdat', 'gbnam', 'gbnas', 'gland', 'natio', 'land', 'telf1'], 
             'hub': 'hub_person', 
             'hub_id': 0,
-            'display_text': 'Patient Details'
+            'display_text': 'Patiëntgegevens'
         }, 
         {
             'satellite': 'sat_location_patient_address', 
             'columns': ['pstlz', 'ort', 'stras'], 
             'hub': 'hub_location', 
             'hub_id': 0,
-            'display_text': 'Patient Address'
+            'display_text': 'Adres van de patiënt'
         }
     ]
 }

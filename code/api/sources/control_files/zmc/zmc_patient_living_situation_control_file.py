@@ -8,7 +8,7 @@ zmc_patient_living_situation_satellites = {
             'columns': ['house_type', 'description'], 
             'hub': 'hub_object', 
             'hub_id': 0,
-            'display_text': 'Living Situation'
+            'display_text': 'Woonsituatie'
         }
     ]
 }

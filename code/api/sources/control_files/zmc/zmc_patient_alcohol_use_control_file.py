@@ -8,7 +8,7 @@ zmc_patient_alcohol_use_satellites = {
             'columns': ['usage_status', 'quantity', 'description'], 
             'hub': 'hub_object', 
             'hub_id': 0,
-            'display_text': 'Alcohol Use'
+            'display_text': 'Alcoholgebruik'
         }
     ]
 }

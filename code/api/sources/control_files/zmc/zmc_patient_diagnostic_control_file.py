@@ -8,14 +8,14 @@ zmc_patient_diagnostic_satellites = {
             'columns': ['type', 'name', 'anatomical_location', 'laterality'], 
             'hub': 'hub_object', 
             'hub_id': 0,
-            'display_text': 'Diagnostic Details'
+            'display_text': 'Diagnostische gegevens'
         }, 
         {
             'satellite': 'sat_time_patient_diagnostic', 
             'columns': ['begin_date', 'end_date'], 
             'hub': 'hub_time', 
             'hub_id': 0,
-            'display_text': 'Diagnostic Dates'
+            'display_text': 'Diagnose datum'
         }
     ]
 }

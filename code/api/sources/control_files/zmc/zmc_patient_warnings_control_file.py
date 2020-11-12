@@ -8,14 +8,14 @@ zmc_patient_warnings_satellites = {
             'columns': ['alerts', 'type'], 
             'hub': 'hub_object', 
             'hub_id': 0,
-            'display_text': 'Warnings'
+            'display_text': 'Waarschuwingen'
         }, 
         {
             'satellite': 'sat_time_patient_warnings', 
             'columns': ['begin_date'], 
             'hub': 'hub_time', 
             'hub_id': 0,
-            'display_text': 'Warning Dates'
+            'display_text': 'Datum van waarschuwing'
         }
     ]
 }
