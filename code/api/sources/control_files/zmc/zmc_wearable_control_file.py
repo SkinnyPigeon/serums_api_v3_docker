@@ -1,5 +1,6 @@
 
-zmc_wearable_hubs = {'table': 'zmc.wearable', 'hubs': [{'hub': 'hub_event', 'keys': ['patnr']}, {'hub': 'hub_time', 'keys': ['patnr']}]}
+# zmc_wearable_hubs = {'table': 'zmc.wearable', 'hubs': [{'hub': 'hub_event', 'keys': ['patnr']}, {'hub': 'hub_time', 'keys': ['patnr']}]}
+zmc_wearable_hubs = {'table': 'zmc.wearable', 'hubs': [{'hub': 'hub_event', 'keys': ['patnr']}]}
 
 zmc_wearable_satellites = {
     # 'satellites': [

@@ -1,4 +1,5 @@
-zmc_wearable = {'tag': 'wearable', 'table': 'zmc.wearable', 'fields': ['patnr', 'nr_sst', 'steps_total', 'cadence', 'cyc_rot', 'cyc_rpm', 'day_nr', 'time_total', 'time_passive', 'time_active', 'time_sit', 'time_stand', 'time_walk', 'time_cycle', 'time_hi'], 'key_lookup': {}}
+zmc_wearable = {'tag': 'wearable', 'table': 'zmc.wearable', 'fields': ['patnr', 'datum', 'duur_meting', 'tijd_gezeten', 'tijd_gelopen', 'aantal_keren_opgestaan_uit_een_stoel', 'aantal_stappen_gezet', 'gemiddeld_aantal_stappen_per_minuut'], 'key_lookup': {}}
+# zmc_wearable = {'tag': 'wearable', 'table': 'zmc.wearable', 'fields': ['patnr', 'nr_sst', 'steps_total', 'cadence', 'cyc_rot', 'cyc_rpm', 'day_nr', 'time_total', 'time_passive', 'time_active', 'time_sit', 'time_stand', 'time_walk', 'time_cycle', 'time_hi'], 'key_lookup': {}}
 
 zmc_diagnostic_1 = {'tag': 'diagnostic', 'table': 'zmc.patient_diagnostic', 'fields': ['patnr', 'type', 'name', 'anatomical_location', 'laterality', 'begin_date', 'end_date'], 'key_lookup': {}}
 zmc_diagnostic_2 = {'tag': 'diagnostic', 'table': 'zmc.patient_documents', 'fields': ['patnr', 'report_title', 'department', 'date', 'content'], 'key_lookup': {}}
