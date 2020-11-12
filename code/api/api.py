@@ -20,9 +20,12 @@ from functions.get_tags_and_doctors import get_tags_and_doctors
 
 FLASK_DEBUG=1
 
-project_folder = os.path.expanduser('~/code/api/')
+project_folder = os.path.expanduser('~/code/api_v3_docker/code/api')
 load_dotenv(os.path.join(project_folder, '.env'))
-PASSWORD = os.getenv('PASSWORD')
+PORT = os.getenv('PGPORT')
+PASSWORD = os.getenv('PGPASSWORD')
+# PASSWORD = os.environ.get('PGPASSWORD')
+# PORT = os.environ.get('PGPORT')
 
 app = Flask(__name__)
 app.config['ERROR_404_HELP'] = False
@@ -253,4 +256,4 @@ class GetDecrypted(Resource):
         return sphr
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port='5000')
+    app.run(debug=True, host='0.0.0.0', port='5001')

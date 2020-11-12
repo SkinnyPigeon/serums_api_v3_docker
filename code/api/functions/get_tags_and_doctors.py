@@ -8,9 +8,12 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
-project_folder = os.path.expanduser('~/code/api_v3/')
+project_folder = os.path.expanduser('~/code/api_v3_docker/code/api')
 load_dotenv(os.path.join(project_folder, '.env'))
-PASSWORD = os.environ.get('PGPASSWORD')
+PORT = os.getenv('PGPORT')
+PASSWORD = os.getenv('PGPASSWORD')
+# PASSWORD = os.environ.get('PGPASSWORD')
+# PORT = os.environ.get('PGPORT')
 
 def hospital_picker(hospital_id):
     if hospital_id == 'FCRB':
@@ -23,7 +26,7 @@ def hospital_picker(hospital_id):
 def setup_connection(hospital):
     metadata = MetaData(schema=hospital)
     Base = automap_base(metadata=metadata)
-    engine = create_engine('postgresql://postgres:{}@localhost:5432/source'.format(PASSWORD))
+    engine = create_engine('postgresql://postgres:{}@localhost:{}/source'.format(PASSWORD, PORT))
     Base.prepare(engine, reflect=True)
     Session = sessionmaker(bind=engine)
     session = Session()

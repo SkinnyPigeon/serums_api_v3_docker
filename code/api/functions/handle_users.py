@@ -7,9 +7,12 @@ from dotenv import load_dotenv
 from pathlib import Path
 import json
 
-project_folder = os.path.expanduser('~/code/api/')
+project_folder = os.path.expanduser('~/code/api_v3_docker/code/api')
 load_dotenv(os.path.join(project_folder, '.env'))
-PASSWORD = os.environ.get('PGPASSWORD')
+PORT = os.getenv('PGPORT')
+PASSWORD = os.getenv('PGPASSWORD')
+# PASSWORD = os.environ.get('PGPASSWORD')
+# PORT = os.environ.get('PGPORT')
 
 
 def hospital_id_picker(hospital_id):
@@ -26,7 +29,7 @@ def hospital_id_picker(hospital_id):
 def setup_connection(hospital):
     metadata = MetaData(schema=hospital)
     Base = automap_base(metadata=metadata)
-    engine = create_engine('postgresql://postgres:{}@localhost:5432/source'.format(PASSWORD))
+    engine = create_engine('postgresql://postgres:{}@localhost:{}/source'.format(PASSWORD, PORT))
     Base.prepare(engine, reflect=True)
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -52,10 +55,10 @@ def add_user_to_serums(req_data):
         add_query = insert(id_table).values(patient_to_add)
         result = connection['engine'].execute(add_query)
         connection['engine'].dispose()
-        return json.dumps({"Result": "Success"})
-    except:
+        return {"Result": "Success"}
+    except Exception as e:
         connection['engine'].dispose()
-        return json.dumps({"Result": "Error"})
+        return {"Result": e}
 
 def remove_user_from_serums(req_data):
     serums_id = req_data['serums_id']
@@ -68,4 +71,4 @@ def remove_user_from_serums(req_data):
         connection['session'].commit()
         connection['engine'].dispose()
 
-    return json.dumps({"Result": "Success"})
+    return {"Result": "Success"}

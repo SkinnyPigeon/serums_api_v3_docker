@@ -7,9 +7,12 @@ from dotenv import load_dotenv
 from pathlib import Path
 import json
 
-project_folder = os.path.expanduser('~/code/api/')
+project_folder = os.path.expanduser('~/code/api_v3_docker/code/api')
 load_dotenv(os.path.join(project_folder, '.env'))
-PASSWORD = os.environ.get('PGPASSWORD')
+PORT = os.getenv('PGPORT')
+PASSWORD = os.getenv('PGPASSWORD')
+# PASSWORD = os.environ.get('PGPASSWORD')
+# PORT = os.environ.get('PGPORT')
 
 def hospital_rule_picker(hospital):
     if hospital == 'FCRB':
@@ -25,7 +28,7 @@ def hospital_rule_picker(hospital):
 def setup_connection(hospital):
     metadata = MetaData(schema=hospital)
     Base = automap_base(metadata=metadata)
-    engine = create_engine('postgresql://postgres:{}@localhost:5432/source'.format(PASSWORD))
+    engine = create_engine('postgresql://postgres:{}@localhost:{}/source'.format(PASSWORD, PORT))
     Base.prepare(engine, reflect=True)
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -50,7 +53,7 @@ def add_rule_to_hospital_db(req_data):
         add_query = insert(rule_table).values(rule_to_add)
         result = connection['engine'].execute(add_query)
         connection['engine'].dispose()
-        return json.dumps({"Result": "Success"})
+        return {"Result": "Success"}
     except Exception as e:
         connection['engine'].dispose()
         return e
@@ -66,7 +69,7 @@ def remove_rule_from_serums(req_data):
         connection['session'].commit()
         connection['engine'].dispose()
 
-        return json.dumps({"Result": "Success"})
+        return {"Result": "Success"}
     except Exception as e:
         connection['engine'].dispose()
         return e
@@ -83,11 +86,11 @@ def update_rule(req_data):
         print(stmt)
         connection['engine'].execute(stmt)
         connection['engine'].dispose()
-        return json.dumps({"Result": "Success"})
+        return {"Result": "Success"}
     except Exception as e:
         print(e)
         connection['engine'].dispose()
-        return json.dumps({"Error": e})
+        return {"Error": e}
 
 def get_rules(req_data):
     serums_id = req_data['serums_id']
@@ -107,7 +110,7 @@ def get_rules(req_data):
             })
             i += 1
         connection['engine'].dispose()
-        return json.dumps(rules)
+        return rules
     except Exception as e:
             connection['engine'].dispose()
             return e

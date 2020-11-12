@@ -1,10 +1,13 @@
 import os
 from pathlib import Path
-project_folder = os.path.expanduser('~/code/api/')
-
 from dotenv import load_dotenv
+
+project_folder = os.path.expanduser('~/code/api_v3_docker/code/api')
 load_dotenv(os.path.join(project_folder, '.env'))
-PASSWORD = os.environ.get('PGPASSWORD')
+PORT = os.getenv('PGPORT')
+PASSWORD = os.getenv('PGPASSWORD')
+# PASSWORD = os.environ.get('PGPASSWORD')
+# PORT = os.environ.get('PGPORT')
 
 import json
 import pandas as pd
@@ -39,7 +42,7 @@ def create_data_vault(hospital_id):
 def connect_to_existing_dv(schema):
     metadata = MetaData(schema=schema)
     Base = automap_base(metadata=metadata)
-    engine = create_engine('postgresql://postgres:{}@localhost:5432/data_vault'.format(PASSWORD))
+    engine = create_engine('postgresql://postgres:{}@localhost:{}/data_vault'.format(PASSWORD, PORT))
     Base.prepare(engine, reflect=True)
     Session = sessionmaker(bind=engine, autoflush=True, autocommit=False)
     session = Session()

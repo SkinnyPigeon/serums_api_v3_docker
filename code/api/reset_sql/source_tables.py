@@ -11,11 +11,14 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
-project_folder = os.path.expanduser('~/code/api/')
+project_folder = os.path.expanduser('~/code/api_v3_docker/code/api')
 load_dotenv(os.path.join(project_folder, '.env'))
-PASSWORD = os.environ.get('PGPASSWORD')
+PORT = os.getenv('PGPORT')
+PASSWORD = os.getenv('PGPASSWORD')
+# PASSWORD = os.environ.get('PGPASSWORD')
+# PORT = os.environ.get('PGPORT')
 
-engine = create_engine('postgresql://postgres:{}@localhost:5432/source'.format(PASSWORD), echo='debug')
+engine = create_engine('postgresql://postgres:{}@localhost:{}/source'.format(PASSWORD, PORT), echo='debug')
 
 
 # Tables/Classes
@@ -280,24 +283,36 @@ class USTAN_Doctors(Base):
 
 # Tables/Classes
 
+# class ZMC_Wearable(Base):
+#     __tablename__ = 'wearable'
+#     __table_args__ = {'schema': 'zmc'}
+#     patnr = Column(Integer, primary_key=True)
+#     day_nr = Column(Integer, primary_key=True)
+#     time_total = Column(Integer)
+#     time_passive = Column(Integer)
+#     time_active = Column(Integer)
+#     time_sit = Column(Integer)
+#     time_stand = Column(Integer)
+#     time_walk = Column(Integer)
+#     time_cycle = Column(Integer)
+#     time_hi = Column(Integer)
+#     nr_sst = Column(Integer)
+#     steps_total = Column(Integer)
+#     cadence = Column(Integer)
+#     cyc_rot = Column(Integer)
+#     cyc_rpm = Column(Integer)
+
 class ZMC_Wearable(Base):
     __tablename__ = 'wearable'
     __table_args__ = {'schema': 'zmc'}
     patnr = Column(Integer, primary_key=True)
-    day_nr = Column(Integer, primary_key=True)
-    time_total = Column(Integer)
-    time_passive = Column(Integer)
-    time_active = Column(Integer)
-    time_sit = Column(Integer)
-    time_stand = Column(Integer)
-    time_walk = Column(Integer)
-    time_cycle = Column(Integer)
-    time_hi = Column(Integer)
-    nr_sst = Column(Integer)
-    steps_total = Column(Integer)
-    cadence = Column(Integer)
-    cyc_rot = Column(Integer)
-    cyc_rpm = Column(Integer)
+    datum = Column(DateTime(timezone=False), primary_key=True)
+    duur_meting = Column(Time)
+    tijd_gezeten = Column(Time)
+    tijd_gelopen = Column(Time)
+    aantal_keren_opgestaan_uit_een_stoel = Column(Integer)
+    aantal_stappen_gezet = Column(Integer)
+    gemiddeld_aantal_stappen_per_minuut = Column(Integer)
 
 class ZMC_Patient_Details(Base):
     __tablename__ = 'patient_details'

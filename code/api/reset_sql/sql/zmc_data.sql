@@ -2,17 +2,32 @@ insert into zmc.patient_details (patnr,gschl,nname,nnams,vname,titel,namzu,gbdat
 ) values (1075835,2,'Calimerass','CALIMERASS','TSTO',NULL,NULL,'04.01.1980','Test PTE - IMS Team.','TESTPTE-IMSTEAM.','NL','NL','NL','2986 VA','Ridderkerk','Koolmees 13 A bus 5','06-21185097');
 
 
-insert into zmc.wearable (patnr,day_nr,time_total,time_passive,time_active,time_sit,time_stand,time_walk,time_cycle,time_hi,nr_sst,steps_total,cadence,cyc_rot,cyc_rpm
-) values (1075835,1,41300,35849,5449,31045,4804,5071,378,0,45,6047,77,245,39);
+-- insert into zmc.wearable (patnr,day_nr,time_total,time_passive,time_active,time_sit,time_stand,time_walk,time_cycle,time_hi,nr_sst,steps_total,cadence,cyc_rot,cyc_rpm
+-- ) values (1075835,1,41300,35849,5449,31045,4804,5071,378,0,45,6047,77,245,39);
 
-insert into zmc.wearable (patnr,day_nr,time_total,time_passive,time_active,time_sit,time_stand,time_walk,time_cycle,time_hi,nr_sst,steps_total,cadence,cyc_rot,cyc_rpm
-) values (1075835,2,42674,37939,4733,31227,6712,4733,0,0,39,5885,80,0,0);
+-- insert into zmc.wearable (patnr,day_nr,time_total,time_passive,time_active,time_sit,time_stand,time_walk,time_cycle,time_hi,nr_sst,steps_total,cadence,cyc_rot,cyc_rpm
+-- ) values (1075835,2,42674,37939,4733,31227,6712,4733,0,0,39,5885,80,0,0);
 
-insert into zmc.wearable (patnr,day_nr,time_total,time_passive,time_active,time_sit,time_stand,time_walk,time_cycle,time_hi,nr_sst,steps_total,cadence,cyc_rot,cyc_rpm
-) values (1075835,3,41071,36401,4668,31652,4749,4668,0,0,33,5892,76,0,0);
+-- insert into zmc.wearable (patnr,day_nr,time_total,time_passive,time_active,time_sit,time_stand,time_walk,time_cycle,time_hi,nr_sst,steps_total,cadence,cyc_rot,cyc_rpm
+-- ) values (1075835,3,41071,36401,4668,31652,4749,4668,0,0,33,5892,76,0,0);
 
-insert into zmc.wearable (patnr,day_nr,time_total,time_passive,time_active,time_sit,time_stand,time_walk,time_cycle,time_hi,nr_sst,steps_total,cadence,cyc_rot,cyc_rpm
-) values (1075835,4,45420,40762,4655,34417,6345,4655,0,0,46,6000,81,0,0);
+-- insert into zmc.wearable (patnr,day_nr,time_total,time_passive,time_active,time_sit,time_stand,time_walk,time_cycle,time_hi,nr_sst,steps_total,cadence,cyc_rot,cyc_rpm
+-- ) values (1075835,4,45420,40762,4655,34417,6345,4655,0,0,46,6000,81,0,0);
+
+insert into zmc.wearable (patnr, datum, duur_meting, tijd_gezeten, tijd_gelopen, aantal_keren_opgestaan_uit_een_stoel, aantal_stappen_gezet, gemiddeld_aantal_stappen_per_minuut)
+values (1075835, '2020-11-16', '16:09:00', '08:46:37', '00:32:49', 31, 2923, 107);
+insert into zmc.wearable (patnr, datum, duur_meting, tijd_gezeten, tijd_gelopen, aantal_keren_opgestaan_uit_een_stoel, aantal_stappen_gezet, gemiddeld_aantal_stappen_per_minuut)
+values (1075835, '2020-11-17', '10:23:14', '07:35:43', '00:23:57', 43, 2202, 115);
+insert into zmc.wearable (patnr, datum, duur_meting, tijd_gezeten, tijd_gelopen, aantal_keren_opgestaan_uit_een_stoel, aantal_stappen_gezet, gemiddeld_aantal_stappen_per_minuut)
+values (1075835, '2020-11-18', '11:14:46', '07:06:27', '00:29:34', 20, 2872, 120);
+insert into zmc.wearable (patnr, datum, duur_meting, tijd_gezeten, tijd_gelopen, aantal_keren_opgestaan_uit_een_stoel, aantal_stappen_gezet, gemiddeld_aantal_stappen_per_minuut)
+values (1075835, '2020-11-19', '10:49:25', '07:07:31', '00:36:19', 20, 3775, 115);
+insert into zmc.wearable (patnr, datum, duur_meting, tijd_gezeten, tijd_gelopen, aantal_keren_opgestaan_uit_een_stoel, aantal_stappen_gezet, gemiddeld_aantal_stappen_per_minuut)
+values (1075835, '2020-11-20', '09:03:09', '04:16:57', '00:41:44', 12, 4001, 111);
+insert into zmc.wearable (patnr, datum, duur_meting, tijd_gezeten, tijd_gelopen, aantal_keren_opgestaan_uit_een_stoel, aantal_stappen_gezet, gemiddeld_aantal_stappen_per_minuut)
+values (1075835, '2020-11-21', '12:28:43', '09:30:42', '00:52:50', 31, 5199, 111);
+insert into zmc.wearable (patnr, datum, duur_meting, tijd_gezeten, tijd_gelopen, aantal_keren_opgestaan_uit_een_stoel, aantal_stappen_gezet, gemiddeld_aantal_stappen_per_minuut)
+values (1075835, '2020-11-22', '14:41:52', '09:24:12', '01:31:35', 40, 8593, 100);
 
 
 insert into zmc.patient_measurements (patnr, height, weight, date) values (1075835, 195, 90, '2018-09-20');

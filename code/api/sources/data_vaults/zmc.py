@@ -1,6 +1,6 @@
 # Imports
 
-from sqlalchemy import Column, Integer, String, Numeric, DateTime, Text, ForeignKey
+from sqlalchemy import Column, Integer, String, Numeric, DateTime, Time, Text, ForeignKey
 
 # Column Types
 
@@ -10,7 +10,8 @@ column_types = {
     'varchar': String,
     'numeric': Numeric,
     'datetime': DateTime,
-    'text': Text
+    'text': Text,
+    'time': Time
 }
 
 # Functions
@@ -191,26 +192,49 @@ def create_zmc_dv(schema, base, engine):
     'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id)),
     'display_text': Column(column_types['string'])}
 
-    columns = [{'nr_sst': Column(column_types['integer'])},{'steps_total': Column(column_types['integer'])},{'cadence': Column(column_types['integer'])},{'cyc_rot': Column(column_types['integer'])},{'cyc_rpm': Column(column_types['integer'])}]
+    columns = [
+        {'datum': Column(column_types['datetime'])},
+        {'duur_meting': Column(column_types['time'])},
+        {'tijd_gezeten': Column(column_types['time'])},
+        {'tijd_gelopen': Column(column_types['time'])},
+        {'aantal_keren_opgestaan_uit_een_stoel': Column(column_types['integer'])},
+        {'aantal_stappen_gezet': Column(column_types['integer'])},
+        {'gemiddeld_aantal_stappen_per_minuut': Column(column_types['integer'])}
+    ]
     for column in columns:
         new_satellite.update(column)
 
     event_exercise_measurements = type('ZMC_Sat_Event_Exercise_Measurements',(base,),new_satellite)
 
     #
+
+    # new_satellite={'__tablename__':'sat_event_exercise_measurements',
+    # '__table_args__':{'schema': schema},
+    # 'id': Column(column_types['integer'], primary_key=True),
+    # 'source_table': Column(column_types['string']),
+    # 'hub_id': Column(column_types['integer'], ForeignKey(hub_event.id)),
+    # 'display_text': Column(column_types['string'])}
+
+    # columns = [{'nr_sst': Column(column_types['integer'])},{'steps_total': Column(column_types['integer'])},{'cadence': Column(column_types['integer'])},{'cyc_rot': Column(column_types['integer'])},{'cyc_rpm': Column(column_types['integer'])}]
+    # for column in columns:
+    #     new_satellite.update(column)
+
+    # event_exercise_measurements = type('ZMC_Sat_Event_Exercise_Measurements',(base,),new_satellite)
+
+    # #
     
-    new_satellite={'__tablename__':'sat_time_exercise_measurements',
-    '__table_args__':{'schema': schema},
-    'id': Column(column_types['integer'], primary_key=True),
-    'source_table': Column(column_types['string']),
-    'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
-    'display_text': Column(column_types['string'])}
+    # new_satellite={'__tablename__':'sat_time_exercise_measurements',
+    # '__table_args__':{'schema': schema},
+    # 'id': Column(column_types['integer'], primary_key=True),
+    # 'source_table': Column(column_types['string']),
+    # 'hub_id': Column(column_types['integer'], ForeignKey(hub_time.id)),
+    # 'display_text': Column(column_types['string'])}
 
-    columns = [{'day_nr': Column(column_types['integer'])},{'time_total': Column(column_types['integer'])},{'time_passive': Column(column_types['integer'])},{'time_active': Column(column_types['integer'])},{'time_sit': Column(column_types['integer'])},{'time_stand': Column(column_types['integer'])},{'time_walk': Column(column_types['integer'])},{'time_cycle': Column(column_types['integer'])},{'time_hi': Column(column_types['integer'])}]
-    for column in columns:
-        new_satellite.update(column)
+    # columns = [{'day_nr': Column(column_types['integer'])},{'time_total': Column(column_types['integer'])},{'time_passive': Column(column_types['integer'])},{'time_active': Column(column_types['integer'])},{'time_sit': Column(column_types['integer'])},{'time_stand': Column(column_types['integer'])},{'time_walk': Column(column_types['integer'])},{'time_cycle': Column(column_types['integer'])},{'time_hi': Column(column_types['integer'])}]
+    # for column in columns:
+    #     new_satellite.update(column)
 
-    time_exercise_measurements = type('ZMC_Sat_Time_Exercise_Measurements',(base,),new_satellite)
+    # time_exercise_measurements = type('ZMC_Sat_Time_Exercise_Measurements',(base,),new_satellite)
 
     #
         
