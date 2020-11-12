@@ -34,7 +34,7 @@ zmc_wearable_satellites = {
             ],
             'hub': 'hub_event',
             'hub_id': 0,
-            'display_text': 'Inspannings'
+            'display_text': 'Activiteitenmonitor resultaten'
         }
     ]
 }

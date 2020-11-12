@@ -256,9 +256,8 @@ insert into fcrb.serums_ids (serums_id, patnr) values (1, 4641202);
 -- insert into fcrb.patient_rules (rule_id, serums_id, tags, filters) values ('as8sadausd99S', 1, ARRAY['wearable', 'patient_details'], '{}');
 insert into fcrb.patient_rules (rule_id, serums_id, tags, filters) values ('abc', 1, ARRAY['all'], '{}');
 
-
 insert into fcrb.hospital_tags (tags) values (ARRAY['wearable', 'diagnostic', 'medication', 'patient_details', 'patient_address', 'appointments', 'healthcare_providers', 'treatments', 'personal', 'all']);
-
+insert into fcrb.translated_tags (tags) values ('{"wearable": {"translation": "Portable"}, "diagnostic": {"translation": "Diagnòstic"}, "medication": {"translation": "Medicació"}, "patient_details": {"translation": "Dades del pacient"}, "patient_address": {"translation": "Adreça del pacient"}, "appointments": {"translation": "Cites"}, "healthcare_providers": {"translation": "Professional mèdic"}, "treatments": {"translation": "Tractaments"}, "personal": {"translation": "Personal"}, "all": {"translation": "Tot"}}');
 
 insert into fcrb.hospital_doctors (id, name, specialism) values (1, 'Mateu Martin Silva', 1);
 insert into fcrb.hospital_doctors (id, name, specialism) values (2, 'Lluc Garcia Torres', 1);

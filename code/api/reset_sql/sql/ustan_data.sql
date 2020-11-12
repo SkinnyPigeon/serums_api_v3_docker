@@ -26,6 +26,7 @@ insert into ustan.serums_ids (serums_id, chi) values (1, 2606566626);
 insert into ustan.patient_rules (rule_id, serums_id, tags, filters) values ('abc', 1, ARRAY['all'], '{}');
 
 insert into ustan.hospital_tags (tags) values (ARRAY['diagnostic', 'patient_details', 'appointments', 'treatments', 'all']);
+insert into ustan.translated_tags (tags) values ('{"diagnostic": {"translation": "Diagnostic"}, "patient_details": {"translation": "Patient details"}, "appointments": {"translation": "Appointments"}, "treatments": {"translation": "Treatments"}, "all": {"translation": "All"}}');
 
 insert into ustan.hospital_doctors (id, name, specialism) values (1, 'Isla MacDonald', 1);
 insert into ustan.hospital_doctors (id, name, specialism) values (2, 'Charles Stewart', 1);

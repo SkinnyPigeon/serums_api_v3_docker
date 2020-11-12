@@ -2,12 +2,20 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
+# project_folder = os.path.expanduser('~/code/api_v3_docker/code/api')
+# load_dotenv(os.path.join(project_folder, '.env'))
+# PORT = os.getenv('PGPORT')
+# PASSWORD = os.getenv('PGPASSWORD')
+# PASSWORD = os.environ.get('PGPASSWORD')
+# PORT = os.environ.get('PGPORT')
+
 project_folder = os.path.expanduser('~/code/api_v3_docker/code/api')
 load_dotenv(os.path.join(project_folder, '.env'))
 PORT = os.getenv('PGPORT')
 PASSWORD = os.getenv('PGPASSWORD')
-# PASSWORD = os.environ.get('PGPASSWORD')
-# PORT = os.environ.get('PGPORT')
+if PORT == None:
+    PASSWORD = os.environ.get('PGPASSWORD')
+    PORT = os.environ.get('PGPORT')
 
 import json
 import pandas as pd

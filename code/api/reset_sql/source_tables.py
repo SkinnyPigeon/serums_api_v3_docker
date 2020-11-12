@@ -11,12 +11,20 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
+# project_folder = os.path.expanduser('~/code/api_v3_docker/code/api')
+# load_dotenv(os.path.join(project_folder, '.env'))
+# PORT = os.getenv('PGPORT')
+# PASSWORD = os.getenv('PGPASSWORD')
+# PASSWORD = os.environ.get('PGPASSWORD')
+# PORT = os.environ.get('PGPORT')
+
 project_folder = os.path.expanduser('~/code/api_v3_docker/code/api')
 load_dotenv(os.path.join(project_folder, '.env'))
 PORT = os.getenv('PGPORT')
 PASSWORD = os.getenv('PGPASSWORD')
-# PASSWORD = os.environ.get('PGPASSWORD')
-# PORT = os.environ.get('PGPORT')
+if PORT == None:
+    PASSWORD = os.environ.get('PGPASSWORD')
+    PORT = os.environ.get('PGPORT')
 
 engine = create_engine('postgresql://postgres:{}@localhost:{}/source'.format(PASSWORD, PORT), echo='debug')
 
@@ -174,6 +182,12 @@ class FCRB_TAGS(Base):
     id = Column(Integer, primary_key=True)
     tags = Column(ARRAY(String))  
 
+class FCRB_Translated_TAGS(Base):
+    __tablename__ = 'translated_tags'
+    __table_args__ = {'schema': 'fcrb'}
+    id = Column(Integer, primary_key=True)
+    tags = Column(JSON) 
+
 class FCRB_Doctors(Base):
     __tablename__ = 'hospital_doctors'
     __table_args__ = {'schema': 'fcrb'}
@@ -269,6 +283,12 @@ class USTAN_TAGS(Base):
     __table_args__ = {'schema': 'ustan'}
     id = Column(Integer, primary_key=True)
     tags = Column(ARRAY(String)) 
+
+class USTAN_Translated_TAGS(Base):
+    __tablename__ = 'translated_tags'
+    __table_args__ = {'schema': 'ustan'}
+    id = Column(Integer, primary_key=True)
+    tags = Column(JSON) 
 
 class USTAN_Doctors(Base):
     __tablename__ = 'hospital_doctors'
@@ -452,6 +472,12 @@ class ZMC_TAGS(Base):
     __table_args__ = {'schema': 'zmc'}
     id = Column(Integer, primary_key=True)
     tags = Column(ARRAY(String)) 
+
+class ZMC_Translated_TAGS(Base):
+    __tablename__ = 'translated_tags'
+    __table_args__ = {'schema': 'zmc'}
+    id = Column(Integer, primary_key=True)
+    tags = Column(JSON) 
 
 class ZMC_Doctors(Base):
     __tablename__ = 'hospital_doctors'

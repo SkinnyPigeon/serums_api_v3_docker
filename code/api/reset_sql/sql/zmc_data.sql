@@ -70,10 +70,12 @@ insert into zmc.patient_diagnostic (patnr, type, name, anatomical_location, late
 -- insert into zmc.patient_rules (rule_id, serums_id, tags, filters) values ('9a8sdn8asj89dfs', 1, ARRAY['wearable', 'patient_details'], '{}');
 insert into zmc.patient_rules (rule_id, serums_id, tags, filters) values ('abc', 1, ARRAY['all'], '{}');
 
-
 insert into zmc.serums_ids (serums_id, patnr) values (1, 1075835);
 
-insert into zmc.hospital_tags (tags) values (ARRAY['wearable', 'diagnostic', 'patient_details', 'patient_address', 'appointments', 'operations', 'documents', 'drugs_and_alcohol', 'allergies', 'additional_information', 'treatments', 'personal']);
+insert into zmc.hospital_tags (tags) values (ARRAY['wearable', 'diagnostic', 'patient_details', 'patient_address', 'appointments', 'operations', 'documents', 'drugs_and_alcohol', 'allergies', 'additional_information', 'treatments', 'personal', 'all']);
+-- insert into zmc.translated_tags (tags) values ('{"0": {"tag": "wearable", "translation": "Wearable/Sensor"}, "1": {"tag": "diagnostic", "translation": "Diagnostiek"}, "2": {"tag": "patient_details", "translation": "Patiënten informatie"}, "3": {"tag": "patient_address", "translation": "Adres van de patiënt"}, "4": {"tag": "appointments", "translation": "Afspraken"}, "5": {"tag": "operations", "translation": "Operaties"}, "6": {"tag": "documents", "translation": "Documenten"}, "7": {"tag": "drugs_and_alcohol", "translation": "Drugs en alcohol"}, "8": {"tag": "allergies", "translation": "Allergieën"}, "9": {"tag": "additional_information", "translation": "Additionele informatie"}, "10": {"tag": "treatments", "translation": "Behandelingen"}, "11": {"tag": "personal", "translation": "Persoonlijke informatie"}, "12": {"tag": "all", "translation": "Alle"}}');
+insert into zmc.translated_tags (tags) values ('{"wearable": {"translation": "Wearable/Sensor"}, "diagnostic": {"translation": "Diagnostiek"}, "patient_details": {"translation": "Patiënten informatie"}, "patient_address": {"translation": "Adres van de patiënt"}, "appointments": {"translation": "Afspraken"}, "operations": {"translation": "Operaties"}, "documents": {"translation": "Documenten"}, "drugs_and_alcohol": {"translation": "Drugs en alcohol"}, "allergies": {"translation": "Allergieën"}, "additional_information": {"translation": "Additionele informatie"}, "treatments": {"translation": "Behandelingen"}, "personal": {"translation": "Persoonlijke informatie"}, "all": {"translation": "Alle"}}');
+
 
 insert into zmc.hospital_doctors (id, name, specialism) values (1, 'Lucas De Vries', 1);
 insert into zmc.hospital_doctors (id, name, specialism) values (2, 'Milan Van de Berg', 1);
