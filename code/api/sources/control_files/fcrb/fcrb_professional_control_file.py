@@ -8,14 +8,14 @@ fcrb_professional_satellites = {
             'columns': ['erusr', 'gbdat', 'rank'], 
             'hub': 'hub_person', 
             'hub_id': 0,
-            'display_text': 'Professional Details'
+            'display_text': 'Detalls Professional'
         }, 
         {
             'satellite': 'sat_time_professional_date', 
             'columns': ['begdt', 'enddt', 'erdat'], 
             'hub': 'hub_time', 
             'hub_id': 0,
-            'display_text': 'Professional Dates'
+            'display_text': 'Dates Professional'
         }
     ]
 }

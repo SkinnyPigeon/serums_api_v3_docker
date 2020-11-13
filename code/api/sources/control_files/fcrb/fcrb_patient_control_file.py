@@ -7,7 +7,7 @@ fcrb_patient_satellites = {
             'satellite': 'sat_person_patient_details', 
             'columns': ['gschl', 'nname', 'vname', 'gbdat', 'gbnam', 'namzu', 'glrand', 'famst', 'telf1', 'rvnum', 'decdat'], 
             'hub': 'hub_person', 'hub_id': 0,
-            'display_text': 'Patient Details'
+            'display_text': 'Detalls Pacient'
         }
     ]
 }

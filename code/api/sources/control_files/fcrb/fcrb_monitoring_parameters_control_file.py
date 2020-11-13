@@ -7,7 +7,7 @@ fcrb_monitoring_parameters_satellites = {
             'satellite': 'sat_object_monitoring_parameters', 
             'columns': ['vbem', 'datyp', 'wertogr', 'wertugr', 'wertmax', 'wertmin'], 
             'hub': 'hub_object', 'hub_id': 0,
-            'display_text': 'Monitoring Parameters'
+            'display_text': 'Paràmetres de Monitorització'
         }
     ]
 }

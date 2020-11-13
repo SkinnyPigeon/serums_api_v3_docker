@@ -1,0 +1,1 @@
+sudo rm -rf code/api/functions/__pycache__/ code/api/sources/control_files/fcrb/__pycache__/ code/api/sources/control_files/ustan/__pycache__/ code/api/sources/control_files/zmc/__pycache__/ code/api/sources/data_vaults/__pycache__/ code/api/sources/format_mapping/__pycache__/ code/api/sources/tags/__pycache__/

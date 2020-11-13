@@ -8,7 +8,7 @@ fcrb_medical_specialty_satellites = {
             'columns': ['orgna'], 
             'hub': 'hub_object', 
             'hub_id': 0,
-            'display_text': 'Organisation Details'
+            'display_text': 'Detalls Organització'
         }
     ]
 }

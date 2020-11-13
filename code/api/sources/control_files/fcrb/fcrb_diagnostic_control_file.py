@@ -7,7 +7,7 @@ fcrb_diagnostic_satellites = {
             'satellite': 'sat_object_diagnostic_details', 
             'columns': ['lfdnr', 'dkey1'], 
             'hub': 'hub_object', 'hub_id': 0,
-            'display_text': 'Diagnostic Details'
+            'display_text': 'Detalls Diagnòstic'
         }
     ]
 }

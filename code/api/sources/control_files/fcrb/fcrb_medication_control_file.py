@@ -7,13 +7,13 @@ fcrb_medication_satellites = {
             'satellite': 'sat_object_medication_details', 
             'columns': ['motx', 'mostx', 'motypid', 'mpresnr', 'storn', 'stusr', 'stoid'], 
             'hub': 'hub_object', 'hub_id': 0,
-            'display_text': 'Medication Details'
+            'display_text': 'Tdetalls Medicació'
         }, 
         {
             'satellite': 'sat_time_medication_date', 
             'columns': ['erdat', 'stdat'], 
             'hub': 'hub_time', 'hub_id': 0,
-            'display_text': 'Medication Dates'
+            'display_text': 'Dates Medicació'
         }
     ]
 }

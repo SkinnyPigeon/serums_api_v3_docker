@@ -7,19 +7,19 @@ fcrb_episode_satellites = {
             'satellite': 'sat_object_treatment_category', 
             'columns': ['bekat'], 
             'hub': 'hub_object', 'hub_id': 0,
-            'display_text': 'Treatment Category'
+            'display_text': 'Categoria Tractament'
         }, 
         {
             'satellite': 'sat_event_episode_type', 
             'columns': ['falar', 'statu', 'krzan', 'storn', 'casetx', 'enddtx'], 
             'hub': 'hub_event', 'hub_id': 0,
-            'display_text': 'Episode Type'
+            'display_text': 'Tipus Episodi'
         }, 
         {
             'satellite': 'sat_object_medical_center', 
             'columns': ['einzg', 'fatnx'], 
             'hub': 'hub_object', 'hub_id': 0,
-            'display_text': 'Medical Center'
+            'display_text': 'Centre Mèdic'
         }
     ]
 }
