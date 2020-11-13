@@ -34,6 +34,15 @@ def hospital_id_picker(hospital_id):
     id_column, id_table = select_id_column(connection)
     return connection, id_column, id_table
 
+def patient_id_picker(hospital_id):
+    if hospital_id == 'FCRB':
+        patient_id = 4641202
+    elif hospital_id == 'USTAN':
+        patient_id = 2606566626
+    elif hospital_id == 'ZMC':
+        patient_id = 1075835
+    return patient_id
+
 def setup_connection(hospital):
     metadata = MetaData(schema=hospital)
     Base = automap_base(metadata=metadata)
@@ -55,6 +64,23 @@ def add_user_to_serums(req_data):
     serums_id = req_data['serums_id']
     patient_id = req_data['patient_id']
     hospital = req_data['hospital_id']
+
+    connection, id_column, id_table = hospital_id_picker(hospital)
+
+    try:
+        patient_to_add = {id_column: patient_id, 'serums_id': serums_id}
+        add_query = insert(id_table).values(patient_to_add)
+        result = connection['engine'].execute(add_query)
+        connection['engine'].dispose()
+        return {"Result": "Success"}
+    except Exception as e:
+        connection['engine'].dispose()
+        return {"Result": e}
+
+def add_poc_user_to_serums(req_data):
+    serums_id = req_data['serums_id']
+    hospital = req_data['hospital_id']
+    patient_id = patient_id_picker(req_data['hospital_id'])
 
     connection, id_column, id_table = hospital_id_picker(hospital)
 

@@ -12,7 +12,7 @@ from functions.data_vault import create_data_vault, copy_to_dv
 from functions.apply_rules_to_data_vault import *
 from functions.encryption import encrypt_patient_record
 from functions.formatter import format_data, format_data_decrypted
-from functions.handle_users import add_user_to_serums, remove_user_from_serums
+from functions.handle_users import add_user_to_serums, remove_user_from_serums, add_poc_user_to_serums
 from functions.handle_rules import add_rule_to_hospital_db, remove_rule_from_serums, update_rule, get_rules
 from functions.get_tags_and_doctors import get_tags_and_doctors
 
@@ -58,6 +58,11 @@ reply_fields = api.model('Successful Response', {
 add_user_fields = api.model('Add User', {
     'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=1),
     'patient_id': fields.Integer(required=True, description="The Patient's ID in the host hospital to be linked to the Serums ID", example=1075835),
+    'hospital_id': fields.String(required=True, description='The id of the hospital for the source data', example="ZMC")
+})
+
+add_poc_user_fields = api.model('Add POC User', {
+    'serums_id': fields.Integer(required=True, description='The Serums ID for the patient', example=1),
     'hospital_id': fields.String(required=True, description='The id of the hospital for the source data', example="ZMC")
 })
 
@@ -157,6 +162,14 @@ class AddUser(Resource):
     def post(self):
         req_data = request.get_json()
         return add_user_to_serums(req_data)
+
+@user_space.route("/add_poc_user", methods=['post'])
+class AddUser(Resource):
+    '''Link a patient's hospital ID to their Serums ID'''
+    @api.doc(body=add_poc_user_fields)
+    def post(self):
+        req_data = request.get_json()
+        return add_poc_user_to_serums(req_data)
     
 @user_space.route("/remove_user", methods=['post'])
 class RemoveUser(Resource):
