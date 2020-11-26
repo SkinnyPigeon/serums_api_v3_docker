@@ -19,6 +19,7 @@ if PORT == None:
 
 import json
 import pandas as pd
+import numpy as np
 
 from sqlalchemy import insert, select
 from sources.data_vaults.fcrb import create_fcrb_dv
@@ -193,6 +194,18 @@ def copy_to_dv(source_data, control_files, connection):
     return return_dv(schema)
     # return "WORKING ON A FIX"
 
+def format_dates(df):
+    print("DATATYPES: {}".format(df.dtypes))
+    columns = list(df)
+    for column in columns:
+        if np.issubdtype(df[column].dtype, np.datetime64):
+            print("COLUMN: {}".format(column))
+            print("OLD TYPE: {}".format(df[column].dtype))
+            df[column] = df[column].astype(str)
+            print("NEW TYPE: {}".format(df[column].dtype))
+
+    return df
+
 def return_dv(schema):
     print("RETURNING DV")
     output = []
@@ -206,6 +219,7 @@ def return_dv(schema):
         if hasattr(class_name, '__table__'):
             query = session.query(class_name)
             df = pd.read_sql(query.statement, con=engine)
+            df = format_dates(df)
             df = df.to_json(orient='index')
             parsed = json.loads(df)
             table = {class_name.__table__.name: parsed}

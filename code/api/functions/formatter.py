@@ -28,8 +28,15 @@ def personal_info_formatter(personal_info, sphr):
     return personal_info
 
 
+# def format_dates(sphr):
+#     for record in sphr:
+#         print("DATATYPES: {}".format(record))
+
+#     return sphr
+
 def sphr_formatter(event_boilerplate, sphr, patient_tags):
     sphr = json.loads(sphr)
+    # sphr = format_dates(sphr)
     filled_records = []
     output = []
 
