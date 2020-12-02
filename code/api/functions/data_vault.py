@@ -218,6 +218,7 @@ def return_dv(schema):
     for class_name in base._decl_class_registry.values():
         if hasattr(class_name, '__table__'):
             query = session.query(class_name)
+            print("QUERY STATEMENT: {}".format(query.statement))
             df = pd.read_sql(query.statement, con=engine)
             df = format_dates(df)
             df = df.to_json(orient='index')

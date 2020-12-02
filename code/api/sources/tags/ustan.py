@@ -27,7 +27,8 @@ ustan_patient_details = {
   'table': 'ustan.demographics',
   'fields': [
     'chi',
-    'name',
+    'first_name',
+    'last_name',
     'gp_name',
     'postcode',
     'age',
@@ -35,6 +36,9 @@ ustan_patient_details = {
     'gender',
     'civil_status',
     'religion',
+    'nationality',
+    'height',
+    'weight',
     'ref_hospital',
     'dat_death'
   ], 'key_lookup': {}
@@ -153,7 +157,8 @@ ustan_all_4 = {
   'table': 'ustan.demographics',
   'fields': [
     'chi',
-    'name',
+    'first_name',
+    'last_name',
     'gp_name',
     'postcode',
     'age',
@@ -161,6 +166,9 @@ ustan_all_4 = {
     'gender',
     'civil_status',
     'religion',
+    'nationality',
+    'height',
+    'weight',
     'ref_hospital',
     'dat_death'
   ], 'key_lookup': {}

@@ -215,7 +215,8 @@ class USTAN_Demographics(Base):
     __tablename__ = 'demographics'
     __table_args__ = {'schema': 'ustan'}
     chi	= Column(BigInteger, primary_key=True)
-    name = Column(String)
+    first_name = Column(String)
+    last_name = Column(String)
     initial	= Column(String)
     gp_name	= Column(String)
     postcode = Column(String)	
@@ -223,6 +224,9 @@ class USTAN_Demographics(Base):
     dat_birth = Column(DateTime(timezone=False), primary_key=True)
     gender = Column(String)
     civil_status = Column(Integer)
+    nationality = Column(String)
+    height = Column(Integer)
+    weight = Column(Integer)
     religion = Column(Integer)
     ref_hospital = Column(Integer)
     dat_death = Column(Integer)

@@ -1,12 +1,12 @@
 ustan_personal_info = {
     "firstName": {
-        "field": "name",
+        "field": "first_name",
         "location": "sat_person_patient_details",
         "value": "NA"
     },
     "lastName": {
-        "field": "NA",
-        "location": "NA",
+        "field": "last_name",
+        "location": "sat_person_patient_details",
         "value": "NA"
     },
     "dateOfBirth": {
@@ -20,8 +20,8 @@ ustan_personal_info = {
         "value": "NA"
     },
     "nationality": {
-        "field": "NA",
-        "location": "NA",
+        "field": "nationality",
+        "location": "sat_person_patient_details",
         "value": "NA"
     },
     "weight": {

@@ -6,7 +6,21 @@ ustan_demographics_satellites = {
         {
             'satellite': 'sat_person_patient_details', 
             'columns': [
-                'name', 'initial', 'gp_name', 'postcode', 'age', 'dat_birth', 'gender', 'civil_status', 'religion', 'ref_hospital', 'dat_death'
+                'first_name', 
+                'last_name', 
+                'initial', 
+                'gp_name', 
+                'postcode', 
+                'age', 
+                'dat_birth', 
+                'gender', 
+                'civil_status', 
+                'religion', 
+                'nationality', 
+                'height', 
+                'weight', 
+                'ref_hospital', 
+                'dat_death'
             ], 'hub': 'hub_person', 'hub_id': 0,
             'display_text': 'Patient Details'
         }

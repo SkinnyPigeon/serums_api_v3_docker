@@ -248,7 +248,8 @@ def create_ustan_dv(schema, base, engine):
     'display_text': Column(column_types['string'])}
 
     columns = [
-        {'name': Column(column_types['string'])},
+        {'first_name': Column(column_types['string'])},
+        {'last_name': Column(column_types['string'])},
         {'initial': Column(column_types['string'])},
         {'gp_name': Column(column_types['string'])},
         {'postcode': Column(column_types['string'])},
@@ -257,6 +258,9 @@ def create_ustan_dv(schema, base, engine):
         {'gender': Column(column_types['string'])},
         {'civil_status': Column(column_types['integer'])},
         {'religion': Column(column_types['integer'])},
+        {'nationality': Column(column_types['string'])},
+        {'height': Column(column_types['integer'])},
+        {'weight': Column(column_types['integer'])},
         {'ref_hospital': Column(column_types['integer'])},
         {'dat_death': Column(column_types['datetime'])}
     ]

@@ -6,8 +6,8 @@ insert into ustan.chemocare (chi, intention, regime, appointment_date, drug_dose
 values (2606566626, 'Adjuvant', 'FEC-80', '2020-12-15', 777, 'neutral', 'NA', 'NA');
 
 
-insert into ustan.demographics (chi, name, initial, gp_name, postcode, age, dat_birth, gender, civil_status, religion, ref_hospital, dat_death)
-values (2606566626, 'MARIE POPPO', 'R', 'BIAGIONI', 'DG349WU', 41, '1976-06-26', 'F', 9, 9, 593, null);
+insert into ustan.demographics (chi, first_name, last_name, initial, gp_name, postcode, age, dat_birth, gender, civil_status, religion, nationality, height, weight, ref_hospital, dat_death)
+values (2606566626, 'MARY', 'SMITH', 'R', 'BIAGIONI', 'DG349WU', 41, '1976-06-26', 'FEMALE', 9, 9, 'UK', 162, 65, 593, null);
 
 
 insert into ustan.diagnosis (chi, first_seen_date, primary_field, age, site, side, histology, stage, tnm_t, tnm_n, tnm_m, perf_stat, metastasis1)
@@ -21,6 +21,7 @@ values (2606566626, '2020-09-11', '2020-10-09', 0, 'C509', 'C773', null, null, '
 
 
 insert into ustan.serums_ids (serums_id, chi) values (1, 2606566626);
+insert into ustan.serums_ids (serums_id, chi) values (125, 2606566626);
 
 -- insert into ustan.patient_rules (rule_id, serums_id, tags, filters) values ('h8asdasja8jskalc', 1, ARRAY['patient_details', 'treatments'], '{}');
 insert into ustan.patient_rules (rule_id, serums_id, tags, filters) values ('abc', 1, ARRAY['all'], '{}');
