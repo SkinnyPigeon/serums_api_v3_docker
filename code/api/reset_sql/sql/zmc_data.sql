@@ -58,6 +58,19 @@ insert into zmc.patient_rules (rule_id, serums_id, tags, filters) values ('abc',
 
 insert into zmc.serums_ids (serums_id, patnr) values (1, 1075835);
 insert into zmc.serums_ids (serums_id, patnr) values (115, 1075835);
+insert into zmc.serums_ids (serums_id, patnr) values (165, 1075835);
+insert into zmc.serums_ids (serums_id, patnr) values (167, 1075835);
+insert into zmc.serums_ids (serums_id, patnr) values (104, 1075835);
+insert into zmc.serums_ids (serums_id, patnr) values (114, 1075835);
+insert into zmc.serums_ids (serums_id, patnr) values (166, 1075835);
+insert into zmc.serums_ids (serums_id, patnr) values (169, 1075835);
+insert into zmc.serums_ids (serums_id, patnr) values (170, 1075835);
+insert into zmc.serums_ids (serums_id, patnr) values (171, 1075835);
+insert into zmc.serums_ids (serums_id, patnr) values (172, 1075835);
+insert into zmc.serums_ids (serums_id, patnr) values (173, 1075835);
+insert into zmc.serums_ids (serums_id, patnr) values (174, 1075835);
+insert into zmc.serums_ids (serums_id, patnr) values (175, 1075835);
+
 
 insert into zmc.hospital_tags (tags) values (ARRAY['wearable', 'diagnostic', 'patient_details', 'patient_address', 'appointments', 'operations', 'documents', 'drugs_and_alcohol', 'allergies', 'additional_information', 'treatments', 'personal', 'all']);
 

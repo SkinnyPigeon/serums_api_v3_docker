@@ -11,14 +11,21 @@ def hospital_picker(hospital_id):
     elif hospital_id == 'ZMC':
         return zmc_personal_info, zmc_event_boilerplate
         
-def personal_info_formatter(personal_info, sphr):
+def personal_info_formatter(hospital_id, personal_info, sphr):
     sphr = json.loads(sphr)
+    print(sphr)
+    print(personal_info)
     for record in sphr:
         try:
             for key, values in record.items():
                 for entry, details in personal_info.items():
+                    # print(details['location'])
                     if details['location'] == key:
                         personal_info[entry] = record[key]['0'][details['field']]
+
+            if hospital_id == 'ZMC':
+                personal_info['weight'] = 75
+                personal_info['height'] = 165
         except:
             pass
     
@@ -78,7 +85,7 @@ def sphr_formatter(event_boilerplate, sphr, patient_tags):
 def format_data(hospital_id, sphr, serums_id, patient_tags):
     output = {"serums_id": serums_id}
     personal_info, event_boilerplate = hospital_picker(hospital_id)
-    formatted_personal_info = personal_info_formatter(personal_info, sphr)
+    formatted_personal_info = personal_info_formatter(hospital_id, personal_info, sphr)
     formatted_sphr = sphr_formatter(event_boilerplate, sphr, patient_tags)
 
     output.update({"personalInfo": formatted_personal_info})
@@ -89,7 +96,7 @@ def format_data(hospital_id, sphr, serums_id, patient_tags):
 def format_data_decrypted(hospital_id, sphr, serums_id, patient_tags):
     output = {"serums_id": serums_id}
     personal_info, event_boilerplate = hospital_picker(hospital_id)
-    formatted_personal_info = personal_info_formatter(personal_info, sphr)
+    formatted_personal_info = personal_info_formatter(hospital_id, personal_info, sphr)
     formatted_sphr = sphr_formatter(event_boilerplate, sphr, patient_tags)
 
     output.update({"personalInfo": formatted_personal_info})
